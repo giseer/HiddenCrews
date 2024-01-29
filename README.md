@@ -1,4 +1,4 @@
-# Hidden Crews: Dominando el Submundo
+# Hidden Crews
 
 ## ¡Bienvenido a Hidden Crews!
 
