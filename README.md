@@ -1,5 +1,5 @@
 # Hidden Crews: Dominando el Submundo
-# ¡Bienvenido a Hidden Crews!
+#1 ¡Bienvenido a Hidden Crews!
 ¡Prepárate para sumergirte en el oscuro submundo de Hidden Crews, donde la estrategia y la violencia se entrelazan en un emocionante juego de simulación de vida de bandas! Conviértete en el líder de tu propia banda y lucha por el dominio de la ciudad en este juego lleno de acción y desafíos.
 
 # Acerca del Juego
