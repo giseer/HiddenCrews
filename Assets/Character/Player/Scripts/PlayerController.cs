@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     private void PerformMovement(Vector2 movementValues)
     {
         _mover.UpdateHorizontalMovement(movementValues);
-        _animationHandler.PerformMoveAnimation(movementValues);
     }
     
     private void PerformJump()

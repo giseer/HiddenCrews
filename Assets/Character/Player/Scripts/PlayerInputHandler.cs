@@ -31,7 +31,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (move.action.IsPressed())
         {
-            Debug.Log("Estoy Moviendome");
             onMove?.Invoke(move.action.ReadValue<Vector2>());
         }
 

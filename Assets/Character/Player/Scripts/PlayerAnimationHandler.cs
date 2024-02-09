@@ -3,22 +3,20 @@ using UnityEngine;
 
 public class PlayerAnimationHandler : MonoBehaviour
 {
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
+
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
     }
 
-    public void PerformMoveAnimation(Vector2 movementValues)
+    public void PerformMoveAnimation(Vector3 desiredDirection)
     {
-        if (movementValues == Vector2.zero)
-        {
-            _animator.SetBool("Walking", false);
-            return;
-        }
-        
-        _animator.SetBool("Walking", true);
+        Debug.Log(desiredDirection.normalized);
+
+        _animator.SetFloat("x", desiredDirection.normalized.x);
+        _animator.SetFloat("z", desiredDirection.normalized.y);
     }
     
     public void PerformJumpAnimation()

@@ -9,6 +9,7 @@ public class PlayerMover : MonoBehaviour
     [Header("Components")]
     private CharacterController _characterController;
     private Camera _mainCamera;
+    [SerializeField] private PlayerAnimationHandler animatorHandler;
     
     private void Awake()
     {
@@ -68,6 +69,7 @@ public class PlayerMover : MonoBehaviour
     
         float smoothingToApply = CalculateSmoothingAmount(smoothingDirection);
         _smoothedMoveXZLocal += smoothingDirection.normalized * smoothingToApply;
+        animatorHandler.PerformMoveAnimation(_smoothedMoveXZLocal);
     }
 
     private Vector3 TransformDirectionToLocal(Vector3 worldDirection)
