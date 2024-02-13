@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput;
     private float _verticalInput;
     
-    [FormerlySerializedAs("turnCalmTime")] public float smoothTurnTime = 0.1f;
-    private float smoothTurnVelocity;
+    [SerializeField] private float smoothTurnTime = 0.1f;
+    [SerializeField] private float smoothTurnVelocity;
     
     [Header("Jump Values")]
     public float jumpForce = 1f;
@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Animator animator;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void OnEnable()
     {
         move.action.Enable();
@@ -46,11 +51,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateVerticalMovement();
-        
         MoveAndRotate(speed);
-        
-        animator.SetFloat("x", GetMovementInput().x);
-        animator.SetFloat("z", GetMovementInput().y);
     }
 
     private void UpdateVerticalMovement()
@@ -115,7 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         if (direction.magnitude >= 0.1f)
         {
-            float _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.eulerAngles.y;
+            float _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
             float smoothDampAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
                 ref smoothTurnVelocity, smoothTurnTime);
@@ -123,10 +124,14 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, smoothDampAngle, 0);
         }
     }
-
+    
     private void MoveCharacter(Vector3 direction, float moveSpeed)
     {
         characterController.Move(direction * (moveSpeed * Time.deltaTime));
+
+        Vector3 localDirection = transform.InverseTransformDirection(direction).normalized * moveSpeed;
+        animator.SetFloat("x", localDirection.x);
+        animator.SetFloat("z", localDirection.z);
     }
     
     private void OnDisable()
