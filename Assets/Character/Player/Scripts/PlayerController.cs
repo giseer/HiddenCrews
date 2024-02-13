@@ -12,13 +12,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Values")]
     [SerializeField] private float speed = 1.1f;
-    [SerializeField] private float sprintSpeed = 5f;
     
     private Vector3 _velocity;
     
-    private bool isSprinting;
-    
-    private float _targetRotation;
     private float _horizontalInput;
     private float _verticalInput;
     
@@ -32,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     
     [Header("Camera Values")]
-    public Transform playerCamera;
+    public Transform mainCamera;
 
     [Header("Constant Values")] 
     private const float GRAVITY = -9.81f;
@@ -50,12 +46,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateVerticalMovement();
-
-        if (isSprinting)
-        {
-            Sprint();
-            return;
-        }
         
         MoveAndRotate(speed);
         
@@ -74,7 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-        
             _velocity.y = 0f;
             return;
         }
@@ -97,7 +86,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 movementDirection = CalculateMovementDirection(movementInput);
 
-        RotateTowardsMovementDirection(movementDirection);
+        SmoothRotate(movementDirection);
         
         MoveCharacter(movementDirection, moveSpeed);
     }
@@ -109,16 +98,24 @@ public class PlayerController : MonoBehaviour
     
     private Vector3 CalculateMovementDirection(Vector2 input)
     {
-        Vector3 direction = new Vector3(input.x, 0, input.y).normalized;
+        Vector3 normalizedInput = new Vector3(input.x, 0, input.y).normalized;
+        Vector3 cameraRight = mainCamera.right;
+        Vector3 cameraForward = mainCamera.forward;
+        cameraForward.y = 0f;
+        cameraForward.Normalize();
+        
+        Vector3 direction = 
+            cameraRight * normalizedInput.x +
+            cameraForward * normalizedInput.z;
         
         return direction;
     }
     
-    private void RotateTowardsMovementDirection(Vector3 direction)
+    private void SmoothRotate(Vector3 direction)
     {
         if (direction.magnitude >= 0.1f)
         {
-            _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
+            float _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.eulerAngles.y;
 
             float smoothDampAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
                 ref smoothTurnVelocity, smoothTurnTime);
@@ -129,21 +126,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveCharacter(Vector3 direction, float moveSpeed)
     {
-        Vector3 normalizedMovementDirection = Quaternion.Euler(0f, _targetRotation, 0f) * Vector3.forward;
-
-        characterController.Move(normalizedMovementDirection * (moveSpeed * Time.deltaTime));
-    }
-
-    private void Sprint()
-    {
-        if (sprint.action.WasPerformedThisFrame() && move.action.ReadValue<Vector2>().y > 0.1f && characterController.isGrounded)
-        {
-            isSprinting = true;
-        
-            MoveAndRotate(sprintSpeed);
-        }
-        
-        isSprinting = false;
+        characterController.Move(direction * (moveSpeed * Time.deltaTime));
     }
     
     private void OnDisable()
