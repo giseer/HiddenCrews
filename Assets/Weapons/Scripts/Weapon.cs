@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float range;
+
+
+    private void Update()
     {
+        RaycastHit hitInfo;
         
+        if (Physics.Raycast(transform.position, transform.position + transform.position * range, out hitInfo))
+        {
+            Debug.Log(hitInfo.transform.tag);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * range);
     }
 }
