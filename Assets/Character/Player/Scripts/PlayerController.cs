@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float _verticalInput;
     
     [SerializeField] private float smoothTurnTime = 0.1f;
-    [SerializeField] private float smoothTurnVelocity;
+    private float smoothTurnVelocity;
     
     [Header("Jump Values")]
     public float jumpForce = 1f;
