@@ -1,40 +1,15 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Input values")] 
-    [SerializeField] private InputActionReference move;
-    [SerializeField] private InputActionReference jump;
-    [SerializeField] private InputActionReference sprint;
-
-    [Header("Movement Values")]
-    [SerializeField] private float speed = 1.1f;
-    
-    private Vector3 _velocity;
-    
-    private float _horizontalInput;
-    private float _verticalInput;
-    
-    [SerializeField] private float smoothTurnTime = 0.1f;
-    private float smoothTurnVelocity;
-    
-    [Header("Jump Values")]
-    public float jumpForce = 1f;
-    
-    [Header("Collision Values")] 
-    [SerializeField] private CharacterController characterController;
-    
-    [Header("Camera Values")]
-    public Transform mainCamera;
-
-    [Header("Constant Values")] 
-    private const float GRAVITY = -9.81f;
-    
     [Header("Components")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerInputHandler inputHandler;
+    [SerializeField] private PlayerMover mover;
+    [SerializeField] private PlayerAnimationsHandler animationsHandler;
+
+    [Header("Visuals")]
+    [SerializeField] private GameObject crosshair;
 
     private void Awake()
     {
@@ -43,101 +18,57 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        move.action.Enable();
-        jump.action.Enable();
-        sprint.action.Enable();
+        inputHandler.onMove.AddListener(OnMove);
+        inputHandler.onJump.AddListener(OnJump);
+        inputHandler.onSprint.AddListener(OnSprint);
+        inputHandler.onAim.AddListener(OnAim);
+        inputHandler.onReleaseAim.AddListener(OnReleaseAim);
+        inputHandler.onStopMove.AddListener(OnStopMove);
     }
 
-    private void Update()
+    private void OnMove(Vector2 movementValues)
     {
-        UpdateVerticalMovement();
-        MoveAndRotate(speed);
+        mover.MoveAndRotate(movementValues);
     }
 
-    private void UpdateVerticalMovement()
+    private void OnStopMove()
     {
-        PerformGravity();
-        Jump();
-        characterController.Move(Vector3.up * (_velocity.y * Time.deltaTime));
+        mover.MoveAndRotate(Vector2.zero);
     }
 
-    private void PerformGravity()
+    private void OnJump()
     {
-        if (characterController.isGrounded)
-        {
-            _velocity.y = 0f;
-            return;
-        }
-        
-        _velocity.y += GRAVITY * Time.deltaTime;  
-        
+        mover.Jump();
+    }
+
+    private void OnSprint()
+    {
+        // Cambiar Velocidad;
+    }
+
+    private void OnAim()
+    {
+        CameraHandler.Instance.ActiveAimCamera();
+        CameraHandler.Instance.DesactiveThirdPersonCamera();
+        animationsHandler.ActiveAimingAnimations();
+        crosshair.SetActive(true);
+    }
+
+    private void OnReleaseAim()
+    {
+        CameraHandler.Instance.ActiveThirdPersonCamera();
+        CameraHandler.Instance.DesactiveAimCamera();
+        animationsHandler.DesactiveAimingAnimations();
+        crosshair.SetActive(false);
     }
     
-    private void Jump()
-    {
-        if (jump.action.WasPerformedThisFrame() && characterController.isGrounded)
-        {
-            _velocity.y = jumpForce;
-        }
-    }
-
-    private void MoveAndRotate(float moveSpeed)
-    {
-        Vector2 movementInput = GetMovementInput();
-        
-        Vector3 movementDirection = CalculateMovementDirection(movementInput);
-
-        SmoothRotate(movementDirection);
-        
-        MoveCharacter(movementDirection, moveSpeed);
-    }
-    
-    private Vector2 GetMovementInput()
-    {
-        return move.action.ReadValue<Vector2>();
-    }
-    
-    private Vector3 CalculateMovementDirection(Vector2 input)
-    {
-        Vector3 normalizedInput = new Vector3(input.x, 0, input.y).normalized;
-        Vector3 cameraRight = mainCamera.right;
-        Vector3 cameraForward = mainCamera.forward;
-        cameraForward.y = 0f;
-        cameraForward.Normalize();
-        
-        Vector3 direction = 
-            cameraRight * normalizedInput.x +
-            cameraForward * normalizedInput.z;
-        
-        return direction;
-    }
-    
-    private void SmoothRotate(Vector3 direction)
-    {
-        if (direction.magnitude >= 0.1f)
-        {
-            float _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-
-            float smoothDampAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
-                ref smoothTurnVelocity, smoothTurnTime);
-
-            transform.rotation = Quaternion.Euler(0, smoothDampAngle, 0);
-        }
-    }
-    
-    private void MoveCharacter(Vector3 direction, float moveSpeed)
-    {
-        characterController.Move(direction * (moveSpeed * Time.deltaTime));
-
-        Vector3 localDirection = transform.InverseTransformDirection(direction).normalized * moveSpeed;
-        animator.SetFloat("x", localDirection.x);
-        animator.SetFloat("z", localDirection.z);
-    }
     
     private void OnDisable()
-    {
-        move.action.Disable();
-        jump.action.Disable();
-        sprint.action.Disable();
+    {   
+        inputHandler.onMove.RemoveListener(OnMove);
+        inputHandler.onJump.RemoveListener(OnJump);
+        inputHandler.onSprint.RemoveListener(OnSprint);
+        inputHandler.onAim.RemoveListener(OnReleaseAim);
+        inputHandler.onReleaseAim.RemoveListener(OnReleaseAim);
     }
 }

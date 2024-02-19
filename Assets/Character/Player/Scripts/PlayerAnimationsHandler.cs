@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimationsHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [Header("Components")] 
+    [SerializeField] private Animator animator;
+    
+    public void ActiveAimingAnimations()
+    {   
+        animator.SetBool("Aiming", true);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    
+    public void DesactiveAimingAnimations()
+    {   
+        animator.SetBool("Aiming", false);
     }
 }
