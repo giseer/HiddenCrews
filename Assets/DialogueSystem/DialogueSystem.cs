@@ -5,9 +5,9 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueText;
-    public string[] textLines;
-    [SerializeField] float textSpeed = 0.2f;
+    [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] string[] textLines;
+    [SerializeField] float textSpeed = 0.1f;
 
     int index;
 
@@ -15,13 +15,25 @@ public class DialogueSystem : MonoBehaviour
 
     void Start()
     {
-        
+        dialogueText.text = string.Empty;
+        StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButton(0)) 
+        {
+            if(dialogueText.text == textLines[index]) 
+            {
+               NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                dialogueText.text = textLines[index];
+            }
+        }
     }
 
     public void StartDialogue()
@@ -33,10 +45,25 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator WriteLine()
     {
-        foreach (var line in textLines) 
+        foreach (char letter in textLines[index].ToCharArray()) 
         {
-        
+            dialogueText.text += letter;
+
+            yield return new WaitForSeconds(textSpeed);
         }
-        yield return new WaitForSeconds(textSpeed);
+    }
+
+    public void NextLine()
+    {
+        if(index < textLines.Length - 1) 
+        {
+            index++;
+            dialogueText.text = string.Empty;
+            StartCoroutine (WriteLine());
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
