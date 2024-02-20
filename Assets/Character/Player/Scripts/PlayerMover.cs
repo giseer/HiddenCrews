@@ -61,7 +61,7 @@ public class PlayerMover : MonoBehaviour
     {
         Vector3 movementDirection = CalculateMovementDirection(movementInput);
 
-        SmoothRotate(movementDirection);
+        //SmoothRotate(movementDirection);
         
         MoveCharacter(movementDirection, speed);
     }
