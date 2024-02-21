@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private Transform target;
     [SerializeField] private float range;
 
 
@@ -20,6 +21,6 @@ public class Weapon : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * range);
+        Gizmos.DrawLine(transform.position, target.position);
     }
 }
