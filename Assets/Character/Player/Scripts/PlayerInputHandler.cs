@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference sprint;
     [SerializeField] private InputActionReference aim;
+    [SerializeField] private InputActionReference shoot;
 
     [Header("InputEvents")] 
     [SerializeField] public UnityEvent<Vector2> onMove;
@@ -18,6 +19,8 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] public UnityEvent onSprint;
     [SerializeField] public UnityEvent onAim;
     [SerializeField] public UnityEvent onReleaseAim;
+    [SerializeField] public UnityEvent onShoot;
+    [SerializeField] public UnityEvent onStopShoot;
     
     private void OnEnable()
     {
@@ -25,6 +28,7 @@ public class PlayerInputHandler : MonoBehaviour
         jump.action.Enable();
         sprint.action.Enable();
         aim.action.Enable();
+        shoot.action.Enable();
     }
 
     private void Update()
@@ -56,6 +60,15 @@ public class PlayerInputHandler : MonoBehaviour
         {
          onReleaseAim.Invoke();   
         }
+
+        if (shoot.action.WasPressedThisFrame())
+        {
+            onShoot.Invoke();
+        }
+        else if(shoot.action.WasReleasedThisFrame())
+        {
+            onStopShoot.Invoke();
+        }
     }
 
     private void OnDisable()
@@ -64,5 +77,6 @@ public class PlayerInputHandler : MonoBehaviour
         jump.action.Disable();
         sprint.action.Disable();
         aim.action.Disable();
+        shoot.action.Enable();
     }
 }

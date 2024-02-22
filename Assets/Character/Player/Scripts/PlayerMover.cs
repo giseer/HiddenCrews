@@ -20,7 +20,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
 
-    private void Update()
+    private void LateUpdate()
     {
         UpdateVerticalMovement();
     }

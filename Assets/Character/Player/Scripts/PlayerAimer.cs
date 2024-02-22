@@ -10,7 +10,9 @@ public class PlayerAimer : MonoBehaviour
     [SerializeField] private Rig aimLayer;
 
     [Header("Components")]
+    [SerializeField] private Weapon weapon;
     private PlayerInputHandler inputHandler;
+    
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class PlayerAimer : MonoBehaviour
     {
         inputHandler.onAim.AddListener(OnAim);
         inputHandler.onReleaseAim.AddListener(OnReleaseAim);
+        inputHandler.onShoot.AddListener(OnShoot);
     }
 
     private void Start()
@@ -43,11 +46,17 @@ public class PlayerAimer : MonoBehaviour
     {
         aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
     }
+    
+    private void OnShoot()
+    {
+        throw new System.NotImplementedException();
+    }
 
     private void OnDisable()
     {
         inputHandler.onAim.RemoveListener(OnAim);
         inputHandler.onReleaseAim.RemoveListener(OnReleaseAim);
+        inputHandler.onShoot.RemoveListener(OnShoot);
     }
 
 }
