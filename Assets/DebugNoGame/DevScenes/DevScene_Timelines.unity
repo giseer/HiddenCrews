@@ -605,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 61ee95c40aa02f74ea28d67ae7bf89aa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1330755669629619180, guid: 61ee95c40aa02f74ea28d67ae7bf89aa,
         type: 3}
@@ -1080,6 +1080,10 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 4677449915019350223, guid: 6754ad082aa0f5f41b13b65846222be4, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 9206851417636762217, guid: f3437b76d2bedfa4bb1f3283cdedf918, type: 2}
+    value: {fileID: 858697385}
+  - key: {fileID: -7611332357687785693, guid: f3437b76d2bedfa4bb1f3283cdedf918, type: 2}
+    value: {fileID: 291918008}
   m_ExposedReferences:
     m_References:
     - 557701b17fe35a24cb301eee389ffb84: {fileID: 563646300}
@@ -1406,8 +1410,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439234742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00043357597, y: -0.99890184, z: 0.045889944, w: 0.009437794}
-  m_LocalPosition: {x: -5.4887905, y: 1.9954304, z: -13.885594}
+  m_LocalRotation: {x: 0.00043357507, y: -0.99890184, z: 0.045889847, w: 0.009437794}
+  m_LocalPosition: {x: -0.75449765, y: 2.0564866, z: -3.239595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1932,9 +1936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Caserio caseriott
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1944,7 +1946,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1968,7 +1970,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2024,7 +2026,6 @@ GameObject:
   - component: {fileID: 864569712}
   - component: {fileID: 864569714}
   - component: {fileID: 864569713}
-  - component: {fileID: 864569715}
   m_Layer: 5
   m_Name: DialogueHolder
   m_TagString: Untagged
@@ -2065,7 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.28235295}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2090,23 +2091,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864569711}
   m_CullTransparentMesh: 1
---- !u!114 &864569715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864569711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef313b8828bf9574d91f255e9ac6b12f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 858697385}
-  textLines:
-  - Hola buenas tardes mi compa coordinador es un psicopata el webo
-  - Espero que esto funcione almenos para la pinche cinematica
-  textSpeed: 0.3
 --- !u!1 &883633790
 GameObject:
   m_ObjectHideFlags: 3
@@ -2365,8 +2349,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 5000.69
-  field of view: 60.000004
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -2392,8 +2376,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991408487}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15655234, y: 0.1018371, z: -0.016230583, w: 0.98227143}
-  m_LocalPosition: {x: -5.4342203, y: 3.8700001, z: -9.48}
+  m_LocalRotation: {x: 0.10960027, y: -0.48746353, z: 0.061833836, w: 0.86402756}
+  m_LocalPosition: {x: -1.1720915, y: 3.56, z: -7.489131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2979,8 +2963,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283045434}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.036519855, y: -0.74543023, z: 0.040978752, w: 0.6643199}
-  m_LocalPosition: {x: 3.3245516, y: -1.831295, z: 2.703586}
+  m_LocalRotation: {x: 0.03651986, y: -0.74543023, z: 0.040978756, w: 0.6643199}
+  m_LocalPosition: {x: 8.0588455, y: -1.7702384, z: 13.3495865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3426,8 +3410,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995407650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19095762, y: 0.01452539, z: -0.0028260534, w: 0.98148674}
-  m_LocalPosition: {x: -4.7274704, y: 3.1154304, z: -18.255594}
+  m_LocalRotation: {x: 0.19095764, y: 0.014525401, z: -0.0028260557, w: 0.98148674}
+  m_LocalPosition: {x: -0.09747052, y: 3.2354302, z: -10.175594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
