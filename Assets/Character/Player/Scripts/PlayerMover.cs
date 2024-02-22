@@ -7,12 +7,6 @@ public class PlayerMover : MonoBehaviour
     
     private Vector3 _velocity;
     
-    private float _horizontalInput;
-    private float _verticalInput;
-    
-    [SerializeField] private float smoothTurnTime = 0.1f;
-    private float smoothTurnVelocity;
-    
     [Header("Jump Values")]
     public float jumpForce = 1f;
     
@@ -60,8 +54,6 @@ public class PlayerMover : MonoBehaviour
     public void MoveAndRotate(Vector2 movementInput)
     {
         Vector3 movementDirection = CalculateMovementDirection(movementInput);
-
-        SmoothRotate(movementDirection);
         
         MoveCharacter(movementDirection, speed);
     }
@@ -79,19 +71,6 @@ public class PlayerMover : MonoBehaviour
             cameraForward * normalizedInput.z;
         
         return direction;
-    }
-    
-    private void SmoothRotate(Vector3 direction)
-    {
-        if (direction.magnitude >= 0.1f)
-        {
-            float _targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-
-            float smoothDampAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
-                ref smoothTurnVelocity, smoothTurnTime);
-
-            transform.rotation = Quaternion.Euler(0, smoothDampAngle, 0);
-        }
     }
     
     private void MoveCharacter(Vector3 direction, float moveSpeed)
