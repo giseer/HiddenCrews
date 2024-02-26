@@ -1,12 +1,13 @@
 using System;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraHandler : MonoBehaviour
 {
 
-    public GameObject ThirdPersonCamera;
-    public GameObject AimCamera;
+    public CinemachineFreeLook thirdPersonCamera;
+    public CinemachineFreeLook aimCamera;
     
     public static CameraHandler Instance { get; private set; }
 
@@ -21,25 +22,25 @@ public class CameraHandler : MonoBehaviour
             Instance = this; 
         } 
     }
-
+    
 
     public void ActiveThirdPersonCamera()
     {
-        ThirdPersonCamera.SetActive(true);
+        thirdPersonCamera.Priority = 100;
     }
     
     public void ActiveAimCamera()
     {
-        AimCamera.SetActive(true);
+        aimCamera.Priority = 100;
     }
     
     public void DesactiveThirdPersonCamera()
     {
-        ThirdPersonCamera.SetActive(false);
+        thirdPersonCamera.Priority = 10;
     }
     
     public void DesactiveAimCamera()
     {
-        AimCamera.SetActive(false);
+        aimCamera.Priority = 10;
     }
 }

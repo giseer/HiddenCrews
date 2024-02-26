@@ -31,7 +31,7 @@ public class PlayerAimer : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         float cameraRotation = mainCamera.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, cameraRotation, 0), turnSpeed * Time.fixedDeltaTime);
@@ -49,7 +49,7 @@ public class PlayerAimer : MonoBehaviour
     
     private void OnShoot()
     {
-        throw new System.NotImplementedException();
+
     }
 
     private void OnDisable()

@@ -4,6 +4,8 @@ public class PlayerMover : MonoBehaviour
 {
     [Header("Movement Values")]
     [SerializeField] private float speed = 1.1f;
+
+    [SerializeField] private float sprintSpeed = 3f;
     
     private Vector3 _velocity;
     
@@ -51,11 +53,11 @@ public class PlayerMover : MonoBehaviour
         }
     }
 
-    public void MoveAndRotate(Vector2 movementInput)
+    public void MoveAndRotate(Vector2 movementInput, bool isSprinting)
     {
         Vector3 movementDirection = CalculateMovementDirection(movementInput);
         
-        MoveCharacter(movementDirection, speed);
+        MoveCharacter(movementDirection, speed, isSprinting);
     }
     
     private Vector3 CalculateMovementDirection(Vector2 input)
@@ -73,12 +75,17 @@ public class PlayerMover : MonoBehaviour
         return direction;
     }
     
-    private void MoveCharacter(Vector3 direction, float moveSpeed)
+    private void MoveCharacter(Vector3 direction, float moveSpeed, bool isSprinting)
     {
-        characterController.Move(direction * (moveSpeed * Time.deltaTime));
+        float currentSpeed = isSprinting ? sprintSpeed : speed;
+        
+        characterController.Move(direction * (currentSpeed * Time.deltaTime));
 
-        Vector3 localDirection = transform.InverseTransformDirection(direction).normalized * moveSpeed;
-        animator.SetFloat("x", localDirection.x);
-        animator.SetFloat("z", localDirection.z);
+        Vector3 normalizedLocalDirection = transform.InverseTransformDirection(direction).normalized;
+
+        normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
+        
+        animator.SetFloat("x", normalizedLocalDirection.x);
+        animator.SetFloat("z", normalizedLocalDirection.z);
     }
 }

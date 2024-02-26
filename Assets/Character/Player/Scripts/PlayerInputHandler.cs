@@ -13,7 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private InputActionReference shoot;
 
     [Header("InputEvents")] 
-    [SerializeField] public UnityEvent<Vector2> onMove;
+    [SerializeField] public UnityEvent<Vector2, bool> onMove;
     [SerializeField] public UnityEvent onStopMove;
     [SerializeField] public UnityEvent onJump;
     [SerializeField] public UnityEvent onSprint;
@@ -35,7 +35,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (move.action.IsPressed())
         {
-            onMove.Invoke(move.action.ReadValue<Vector2>());
+            onMove.Invoke(move.action.ReadValue<Vector2>(), sprint.action.IsPressed());
         }
         else
         {

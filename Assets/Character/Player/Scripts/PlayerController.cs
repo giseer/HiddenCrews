@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
         inputHandler.onStopMove.AddListener(OnStopMove);
     }
 
-    private void OnMove(Vector2 movementValues)
+    private void OnMove(Vector2 movementValues, bool isSprinting)
     {
-        mover.MoveAndRotate(movementValues);
+        mover.MoveAndRotate(movementValues, isSprinting);
     }
 
     private void OnStopMove()
     {
-        mover.MoveAndRotate(Vector2.zero);
+        mover.MoveAndRotate(Vector2.zero, false);
     }
 
     private void OnJump()
