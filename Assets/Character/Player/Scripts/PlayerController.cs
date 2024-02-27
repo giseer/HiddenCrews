@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     private void OnAim()
     {
         CameraHandler.Instance.ActiveAimCamera();
-        CameraHandler.Instance.DesactiveThirdPersonCamera();
         animationsHandler.ActiveAimingAnimations();
         crosshair.SetActive(true);
     }
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
     private void OnReleaseAim()
     {
         CameraHandler.Instance.ActiveThirdPersonCamera();
-        CameraHandler.Instance.DesactiveAimCamera();
         animationsHandler.DesactiveAimingAnimations();
         crosshair.SetActive(false);
     }

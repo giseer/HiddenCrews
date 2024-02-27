@@ -7,7 +7,10 @@ public class CameraHandler : MonoBehaviour
 {
 
     public CinemachineFreeLook thirdPersonCamera;
-    public CinemachineFreeLook aimCamera;
+    private float thirdPersonCameraZoom;
+    [SerializeField] private float aimCameraZoom;
+    
+    
     
     public static CameraHandler Instance { get; private set; }
 
@@ -22,25 +25,19 @@ public class CameraHandler : MonoBehaviour
             Instance = this; 
         } 
     }
-    
+
+    private void Start()
+    {
+        thirdPersonCameraZoom = thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.y;
+    }
 
     public void ActiveThirdPersonCamera()
     {
-        thirdPersonCamera.Priority = 100;
+        thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.z = thirdPersonCameraZoom;
     }
     
     public void ActiveAimCamera()
     {
-        aimCamera.Priority = 100;
-    }
-    
-    public void DesactiveThirdPersonCamera()
-    {
-        thirdPersonCamera.Priority = 10;
-    }
-    
-    public void DesactiveAimCamera()
-    {
-        aimCamera.Priority = 10;
+        thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.z = aimCameraZoom;
     }
 }
