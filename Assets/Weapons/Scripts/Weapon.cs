@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
         
         if (Physics.Raycast(transform.position, transform.position + transform.position * range, out hitInfo))
         {
-            //Debug.Log(hitInfo.transform.tag);
+            Debug.Log(hitInfo.transform.tag);
         }
     }
 
