@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float range;
+    public float range;
 
 
     private void Update()
@@ -16,11 +16,5 @@ public class Weapon : MonoBehaviour
         {
             //Debug.Log(hitInfo.transform.tag);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, target.position);
     }
 }

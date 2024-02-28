@@ -17,7 +17,7 @@ public class PlayerAimer : MonoBehaviour
 
     [Header("Shoot Settings")] 
     [SerializeField] private ParticleSystem shootParticleSystem;
-    [SerializeField] private ParticleSystem shootImpactParticleSystem;
+    [SerializeField] private GameObject shootImpact;
     private Transform raycastOrigin;
     private Transform raycastDestination;
     
@@ -71,11 +71,11 @@ public class PlayerAimer : MonoBehaviour
     {
         shootParticleSystem.Emit(1);
         
-        if (Physics.Raycast(ray, out hitInfo))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo,  weapon.range))
         {
-            shootImpactParticleSystem.transform.position = hitInfo.point;
-            shootImpactParticleSystem.transform.forward = hitInfo.normal;
-            shootImpactParticleSystem.Emit(1);
+            Debug.Log("Estoy Instanciando Impactos");
+            GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Destroy(ImpactInstanciated, 2f);
         }
     }
 
