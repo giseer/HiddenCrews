@@ -52,18 +52,16 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnAim()
     {
-        // aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
-        //
-        // DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 1f, 0.5f);
-        // DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 0.5f);
+        aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
+        
+        DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 0.5f);
     }
 
     private void OnReleaseAim()
     {
-        // aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
-        //
-        //  DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 0f, 0.5f);
-        //  DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
+        aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
+        
+         DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
     }
 
     private Ray ray;
