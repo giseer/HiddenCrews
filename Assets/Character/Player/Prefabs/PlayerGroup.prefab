@@ -292,6 +292,8 @@ MonoBehaviour:
   transitionWeaponDuration: 0.3
   mainCamera: {fileID: 0}
   aimLayer: {fileID: 5329829463757256008}
+  rightHandK: {fileID: 8279781792329071650}
+  leftHandK: {fileID: 5242542920653853554}
   weapon: {fileID: 6922625109621264900}
 --- !u!143 &1372650472985494279
 CharacterController:
@@ -332,7 +334,7 @@ GameObject:
   - component: {fileID: 5446189661931734164}
   - component: {fileID: 277579851651558206}
   m_Layer: 0
-  m_Name: WeaponPose
+  m_Name: WeaponAimingPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -935,6 +937,37 @@ MonoBehaviour:
   m_Offset: {x: 0.38, y: -0.15, z: -0.84}
   m_ApplyAfter: 1
   m_PreserveComposition: 0
+--- !u!1 &3143516864562277613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6293381814072798628}
+  m_Layer: 0
+  m_Name: PistolPlaceHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6293381814072798628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143516864562277613}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.47739166, y: 0.3056685, z: 0.5199148, w: 0.63902473}
+  m_LocalPosition: {x: -0.0418, y: 0.0366, z: 0.002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4613556722985941836}
+  m_LocalEulerAnglesHint: {x: -68.121, y: -16.485, z: 89.451}
 --- !u!1 &3283669775756563752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3895794367786507656}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13054968, y: -0.000000017059124, z: 0.0000000022462874, w: 0.9914418}
+  m_LocalRotation: {x: 0.13054968, y: 0.000000017059124, z: -0.0000000022462874, w: 0.9914418}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1657,7 +1690,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6246429440500724656}
-  - component: {fileID: 4432197686108759452}
   - component: {fileID: 9142263902080715964}
   m_Layer: 0
   m_Name: WeaponPose
@@ -1681,53 +1713,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5075878173813118086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4432197686108759452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6001362314938052558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10bdb03db33fb148b858a4a3b646cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Data:
-    m_ConstrainedObject: {fileID: 6246429440500724656}
-    m_SourceObjects:
-      m_Length: 1
-      m_Item0:
-        transform: {fileID: 4291830878030134553}
-        weight: 1
-      m_Item1:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item2:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item3:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item4:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item5:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item6:
-        transform: {fileID: 0}
-        weight: 0
-      m_Item7:
-        transform: {fileID: 0}
-        weight: 0
-    m_Offset: {x: -0.07, y: 0.01, z: 0.43}
-    m_ConstrainedAxes:
-      x: 1
-      y: 1
-      z: 1
-    m_MaintainOffset: 0
 --- !u!114 &9142263902080715964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,7 +1731,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 6246429440500724656}
+        transform: {fileID: 6293381814072798628}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -2056,7 +2041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7823374062060785611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.112494275, y: -0.000000017623348, z: 0.0000000019951905,
+  m_LocalRotation: {x: 0.112494275, y: 0.000000017623355, z: -0.0000000019951911,
     w: 0.9936524}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2346,6 +2331,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3730775373782873936}
+    - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: 61ee95c40aa02f74ea28d67ae7bf89aa,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6293381814072798628}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61ee95c40aa02f74ea28d67ae7bf89aa,
         type: 3}

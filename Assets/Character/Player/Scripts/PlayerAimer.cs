@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -7,7 +8,12 @@ public class PlayerAimer : MonoBehaviour
     [SerializeField] private float transitionWeaponDuration = 0.3f;
 
     [SerializeField] private Camera mainCamera;
+    
+    [Header("Animation Riggings")]
     [SerializeField] private Rig aimLayer;
+
+    [SerializeField] private TwoBoneIKConstraint rightHandK;
+    [SerializeField] private TwoBoneIKConstraint leftHandK;
 
     [Header("Components")]
     [SerializeField] private Weapon weapon;
@@ -40,11 +46,17 @@ public class PlayerAimer : MonoBehaviour
     private void OnAim()
     {
         aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
+
+        DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 1f, 1f);
+        DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 1f);
     }
 
     private void OnReleaseAim()
     {
         aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
+
+         DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 0f, 1.5f);
+         DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 1.5f);
     }
     
     private void OnShoot()
