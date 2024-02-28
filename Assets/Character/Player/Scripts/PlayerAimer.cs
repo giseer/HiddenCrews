@@ -15,6 +15,13 @@ public class PlayerAimer : MonoBehaviour
     [SerializeField] private TwoBoneIKConstraint rightHandK;
     [SerializeField] private TwoBoneIKConstraint leftHandK;
 
+    [Header("Shoot Settings")] 
+    [SerializeField] private ParticleSystem shootParticleSystem;
+    [SerializeField] private ParticleSystem shootImpactParticleSystem;
+    private Transform raycastOrigin;
+    private Transform raycastDestination;
+    
+    
     [Header("Components")]
     [SerializeField] private Weapon weapon;
     private PlayerInputHandler inputHandler;
@@ -45,23 +52,33 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnAim()
     {
-        aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
-
-        DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 1f, 1f);
-        DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 1f);
+        // aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
+        //
+        // DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 1f, 0.5f);
+        // DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 0.5f);
     }
 
     private void OnReleaseAim()
     {
-        aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
-
-         DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 0f, 1.5f);
-         DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 1.5f);
+        // aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
+        //
+        //  DOTween.To(()=> rightHandK.weight, x=> rightHandK.weight = x, 0f, 0.5f);
+        //  DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
     }
+
+    private Ray ray;
+    RaycastHit hitInfo; 
     
     private void OnShoot()
     {
-
+        shootParticleSystem.Emit(1);
+        
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            shootImpactParticleSystem.transform.position = hitInfo.point;
+            shootImpactParticleSystem.transform.forward = hitInfo.normal;
+            shootImpactParticleSystem.Emit(1);
+        }
     }
 
     private void OnDisable()

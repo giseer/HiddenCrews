@@ -11,3 +11,9 @@ e
 5Assets/Character/Player/Scripts/PlayerInputHandler.cs,f\b\fb1e9c2f12e6a961bf008ae3a2c4b9c9bbea03ee
 W
 'Assets/Cameras/Scripts/CameraHandler.cs,d\8\d8965b321df8ff7101beeecb3552b729b5b291bd
+?
+HiddenCrews.sln,2\1\21a7b375962621df8376a408fae5ba0e22692843
+P
+ Assets/Weapons/Scripts/Weapon.cs,c\0\c0a338613429134f4e38d708ef4731e5acfd6607
+{
+KAssets/JMO Assets/WarFX/_Effects/MuzzleFlashes/!MuzzleFlash Differences.txt,3\e\3e8029f2eaf3532132a0b7a4685e08074ee8d335
