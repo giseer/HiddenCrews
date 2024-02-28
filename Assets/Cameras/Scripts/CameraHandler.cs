@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,6 +10,8 @@ public class CameraHandler : MonoBehaviour
     public CinemachineFreeLook thirdPersonCamera;
     private float thirdPersonCameraZoom;
     [SerializeField] private float aimCameraZoom;
+    
+    private CinemachineCameraOffset cameraOffset;
     
     
     
@@ -29,15 +32,20 @@ public class CameraHandler : MonoBehaviour
     private void Start()
     {
         thirdPersonCameraZoom = thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.y;
+        cameraOffset = thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>();
     }
-
+    
     public void ActiveThirdPersonCamera()
     {
-        thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.z = thirdPersonCameraZoom;
+        DOTween.To(() => cameraOffset.m_Offset.z, 
+            x => cameraOffset.m_Offset.z = x, 
+            thirdPersonCameraZoom, 1f);
     }
     
     public void ActiveAimCamera()
     {
-        thirdPersonCamera.GetComponentInChildren<CinemachineCameraOffset>().m_Offset.z = aimCameraZoom;
+        DOTween.To(() => cameraOffset.m_Offset.z, 
+            x => cameraOffset.m_Offset.z = x, 
+            aimCameraZoom, 1f);
     }
 }
