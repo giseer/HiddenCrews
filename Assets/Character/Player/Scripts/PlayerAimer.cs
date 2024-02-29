@@ -1,19 +1,10 @@
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 public class PlayerAimer : MonoBehaviour
 {
     [SerializeField] private float turnSpeed = 15f;
-    [SerializeField] private float transitionWeaponDuration = 0.3f;
 
     [SerializeField] private Camera mainCamera;
-    
-    [Header("Animation Riggings")]
-    [SerializeField] private Rig aimLayer;
-
-    [SerializeField] private TwoBoneIKConstraint rightHandK;
-    [SerializeField] private TwoBoneIKConstraint leftHandK;
 
     [Header("Shoot Settings")] 
     [SerializeField] private ParticleSystem shootParticleSystem;
@@ -21,15 +12,16 @@ public class PlayerAimer : MonoBehaviour
     private Transform raycastOrigin;
     private Transform raycastDestination;
     
-    
     [Header("Components")]
     [SerializeField] private Weapon weapon;
     private PlayerInputHandler inputHandler;
+    private RiggingAnimationer riggingAnimationer;
     
 
     private void Awake()
     {
-        inputHandler = GetComponent<PlayerInputHandler>();
+        inputHandler = GetComponentInChildren<PlayerInputHandler>();
+        riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
     }
 
     private void OnEnable()
@@ -52,16 +44,12 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnAim()
     {
-        aimLayer.weight += Time.deltaTime / transitionWeaponDuration;
-        
-        DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 1f, 0.5f);
+        riggingAnimationer.PerformAim();
     }
 
     private void OnReleaseAim()
     {
-        aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
-        
-         DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
+        riggingAnimationer.PerformReleaseAim();
     }
 
     private Ray ray;

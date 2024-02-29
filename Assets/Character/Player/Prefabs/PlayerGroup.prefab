@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 3201901587974697184}
   - component: {fileID: 8773170315912179640}
   - component: {fileID: 7691996447858379587}
+  - component: {fileID: 4247027800257509786}
   - component: {fileID: 1372650472985494279}
   m_Layer: 0
   m_Name: Player
@@ -289,15 +290,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 15
-  transitionWeaponDuration: 0.3
   mainCamera: {fileID: 0}
-  aimLayer: {fileID: 5329829463757256008}
-  rightHandK: {fileID: 8279781792329071650}
-  leftHandK: {fileID: 5242542920653853554}
   shootParticleSystem: {fileID: 8851360946651927343}
   shootImpact: {fileID: 3022987544474651613, guid: 9668b567750866141b673dd5709ebb05,
     type: 3}
   weapon: {fileID: 6922625109621264900}
+--- !u!114 &4247027800257509786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590135649521944199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48229ddeb34345e5bd0dc792b1c500a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionWeaponDuration: 0.3
+  aimLayer: {fileID: 5329829463757256008}
+  rightHandK: {fileID: 8279781792329071650}
+  leftHandK: {fileID: 5242542920653853554}
 --- !u!143 &1372650472985494279
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1783,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &712864723330199580
 Transform:
   m_ObjectHideFlags: 0
@@ -1813,8 +1826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b2b7be94e99af49bb266f5dff9ee30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 20
+  RightHandGrip: {fileID: 2268100330453841250}
+  LeftHandGrip: {fileID: 206092027332432903}
+  HandPlaceHolder: {fileID: 3143516864562277613}
+  muzzleFlash: {fileID: 8851360946651927343}
 --- !u!1 &6393398883303611666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,11 +2200,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8426296691524974757, guid: 0e1141dd1796ec14b9d7f25dafedfa70,
-        type: 3}
-      propertyPath: range
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

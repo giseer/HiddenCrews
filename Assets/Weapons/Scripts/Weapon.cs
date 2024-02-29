@@ -1,20 +1,14 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     public float range;
-
-
-    private void Update()
-    {
-        RaycastHit hitInfo;
+    
+        [Header("Grips Settings")] 
+        public GameObject RightHandGrip;
+        public GameObject LeftHandGrip;
+        public GameObject HandPlaceHolder;
         
-        if (Physics.Raycast(transform.position, transform.position + transform.position * range, out hitInfo))
-        {
-            //Debug.Log(hitInfo.transform.tag);
-        }
-    }
+        [Header("Particles Settings")]
+        public ParticleSystem muzzleFlash;
 }
