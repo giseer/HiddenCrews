@@ -17,3 +17,5 @@ P
  Assets/Weapons/Scripts/Weapon.cs,c\0\c0a338613429134f4e38d708ef4731e5acfd6607
 {
 KAssets/JMO Assets/WarFX/_Effects/MuzzleFlashes/!MuzzleFlash Differences.txt,3\e\3e8029f2eaf3532132a0b7a4685e08074ee8d335
+e
+5Assets/Character/Player/Scripts/RiggingAnimationer.cs,b\5\b59a2f2b4cdc6810221f86edc7f02f5201f8d2f7

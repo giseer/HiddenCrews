@@ -21,7 +21,7 @@ public class RiggingAnimationer : MonoBehaviour
 
     public void PerformReleaseAim()
     {
-        aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
-        DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
+        // aimLayer.weight -= Time.deltaTime / transitionWeaponDuration;
+        // DOTween.To(()=> leftHandK.weight, x=> leftHandK.weight = x, 0f, 0.5f);
     }
 }
