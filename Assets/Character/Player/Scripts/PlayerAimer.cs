@@ -49,7 +49,7 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnReleaseAim()
     {
-        riggingAnimationer.PerformReleaseAim();
+       riggingAnimationer.PerformReleaseAim();
     }
 
     private Ray ray;
