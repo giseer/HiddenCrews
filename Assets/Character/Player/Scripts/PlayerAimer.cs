@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerAimer : MonoBehaviour
 {
@@ -7,13 +8,18 @@ public class PlayerAimer : MonoBehaviour
     [SerializeField] private Camera mainCamera;
 
     [Header("Shoot Settings")] 
-    [SerializeField] private ParticleSystem shootParticleSystem;
     [SerializeField] private GameObject shootImpact;
     private Transform raycastOrigin;
     private Transform raycastDestination;
+
+    [Header("Weapons")] 
+    public Weapon[] weaponsOwned;
+    public Weapon activeWeapon;
+
+    [Header("Events")]
+    [HideInInspector] public UnityEvent onWeaponChange;
     
     [Header("Components")]
-    [SerializeField] private Weapon weapon;
     private PlayerInputHandler inputHandler;
     private RiggingAnimationer riggingAnimationer;
     
@@ -40,6 +46,48 @@ public class PlayerAimer : MonoBehaviour
     {
         float cameraRotation = mainCamera.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, cameraRotation, 0), turnSpeed * Time.fixedDeltaTime);
+
+        ActiveWeapon();
+    }
+
+    private void ActiveWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DesactiveAllWeapons();
+            activeWeapon = weaponsOwned[0];
+            activeWeapon.gameObject.SetActive(true);
+            onWeaponChange.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DesactiveAllWeapons();
+            activeWeapon = weaponsOwned[1];
+            activeWeapon.gameObject.SetActive(true);
+            onWeaponChange.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            DesactiveAllWeapons();
+            activeWeapon = weaponsOwned[2];
+            activeWeapon.gameObject.SetActive(true);
+            onWeaponChange.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            DesactiveAllWeapons();
+            activeWeapon = weaponsOwned[3];
+            activeWeapon.gameObject.SetActive(true);
+            onWeaponChange.Invoke();
+        }
+    }
+
+    private void DesactiveAllWeapons()
+    {
+        foreach (Weapon weapon in weaponsOwned)
+        {
+            weapon.gameObject.SetActive(false);
+        }
     }
 
     private void OnAim()
@@ -57,9 +105,9 @@ public class PlayerAimer : MonoBehaviour
     
     private void OnShoot()
     {
-        shootParticleSystem.Emit(1);
+        //shootParticleSystem.Emit(1);
         
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo,  weapon.range))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo,  weaponsOwned[1].range))
         {
             Debug.Log("Estoy Instanciando Impactos");
             GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
