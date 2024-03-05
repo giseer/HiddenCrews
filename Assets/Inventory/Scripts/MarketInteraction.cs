@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MarketInteraction : MonoBehaviour
 {
     public GameObject marketCanvas;
-    public List<Button> armaMarket1;
+    public List<Button> armaMarket;
     public RawImage otroCanvas;
     public GameObject player;
 
@@ -26,14 +26,14 @@ public class MarketInteraction : MonoBehaviour
 
     public void OnClick(Button armaMarket2)
     {
-        if (armaMarket1.Contains(armaMarket2))
+        if (armaMarket.Contains(armaMarket2))
         {
             armaMarket2.gameObject.SetActive(false);
 
             armaMarket2.transform.SetParent(otroCanvas.transform, false);
             armaMarket2.gameObject.SetActive(true);
 
-            int index = armaMarket1.IndexOf(armaMarket2);
+            int index = armaMarket.IndexOf(armaMarket2);
 
             if (index >= 0 && index < listaDeCanvasMensaje.Count)
             {

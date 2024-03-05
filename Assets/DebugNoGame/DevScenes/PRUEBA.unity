@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 261.80057, g: 324.3278, b: 429.24698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -466,7 +466,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA10
 --- !u!222 &237430063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA7
 --- !u!222 &253099830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA6
 --- !u!222 &322049870
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA11
 --- !u!222 &391292813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA17
 --- !u!222 &601806788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1684,7 +1684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA23
 --- !u!222 &630386362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2169,7 +2169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA22
 --- !u!222 &790063160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2977,7 +2977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA16
 --- !u!222 &914451361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3056,7 +3056,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA9
 --- !u!222 &934012153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3135,7 +3135,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA13
 --- !u!222 &966595014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4256,7 +4256,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA21
 --- !u!222 &1268870382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4335,7 +4335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA15
 --- !u!222 &1269370659
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5747,7 +5747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA3
+  m_Text: ARMA4
 --- !u!222 &1680542762
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5928,7 +5928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA14
 --- !u!222 &1688584738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6007,7 +6007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA18
 --- !u!222 &1731027554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6159,7 +6159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA24
 --- !u!222 &1788780452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6198,7 +6198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marketCanvas: {fileID: 1415060371}
-  armaMarket1:
+  armaMarket:
   - {fileID: 204683258550554557}
   - {fileID: 2313976926774441732}
   - {fileID: 7857864021743642351}
@@ -6421,7 +6421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA2
+  m_Text: ARMA3
 --- !u!222 &1801432212
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6826,7 +6826,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA20
 --- !u!222 &1951204596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7075,7 +7075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA5
 --- !u!222 &1972200051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7402,7 +7402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA12
 --- !u!222 &1999251644
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7481,7 +7481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA8
 --- !u!222 &2005676609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7808,7 +7808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARMA1
+  m_Text: ARMA19
 --- !u!222 &2098137573
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8612,6 +8612,7 @@ GameObject:
   - component: {fileID: 6056755651474198674}
   - component: {fileID: 3259291644182372688}
   - component: {fileID: 6776332862990025820}
+  - component: {fileID: 6776332862990025821}
   m_Layer: 5
   m_Name: Button (Legacy) (4)
   m_TagString: Untagged
@@ -8720,6 +8721,7 @@ GameObject:
   - component: {fileID: 3748669716836680531}
   - component: {fileID: 951695102761794819}
   - component: {fileID: 8510056280589509707}
+  - component: {fileID: 8510056280589509708}
   m_Layer: 5
   m_Name: Button (Legacy) (11)
   m_TagString: Untagged
@@ -9383,6 +9385,7 @@ GameObject:
   - component: {fileID: 8388777395418437855}
   - component: {fileID: 6106834724534927668}
   - component: {fileID: 92283385869988750}
+  - component: {fileID: 8388777395418437856}
   m_Layer: 5
   m_Name: Button (Legacy) (1)
   m_TagString: Untagged
@@ -9582,6 +9585,7 @@ GameObject:
   - component: {fileID: 478231167318972953}
   - component: {fileID: 4503319165323370198}
   - component: {fileID: 8237327538818789592}
+  - component: {fileID: 8237327538818789593}
   m_Layer: 5
   m_Name: Button (Legacy) (12)
   m_TagString: Untagged
@@ -9635,6 +9639,7 @@ GameObject:
   - component: {fileID: 2212144560782134315}
   - component: {fileID: 3700046279733870201}
   - component: {fileID: 7014223178669745181}
+  - component: {fileID: 7014223178669745182}
   m_Layer: 5
   m_Name: Button (Legacy) (20)
   m_TagString: Untagged
@@ -9690,6 +9695,7 @@ GameObject:
   - component: {fileID: 1900024027666287755}
   - component: {fileID: 3999204267577812327}
   - component: {fileID: 7597110778996134059}
+  - component: {fileID: 7597110778996134060}
   m_Layer: 5
   m_Name: Button (Legacy) (14)
   m_TagString: Untagged
@@ -9993,6 +9999,7 @@ GameObject:
   - component: {fileID: 1978247368383109196}
   - component: {fileID: 9040367275424053068}
   - component: {fileID: 1968972721954318405}
+  - component: {fileID: 9040367275424053069}
   m_Layer: 5
   m_Name: Button (Legacy) (5)
   m_TagString: Untagged
@@ -10848,6 +10855,7 @@ GameObject:
   - component: {fileID: 8744660981083408867}
   - component: {fileID: 2880037066204680095}
   - component: {fileID: 5142605764488917106}
+  - component: {fileID: 8744660981083408868}
   m_Layer: 5
   m_Name: Button (Legacy) (2)
   m_TagString: Untagged
@@ -11093,6 +11101,7 @@ GameObject:
   - component: {fileID: 2977779230346380396}
   - component: {fileID: 6462364958561731273}
   - component: {fileID: 6879162224552220839}
+  - component: {fileID: 7929160204754024717}
   m_Layer: 5
   m_Name: Button (Legacy) (10)
   m_TagString: Untagged
@@ -11595,6 +11604,7 @@ GameObject:
   - component: {fileID: 3730937841138431999}
   - component: {fileID: 7400311072785258853}
   - component: {fileID: 8008662197520005275}
+  - component: {fileID: 8008662197520005276}
   m_Layer: 5
   m_Name: Button (Legacy) (16)
   m_TagString: Untagged
@@ -11932,6 +11942,7 @@ GameObject:
   - component: {fileID: 2347423447143899686}
   - component: {fileID: 3924750237674766171}
   - component: {fileID: 205678188308900814}
+  - component: {fileID: 6565902627858683929}
   m_Layer: 5
   m_Name: Button (Legacy) (18)
   m_TagString: Untagged
@@ -12070,6 +12081,7 @@ GameObject:
   - component: {fileID: 2455085466409560875}
   - component: {fileID: 5182945002636009286}
   - component: {fileID: 8403505717042117439}
+  - component: {fileID: 8403505717042117440}
   m_Layer: 5
   m_Name: Button (Legacy) (6)
   m_TagString: Untagged
@@ -12330,6 +12342,7 @@ GameObject:
   - component: {fileID: 915623802902142122}
   - component: {fileID: 1039731281463783433}
   - component: {fileID: 7857864021743642351}
+  - component: {fileID: 7857864021743642352}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -12571,6 +12584,7 @@ GameObject:
   - component: {fileID: 5370799809472858917}
   - component: {fileID: 7892642524038519250}
   - component: {fileID: 3943355507238964600}
+  - component: {fileID: 7892642524038519251}
   m_Layer: 5
   m_Name: Button (Legacy) (19)
   m_TagString: Untagged
@@ -13099,6 +13113,7 @@ GameObject:
   - component: {fileID: 3513199024365953489}
   - component: {fileID: 7428434982542209071}
   - component: {fileID: 6008043896229074202}
+  - component: {fileID: 7428434982542209072}
   m_Layer: 5
   m_Name: Button (Legacy) (17)
   m_TagString: Untagged
@@ -13256,6 +13271,7 @@ GameObject:
   - component: {fileID: 2440519200059771645}
   - component: {fileID: 4747767366259188448}
   - component: {fileID: 2819890673832200130}
+  - component: {fileID: 5927702156635731068}
   m_Layer: 5
   m_Name: Button (Legacy) (3)
   m_TagString: Untagged
@@ -13263,6 +13279,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5927702156635731068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927702156635731067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1535235702}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1535235702}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5943156005671473361
 GameObject:
   m_ObjectHideFlags: 0
@@ -13725,6 +13786,51 @@ RectTransform:
   m_AnchoredPosition: {x: 73, y: -68}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6565902627858683929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356253431680827186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1414244320}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1414244320}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6596796360002849794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13872,6 +13978,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6776332862990025821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684282761704155326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1091429875}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1091429875}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6786588029617726034
 GameObject:
   m_ObjectHideFlags: 0
@@ -13884,6 +14035,7 @@ GameObject:
   - component: {fileID: 1229607597362052035}
   - component: {fileID: 9213931903502055366}
   - component: {fileID: 389812668029672410}
+  - component: {fileID: 9213931903502055367}
   m_Layer: 5
   m_Name: Button (Legacy) (8)
   m_TagString: Untagged
@@ -14211,6 +14363,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7014223178669745182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837093627902499100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 796347292}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 796347292}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7039334329610208940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14261,6 +14458,7 @@ GameObject:
   - component: {fileID: 1105252207879719265}
   - component: {fileID: 6878543996141742466}
   - component: {fileID: 301294025060049005}
+  - component: {fileID: 7073966609971605227}
   m_Layer: 5
   m_Name: Button (Legacy) (9)
   m_TagString: Untagged
@@ -14268,6 +14466,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7073966609971605227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073966609971605226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1101215155}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1101215155}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7164100418322263222
 GameObject:
   m_ObjectHideFlags: 0
@@ -14583,6 +14826,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7428434982542209072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747963711520425323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1953703419}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1953703419}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7535658268935168982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14756,6 +15044,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7597110778996134060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921833894146960106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 203169536}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 203169536}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7691535683783300080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14922,6 +15255,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7857864021743642352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038850621660119889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1992483780}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1992483780}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7892642524038519250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14952,6 +15330,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7892642524038519251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180408741328800622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1587533615}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1587533615}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7929160204754024716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14972,6 +15395,51 @@ RectTransform:
   m_AnchoredPosition: {x: 73, y: -68}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7929160204754024717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284401583483057261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 609115440}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 609115440}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &7954092735444880893
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15052,6 +15520,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8008662197520005276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3992613464157376050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 169648762}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 169648762}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8049662541792707831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15139,6 +15652,7 @@ GameObject:
   - component: {fileID: 3613165511763016195}
   - component: {fileID: 2467040010673140213}
   - component: {fileID: 4015777251299880877}
+  - component: {fileID: 8142700942508547306}
   m_Layer: 5
   m_Name: Button (Legacy) (21)
   m_TagString: Untagged
@@ -15146,6 +15660,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8142700942508547306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142700942508547305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 588545689}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 588545689}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8177040775801317158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15264,6 +15823,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8237327538818789593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716914219303831172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 858405535}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 858405535}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8254545782888327488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15603,6 +16207,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569427780108699636}
   m_CullTransparentMesh: 1
+--- !u!114 &8388777395418437856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569427780108699636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 967845927}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 967845927}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8399470755838674801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15693,6 +16342,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8403505717042117440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553478568411521779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1365547581}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1365547581}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8474509703316363594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15776,6 +16470,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8510056280589509708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769435243625226106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1526798046}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1526798046}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8513981102254108367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15823,6 +16562,7 @@ GameObject:
   - component: {fileID: 3538041444250942094}
   - component: {fileID: 8664615932101123755}
   - component: {fileID: 4314440831670661045}
+  - component: {fileID: 8664615932101123756}
   m_Layer: 5
   m_Name: Button (Legacy) (7)
   m_TagString: Untagged
@@ -16026,6 +16766,7 @@ GameObject:
   - component: {fileID: 1152526427477677557}
   - component: {fileID: 617451964058125052}
   - component: {fileID: 8632174175100012101}
+  - component: {fileID: 8641057137505486770}
   m_Layer: 5
   m_Name: Button (Legacy) (15)
   m_TagString: Untagged
@@ -16033,6 +16774,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8641057137505486770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641057137505486769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1279185702}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1279185702}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8664615932101123755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16063,6 +16849,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8664615932101123756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538153948038526777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1684554971}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1684554971}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &8744660981083408867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16071,6 +16902,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2991745321770288667}
   m_CullTransparentMesh: 1
+--- !u!114 &8744660981083408868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991745321770288667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 827092542}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 827092542}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8759486496000409314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16286,6 +17162,7 @@ GameObject:
   - component: {fileID: 3078886985273969345}
   - component: {fileID: 5891371102826316570}
   - component: {fileID: 2091962881051690643}
+  - component: {fileID: 9003880013808667726}
   m_Layer: 5
   m_Name: Button (Legacy) (13)
   m_TagString: Untagged
@@ -16293,6 +17170,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9003880013808667726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003880013808667725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 657333963}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 657333963}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &9040367275424053068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16323,6 +17245,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9040367275424053069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178793086480765107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2052392726}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2052392726}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &9043513601650336865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16428,6 +17395,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9213931903502055367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786588029617726034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: ActivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1450224644}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790054826}
+          m_TargetAssemblyTypeName: MarketInteraction, Assembly-CSharp
+          m_MethodName: DesactivarCanvasMensaje
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1450224644}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
