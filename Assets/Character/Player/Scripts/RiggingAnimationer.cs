@@ -8,14 +8,18 @@ public class RiggingAnimationer : MonoBehaviour
     [Header("Transition Settings")]
     [SerializeField] private float transitionWeaponDuration = 0.3f;
 
+    [Header("Rig Builder")] 
+    [SerializeField] private RigBuilder rigBuilder;
+
     [Header("Place Holder Riggings")] 
+    [SerializeField] private Transform commonPlaceHolder;
     [SerializeField] private MultiParentConstraint placeHolderParentConstraint;
     [SerializeField] private MultiPositionConstraint placeHolderPositionConstraint;
-    
     
     [Header("Aim Holder Riggings")]
     [SerializeField] private Rig aimLayer;
 
+    [SerializeField] private Transform commonAimHolder;
     [SerializeField] private MultiAimConstraint aimHolderAimConstraint;
     [SerializeField] private MultiParentConstraint aimHolderParentConstraint;
     [SerializeField] private MultiPositionConstraint aimHolderPositionConstraint;
@@ -37,25 +41,34 @@ public class RiggingAnimationer : MonoBehaviour
         aimer.onWeaponChange.AddListener(ActiveWeaponAnimationRiggs);
     }
 
-    private void ActiveWeaponAnimationRiggs()
+    private void LateUpdate()
     {
-        Debug.Log("Wha happen");
-        
+        rigBuilder.SyncLayers();
+    }
+
+    private void ActiveWeaponAnimationRiggs(Weapon activeWeapon)
+    {
         // Constraints del PlaceHolder
-        placeHolderParentConstraint.data.constrainedObject = aimer.activeWeapon.gameObject.transform;
-        placeHolderParentConstraint.data.sourceObjects.Clear();
-        placeHolderParentConstraint.data.sourceObjects.Add(new WeightedTransform(aimer.activeWeapon.WeaponPlaceHolder.transform, 1f));
-        //placeHolderParentConstraint.data.sourceObjects[0] = new WeightedTransform(aimer.activeWeapon.WeaponPlaceHolder.transform,1f);
+        placeHolderParentConstraint.data.constrainedObject = activeWeapon.gameObject.transform;
+        commonPlaceHolder.position = activeWeapon.WeaponPlaceHolder.transform.position;
+        commonPlaceHolder.rotation = activeWeapon.WeaponPlaceHolder.transform.rotation;
         
-        placeHolderPositionConstraint.data.constrainedObject = aimer.activeWeapon.WeaponPlaceHolder.transform;
+        placeHolderPositionConstraint.data.constrainedObject = activeWeapon.WeaponPlaceHolder.transform;
         
         //Constraints del AimHolder 
-        aimHolderAimConstraint.data.constrainedObject = aimer.activeWeapon.WeaponAimHolder.transform;
-        aimHolderParentConstraint.data.constrainedObject = aimer.activeWeapon.transform;
-        aimHolderParentConstraint.data.sourceObjects.Clear();
-        aimHolderParentConstraint.data.sourceObjects.Add(new WeightedTransform(aimer.activeWeapon.WeaponAimHolder.transform, 1f));
-        aimHolderPositionConstraint.data.constrainedObject = aimer.activeWeapon.transform;
-
+        aimHolderAimConstraint.data.constrainedObject = activeWeapon.WeaponAimHolder.transform;
+        
+        aimHolderParentConstraint.data.constrainedObject = activeWeapon.transform;
+        commonAimHolder.position = activeWeapon.WeaponAimHolder.transform.position;
+        commonAimHolder.rotation = activeWeapon.WeaponAimHolder.transform.rotation;
+        
+        aimHolderPositionConstraint.data.constrainedObject = activeWeapon.transform;
+        
+        //Constraints de las manos
+        leftHandK.data.target = activeWeapon.LeftHandGrip.transform;
+        rightHandK.data.target = activeWeapon.RightHandGrip.transform;
+        
+        rigBuilder.Build();
     }
     
     public void PerformAim()

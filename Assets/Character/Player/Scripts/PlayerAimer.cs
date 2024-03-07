@@ -13,11 +13,11 @@ public class PlayerAimer : MonoBehaviour
     private Transform raycastDestination;
 
     [Header("Weapons")] 
-    public Weapon[] weaponsOwned;
-    public Weapon activeWeapon;
+    [SerializeField] private Weapon[] weaponsOwned;
+    private Weapon activeWeapon;
 
     [Header("Events")]
-    [HideInInspector] public UnityEvent onWeaponChange;
+    [HideInInspector] public UnityEvent<Weapon> onWeaponChange;
     
     [Header("Components")]
     private PlayerInputHandler inputHandler;
@@ -57,28 +57,28 @@ public class PlayerAimer : MonoBehaviour
             DesactiveAllWeapons();
             activeWeapon = weaponsOwned[0];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            onWeaponChange.Invoke(activeWeapon);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             DesactiveAllWeapons();
             activeWeapon = weaponsOwned[1];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            onWeaponChange.Invoke(activeWeapon);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             DesactiveAllWeapons();
             activeWeapon = weaponsOwned[2];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            onWeaponChange.Invoke(activeWeapon);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             DesactiveAllWeapons();
             activeWeapon = weaponsOwned[3];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            onWeaponChange.Invoke(activeWeapon);
         }
     }
 
@@ -105,9 +105,9 @@ public class PlayerAimer : MonoBehaviour
     
     private void OnShoot()
     {
-        //shootParticleSystem.Emit(1);
+        activeWeapon.muzzleFlash.Emit(1);
         
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo,  weaponsOwned[1].range))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, activeWeapon.range))
         {
             Debug.Log("Estoy Instanciando Impactos");
             GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
