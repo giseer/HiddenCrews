@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] InputActionReference pause;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject optionsCourse;
     [SerializeField] bool menuOpened;
 
     // Start is called before the first frame update
@@ -30,6 +31,9 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
+        Cursor.visible = pauseMenu.gameObject.activeSelf;
+
+        Cursor.lockState = pauseMenu.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
 
         if (menuOpened)
         {
@@ -53,4 +57,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
+
+    public void Options()
+    {
+        optionsCourse.SetActive(true);
+        pauseMenu.SetActive(false);
+        Cursor.visible = optionsCourse.gameObject.activeSelf;
+
+        Cursor.lockState = optionsCourse.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
+    }
+
 }
