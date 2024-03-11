@@ -1200,10 +1200,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marketCanvas: {fileID: 108591531}
-  armaMarket: []
+  listaDeCanvas: []
+  armaMarket1: []
   otroCanvas: {fileID: 0}
   player: {fileID: 0}
-  listaDeCanvasMensaje: []
 --- !u!4 &1790054827
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,6 +1407,74 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1944903359
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.280556
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000004529953
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2262535
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5fd77d184068b3a44b04dfe01adfe877,
+        type: 3}
+      propertyPath: m_Name
+      value: Sede_Japoneses
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5fd77d184068b3a44b04dfe01adfe877, type: 3}
 --- !u!1 &1956839142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,3 +3665,4 @@ SceneRoots:
   - {fileID: 537036793}
   - {fileID: 1790054827}
   - {fileID: 158527660}
+  - {fileID: 1944903359}
