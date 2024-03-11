@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.80057, g: 324.3278, b: 429.24698, a: 1}
+  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6625,7 +6625,7 @@ Transform:
   m_GameObject: {fileID: 696245250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.0779514, y: 5.179294, z: 3.7011175}
+  m_LocalPosition: {x: -7.0779514, y: 4.84, z: 3.7011175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10339,8 +10339,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107640838}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11249429, y: -0.000000034460427, z: 0.0000000039013655, w: 0.9936524}
-  m_LocalPosition: {x: 0.38000003, y: 2.541587, z: -3.8522737}
+  m_LocalRotation: {x: 0.11249429, y: 0.00000003446043, z: -0.000000003901366, w: 0.9936524}
+  m_LocalPosition: {x: 0.37999997, y: 2.541587, z: -3.8522737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17910,6 +17910,30 @@ MonoBehaviour:
   - {fileID: 961016470}
   - {fileID: 1702040203}
   - {fileID: 1428472806}
+  - {fileID: 1125503559}
+  - {fileID: 1097429017}
+  - {fileID: 1992483780}
+  - {fileID: 967845927}
+  - {fileID: 827092542}
+  - {fileID: 1535235702}
+  - {fileID: 1091429875}
+  - {fileID: 2052392726}
+  - {fileID: 1365547581}
+  - {fileID: 1684554971}
+  - {fileID: 1450224644}
+  - {fileID: 1101215155}
+  - {fileID: 609115440}
+  - {fileID: 1526798046}
+  - {fileID: 858405535}
+  - {fileID: 657333963}
+  - {fileID: 203169536}
+  - {fileID: 1279185702}
+  - {fileID: 169648762}
+  - {fileID: 1953703419}
+  - {fileID: 1414244320}
+  - {fileID: 1587533615}
+  - {fileID: 796347292}
+  - {fileID: 588545689}
   armaMarket1:
   - {fileID: 204683258550554557}
   - {fileID: 2313976926774441732}
@@ -29981,12 +30005,12 @@ PrefabInstance:
     - target: {fileID: 3680234830674826619, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017059124
+      value: 0.000000017059124
       objectReference: {fileID: 0}
     - target: {fileID: 3680234830674826619, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000022462874
+      value: -0.0000000022462874
       objectReference: {fileID: 0}
     - target: {fileID: 4178121877719284480, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
@@ -30001,12 +30025,12 @@ PrefabInstance:
     - target: {fileID: 4538634304964413363, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017623348
+      value: 0.000000017623355
       objectReference: {fileID: 0}
     - target: {fileID: 4538634304964413363, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000019951905
+      value: -0.0000000019951911
       objectReference: {fileID: 0}
     - target: {fileID: 5446189661931734164, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
