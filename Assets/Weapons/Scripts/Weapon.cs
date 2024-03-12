@@ -9,7 +9,9 @@ public class Weapon : MonoBehaviour
     [Header("Grips Settings")] 
     public GameObject RightHandGrip;
     public GameObject LeftHandGrip;
+    
     public GameObject WeaponPlaceHolder;
+    
     public GameObject WeaponAimHolder;
     
     [Header("Particles Settings")]

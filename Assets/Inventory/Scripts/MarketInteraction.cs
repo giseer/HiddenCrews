@@ -48,11 +48,6 @@ public class MarketInteraction : MonoBehaviour
         canvasActivo = nuevoCanvas;
     }
 
-    public void Mensaje()
-    {
-        Debug.Log("HOLA"); 
-    }
-
     public void OnClickButton(Button armaMarket2)
     {
         if (armaMarket1.Contains(armaMarket2))
@@ -96,6 +91,7 @@ public class MarketInteraction : MonoBehaviour
         if (!marketCanvas.gameObject.activeSelf)
         {
             DesactivarCanvasMensaje(canvasActivo);
+            DesactivarTodosLosCanvas();
         }
     }
 

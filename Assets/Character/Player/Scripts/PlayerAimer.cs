@@ -18,6 +18,7 @@ public class PlayerAimer : MonoBehaviour
 
     [Header("Events")]
     [HideInInspector] public UnityEvent<Weapon> onWeaponChange;
+    [HideInInspector] public UnityEvent onNoWeapon;
     
     [Header("Components")]
     private PlayerInputHandler inputHandler;
@@ -55,6 +56,13 @@ public class PlayerAimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             DesactiveAllWeapons();
+            
+            if(activeWeapon == weaponsOwned[0])
+            {
+                activeWeapon = null;
+                return;    
+            }
+            
             activeWeapon = weaponsOwned[0];
             activeWeapon.gameObject.SetActive(true);
             onWeaponChange.Invoke(activeWeapon);
@@ -62,6 +70,13 @@ public class PlayerAimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             DesactiveAllWeapons();
+            
+            if(activeWeapon == weaponsOwned[1])
+            {
+                activeWeapon = null;
+                return;
+            }
+            
             activeWeapon = weaponsOwned[1];
             activeWeapon.gameObject.SetActive(true);
             onWeaponChange.Invoke(activeWeapon);
@@ -69,6 +84,13 @@ public class PlayerAimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             DesactiveAllWeapons();
+            
+            if(activeWeapon == weaponsOwned[2])
+            {
+                activeWeapon = null;
+                return;
+            }
+            
             activeWeapon = weaponsOwned[2];
             activeWeapon.gameObject.SetActive(true);
             onWeaponChange.Invoke(activeWeapon);
@@ -76,6 +98,13 @@ public class PlayerAimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             DesactiveAllWeapons();
+            
+            if(activeWeapon == weaponsOwned[3])
+            {
+                activeWeapon = null;
+                return;
+            }
+            
             activeWeapon = weaponsOwned[3];
             activeWeapon.gameObject.SetActive(true);
             onWeaponChange.Invoke(activeWeapon);
@@ -88,6 +117,7 @@ public class PlayerAimer : MonoBehaviour
         {
             weapon.gameObject.SetActive(false);
         }
+        onNoWeapon.Invoke();
     }
 
     private void OnAim()
@@ -105,13 +135,15 @@ public class PlayerAimer : MonoBehaviour
     
     private void OnShoot()
     {
-        activeWeapon.muzzleFlash.Emit(1);
-        
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, activeWeapon.range))
+        if(activeWeapon != null && activeWeapon.muzzleFlash)
         {
-            Debug.Log("Estoy Instanciando Impactos");
-            GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-            Destroy(ImpactInstanciated, 2f);
+            activeWeapon.muzzleFlash.Emit(1);
+            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, activeWeapon.range))
+            {
+                Debug.Log("Estoy Instanciando Impactos");
+                GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                Destroy(ImpactInstanciated, 2f);
+            }
         }
     }
 

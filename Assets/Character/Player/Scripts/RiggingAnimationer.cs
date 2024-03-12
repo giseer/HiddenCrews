@@ -34,11 +34,13 @@ public class RiggingAnimationer : MonoBehaviour
     private void Awake()
     {
         aimer = GetComponentInChildren<PlayerAimer>();
+        DesactiveRiggings();
     }
 
     private void OnEnable()
     {
         aimer.onWeaponChange.AddListener(ActiveWeaponAnimationRiggs);
+        aimer.onNoWeapon.AddListener(DesactiveRiggings);
     }
 
     private void LateUpdate()
@@ -48,12 +50,15 @@ public class RiggingAnimationer : MonoBehaviour
 
     private void ActiveWeaponAnimationRiggs(Weapon activeWeapon)
     {
+        rigBuilder.enabled = true;
+
         // Constraints del PlaceHolder
         placeHolderParentConstraint.data.constrainedObject = activeWeapon.gameObject.transform;
+        
         commonPlaceHolder.position = activeWeapon.WeaponPlaceHolder.transform.position;
         commonPlaceHolder.rotation = activeWeapon.WeaponPlaceHolder.transform.rotation;
         
-        placeHolderPositionConstraint.data.constrainedObject = activeWeapon.WeaponPlaceHolder.transform;
+        placeHolderPositionConstraint.data.constrainedObject = activeWeapon.gameObject.transform;
         
         //Constraints del AimHolder 
         aimHolderAimConstraint.data.constrainedObject = activeWeapon.WeaponAimHolder.transform;
@@ -69,6 +74,11 @@ public class RiggingAnimationer : MonoBehaviour
         rightHandK.data.target = activeWeapon.RightHandGrip.transform;
         
         rigBuilder.Build();
+    }
+    
+    private void DesactiveRiggings()
+    {
+        rigBuilder.enabled = false;
     }
     
     public void PerformAim()
