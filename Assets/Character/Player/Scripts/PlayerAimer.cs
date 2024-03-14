@@ -143,7 +143,11 @@ public class PlayerAimer : MonoBehaviour
             activeWeapon.muzzleFlash.Emit(1);
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, activeWeapon.range))
             {
-                Debug.Log("Estoy Instanciando Impactos");
+                if (hitInfo.transform.gameObject.tag.Equals("Rival"))
+                {
+                    hitInfo.transform.GetComponentInChildren<EnemyHealther>().TakeDamage();
+                }
+                
                 GameObject ImpactInstanciated = Instantiate(shootImpact, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                 Destroy(ImpactInstanciated, 2f);
             }
