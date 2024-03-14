@@ -177,8 +177,10 @@ MonoBehaviour:
     sceneToBakingSet:
       m_Keys:
       - 6d95656947bfa0347a837a46c0880110
+      - cc67571c4a2d62e40bcf3d4a3276a798
       m_Values:
       - {fileID: 11400000, guid: a7a0c4b0e7ec3d1469d824c9df74800c, type: 2}
+      - {fileID: 0}
     bakingSets:
     - {fileID: 11400000, guid: a7a0c4b0e7ec3d1469d824c9df74800c, type: 2}
     sceneBounds:
