@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6923205810336966524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -163.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -141.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3708767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000052317723
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.92868215
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000013100453
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 136.461
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: abb537b8d46dbd148a064493126f7773,
+        type: 3}
+      propertyPath: m_Name
+      value: Sede_Italianos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abb537b8d46dbd148a064493126f7773, type: 3}
