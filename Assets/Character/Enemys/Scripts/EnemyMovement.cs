@@ -10,10 +10,10 @@ public class EnemyMovement : MonoBehaviour
 
     public float normalSpeed = 3f;
     public float boostedSpeed = 6f;
-    public float boostDuration = 2f; // Duración de la velocidad aumentada
-    public float decreaseDuration = 2f; // Duración de la disminución de velocidad
-    public float minSpeed = 1f; // Velocidad mínima permitida
-    public float decreaseRate = 1f; // Tasa de disminución gradual
+    public float boostDuration = 2f; // Duraciï¿½n de la velocidad aumentada
+    public float decreaseDuration = 2f; // Duraciï¿½n de la disminuciï¿½n de velocidad
+    public float minSpeed = 1f; // Velocidad mï¿½nima permitida
+    public float decreaseRate = 1f; // Tasa de disminuciï¿½n gradual
 
     public float moveSpeed = 5f;
     public Transform[] waypoints;
@@ -21,11 +21,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponentInChildren<NavMeshAgent>();
 
         if (target == null)
         {
-            Debug.LogError("El objeto a seguir no está asignado en el Inspector.");
+            Debug.LogError("El objeto a seguir no estï¿½ asignado en el Inspector.");
         }
 
         navMeshAgent.speed = normalSpeed;

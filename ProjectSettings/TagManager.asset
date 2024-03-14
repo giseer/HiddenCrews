@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Building
+  - PunchingBag
+  - Rival
+  - Ally
   layers:
   - Default
   - TransparentFX
