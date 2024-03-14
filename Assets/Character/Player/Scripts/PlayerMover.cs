@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerMover : MonoBehaviour
     public float jumpForce = 1f;
     
     [Header("Camera Values")]
-    public Transform mainCamera;
+    [HideInInspector] public Transform mainCamera;
 
     [Header("Constant Values")] 
     private const float GRAVITY = -9.81f;
@@ -21,6 +22,11 @@ public class PlayerMover : MonoBehaviour
     [Header("Components")]
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main.transform;
+    }
 
     private void LateUpdate()
     {

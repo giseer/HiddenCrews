@@ -6,7 +6,7 @@ public class PlayerAimer : MonoBehaviour
 {
     [SerializeField] private float turnSpeed = 15f;
 
-    [SerializeField] private Camera mainCamera;
+    private Camera mainCamera;
 
     [Header("Shoot Settings")] 
     [SerializeField] private GameObject shootImpact;
@@ -28,6 +28,7 @@ public class PlayerAimer : MonoBehaviour
 
     private void Awake()
     {
+        mainCamera = Camera.main;
         inputHandler = GetComponentInChildren<PlayerInputHandler>();
         riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
         Cursor.lockState = CursorLockMode.Locked;
