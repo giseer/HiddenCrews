@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class PlayerAimer : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class PlayerAimer : MonoBehaviour
     {
         inputHandler = GetComponentInChildren<PlayerInputHandler>();
         riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
