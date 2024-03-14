@@ -13,17 +13,28 @@ public class EnemyHealther : MonoBehaviour
     }
 
     [ContextMenu(nameof(TakeDamage))]
-    public void TakeDamage(int amount = 10)
+    public void TakeDamage()
     {
-        healthPoints -= amount;
+        healthPoints -= 10;
+        if (healthPoints <= 0)
+        {
+            Die();
+        }
+        
         StartCoroutine(Blink());
+    }
+
+    private void Die()
+    {
+        //Animacion de muerte
+        Destroy(gameObject);
     }
 
     IEnumerator Blink()
     {
         Color originalColor = renderer.material.color;
         renderer.material.color = Color.red;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
         renderer.material.color = originalColor;
     }
 }
