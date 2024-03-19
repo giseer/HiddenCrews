@@ -9,4 +9,5 @@ public abstract class Mission : MonoBehaviour
     protected abstract void checkFinishConditions();
     protected abstract void OnPassed();
     protected abstract void OnFailed();
+    
 }

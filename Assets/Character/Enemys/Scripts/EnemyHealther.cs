@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,13 @@ public class EnemyHealther : MonoBehaviour
     [SerializeField] private int maxHealthPoints;
     private int healthPoints;
     [SerializeField] private MeshRenderer renderer;
+
+    public static int enemyCount;
+
+    private void Awake()
+    {
+        enemyCount++;
+    }
 
     private void Start()
     {
@@ -27,6 +35,7 @@ public class EnemyHealther : MonoBehaviour
     private void Die()
     {
         //Animacion de muerte
+        enemyCount--;
         Destroy(gameObject);
     }
 
