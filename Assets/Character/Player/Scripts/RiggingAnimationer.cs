@@ -29,11 +29,10 @@ public class RiggingAnimationer : MonoBehaviour
     [SerializeField] private TwoBoneIKConstraint leftHandK;
 
     [Header("Weapon Settings")] 
-    private PlayerAimer aimer;
+    [SerializeField] private PlayerAimer aimer;
 
     private void Awake()
     {
-        aimer = GetComponentInChildren<PlayerAimer>();
         DesactiveRiggings();
     }
 
@@ -48,8 +47,10 @@ public class RiggingAnimationer : MonoBehaviour
         rigBuilder.SyncLayers();
     }
 
-    private void ActiveWeaponAnimationRiggs(Weapon activeWeapon)
+    public void ActiveWeaponAnimationRiggs()
     {
+        Weapon activeWeapon = aimer.activeWeapon;
+        
         rigBuilder.enabled = true;
 
         // Constraints del PlaceHolder
@@ -76,7 +77,13 @@ public class RiggingAnimationer : MonoBehaviour
         rigBuilder.Build();
     }
     
-    private void DesactiveRiggings()
+    public void ActiveRiggings()
+    {
+        rigBuilder.enabled = true;
+        rigBuilder.Build();
+    }
+    
+    public void DesactiveRiggings()
     {
         rigBuilder.enabled = false;
     }

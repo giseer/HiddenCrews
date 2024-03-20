@@ -13,14 +13,14 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private InputActionReference shoot;
 
     [Header("InputEvents")] 
-    [SerializeField] public UnityEvent<Vector2, bool> onMove;
-    [SerializeField] public UnityEvent onStopMove;
-    [SerializeField] public UnityEvent onJump;
-    [SerializeField] public UnityEvent onSprint;
-    [SerializeField] public UnityEvent onAim;
-    [SerializeField] public UnityEvent onReleaseAim;
-    [SerializeField] public UnityEvent onShoot;
-    [SerializeField] public UnityEvent onStopShoot;
+    [HideInInspector] public UnityEvent<Vector2, bool> onMove;
+    [HideInInspector] public UnityEvent onStopMove;
+    [HideInInspector] public UnityEvent onJump;
+    [HideInInspector] public UnityEvent onSprint;
+    [HideInInspector] public UnityEvent onAim;
+    [HideInInspector] public UnityEvent onReleaseAim;
+    [HideInInspector] public UnityEvent onShoot;
+    [HideInInspector] public UnityEvent onStopShoot;
     
     private void OnEnable()
     {
