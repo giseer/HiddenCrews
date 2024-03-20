@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class PlayerMover : MonoBehaviour
 {
@@ -21,11 +21,14 @@ public class PlayerMover : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private Animator animator;
+    private PlayerAnimationsHandler animationer;
+    private RiggingAnimationer riggingAnimationer;
 
     private void Awake()
     {
         mainCamera = Camera.main.transform;
+        animationer = GetComponentInChildren<PlayerAnimationsHandler>();
+        riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
     }
 
     private void LateUpdate()
@@ -56,6 +59,8 @@ public class PlayerMover : MonoBehaviour
         if (characterController.isGrounded)
         {
             _velocity.y = jumpForce;
+            riggingAnimationer.DesactiveRiggings();
+            animationer.AnimateJump();
         }
     }
 
@@ -91,7 +96,6 @@ public class PlayerMover : MonoBehaviour
 
         normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
         
-        animator.SetFloat("x", normalizedLocalDirection.x);
-        animator.SetFloat("z", normalizedLocalDirection.z);
+        animationer.AnimateMovement(normalizedLocalDirection);
     }
 }
