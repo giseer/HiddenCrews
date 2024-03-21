@@ -4,10 +4,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerAimer : MonoBehaviour
 {
+    [Header("Input Actions")] 
+    [SerializeField] private InputActionReference weapon1;
+    [SerializeField] private InputActionReference weapon2;
+    [SerializeField] private InputActionReference weapon3;
+    [SerializeField] private InputActionReference weapon4;
+    [SerializeField] private InputActionReference weaponScroll;
+    
+    
+    [Header("Aim Settings")]
     [SerializeField] private float turnSpeed = 15f;
 
     private Camera mainCamera;
-
+    
     [Header("Shoot Settings")] 
     [SerializeField] private GameObject shootImpact;
     private Transform raycastOrigin;
@@ -16,6 +25,7 @@ public class PlayerAimer : MonoBehaviour
     [Header("Weapons Settings")] 
     [SerializeField] private Weapon[] weaponsOwned;
     [HideInInspector] public Weapon activeWeapon;
+    private int desiredWeaponIndex = -1;
 
     [Header("Sensitivity Settings")] 
     [SerializeField] private float normalSensitivity;
@@ -42,6 +52,12 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnEnable()
     {
+        weapon1.action.Enable();
+        weapon2.action.Enable();
+        weapon3.action.Enable();
+        weapon4.action.Enable();
+        weaponScroll.action.Enable();
+        
         inputHandler.onAim.AddListener(OnAim);
         inputHandler.onReleaseAim.AddListener(OnReleaseAim);
         inputHandler.onShoot.AddListener(OnShoot);
@@ -63,64 +79,28 @@ public class PlayerAimer : MonoBehaviour
 
     private void ActiveWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (weapon1.action.WasPerformedThisFrame())
         {
-            DesactiveAllWeapons();
-            
-            if(activeWeapon == weaponsOwned[0])
-            {
-                activeWeapon = null;
-                return;    
-            }
-            
-            activeWeapon = weaponsOwned[0];
-            activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            desiredWeaponIndex = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (weapon2.action.WasPerformedThisFrame())
         {
-            DesactiveAllWeapons();
-            
-            if(activeWeapon == weaponsOwned[1])
-            {
-                activeWeapon = null;
-                return;
-            }
-            
-            activeWeapon = weaponsOwned[1];
-            activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            desiredWeaponIndex = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (weapon3.action.WasPerformedThisFrame())
         {
-            DesactiveAllWeapons();
-            
-            if(activeWeapon == weaponsOwned[2])
-            {
-                activeWeapon = null;
-                return;
-            }
-            
-            activeWeapon = weaponsOwned[2];
-            activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            desiredWeaponIndex = 2;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (weapon4.action.WasPerformedThisFrame())
         {
-            DesactiveAllWeapons();
-            
-            if(activeWeapon == weaponsOwned[3])
-            {
-                activeWeapon = null;
-                return;
-            }
-            
-            activeWeapon = weaponsOwned[3];
-            activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke();
+            desiredWeaponIndex = 3;
         }
+        
+        DesactiveAllWeapons();
+        ChangeWeapon(desiredWeaponIndex);
+        ActiveCurrentWeapon();
     }
-
+    
     private void DesactiveAllWeapons()
     {
         foreach (Weapon weapon in weaponsOwned)
@@ -128,6 +108,23 @@ public class PlayerAimer : MonoBehaviour
             weapon.gameObject.SetActive(false);
         }
         onNoWeapon.Invoke();
+    }
+    
+    private void ChangeWeapon(int index)
+    {
+        if(activeWeapon == weaponsOwned[index])
+        {
+            activeWeapon = null;
+            return;    
+        }
+        
+        activeWeapon = weaponsOwned[index];
+    }
+    
+    private void ActiveCurrentWeapon()
+    {
+        activeWeapon.gameObject.SetActive(true);
+        onWeaponChange.Invoke();
     }
 
     private void OnAim()
@@ -165,6 +162,12 @@ public class PlayerAimer : MonoBehaviour
 
     private void OnDisable()
     {
+        weapon1.action.Disable();
+        weapon2.action.Disable();
+        weapon3.action.Disable();
+        weapon4.action.Disable();
+        weaponScroll.action.Disable();
+        
         inputHandler.onAim.RemoveListener(OnAim);
         inputHandler.onReleaseAim.RemoveListener(OnReleaseAim);
         inputHandler.onShoot.RemoveListener(OnShoot);

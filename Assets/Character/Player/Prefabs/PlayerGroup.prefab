@@ -499,6 +499,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e93dd21ed5fcc3499fd4594e9a8069b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon1: {fileID: 753505820185985423, guid: 6129e1c2885d0444a954e86c7fde5868, type: 3}
+  weapon2: {fileID: -6946490156466146865, guid: 6129e1c2885d0444a954e86c7fde5868,
+    type: 3}
+  weapon3: {fileID: 4767088253168216558, guid: 6129e1c2885d0444a954e86c7fde5868, type: 3}
+  weapon4: {fileID: -4967428407362547462, guid: 6129e1c2885d0444a954e86c7fde5868,
+    type: 3}
+  weaponScroll: {fileID: -5040828951118125423, guid: 6129e1c2885d0444a954e86c7fde5868,
+    type: 3}
   turnSpeed: 15
   shootImpact: {fileID: 3022987544474651613, guid: 9668b567750866141b673dd5709ebb05,
     type: 3}
@@ -508,12 +516,15 @@ MonoBehaviour:
   - {fileID: 2162914472177688908}
   - {fileID: 6301486736013412034}
   activeWeapon: {fileID: 0}
+  normalSensitivity: 1.5
+  aimSensitivity: 1
   onWeaponChange:
     m_PersistentCalls:
       m_Calls: []
   onNoWeapon:
     m_PersistentCalls:
       m_Calls: []
+  cameraHandler: {fileID: 3158325286468964833}
 --- !u!143 &1372650472985494279
 CharacterController:
   m_ObjectHideFlags: 0
