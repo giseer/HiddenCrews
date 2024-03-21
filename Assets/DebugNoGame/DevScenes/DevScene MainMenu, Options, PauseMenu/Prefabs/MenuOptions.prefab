@@ -1426,7 +1426,7 @@ GameObject:
   - component: {fileID: 4405277568574436297}
   - component: {fileID: 8480720428432291290}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Language
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,6 +1556,55 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!1 &2401088694764262066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5283243302579131074}
+  - component: {fileID: 782339113157171820}
+  m_Layer: 0
+  m_Name: ResolutionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5283243302579131074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401088694764262066}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8104854511166396262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &782339113157171820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401088694764262066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c10820589263b24daacc6689f142dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onOptionsMenuClosed:
+    m_PersistentCalls:
+      m_Calls: []
+  qualityDropdown: {fileID: 895026574939350576}
+  resolutionDropdown: {fileID: 895026574939350576}
 --- !u!1 &2682401685461251076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,7 +1618,7 @@ GameObject:
   - component: {fileID: 8397290762444303965}
   - component: {fileID: 895026574939350576}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Resolutions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,8 +2119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: 2.7}
-  m_SizeDelta: {x: -35, y: -13}
+  m_AnchoredPosition: {x: -2.1167, y: -1.1}
+  m_SizeDelta: {x: -24.2334, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5608628756530519288
 CanvasRenderer:
@@ -2128,14 +2177,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2393,6 +2442,7 @@ RectTransform:
   - {fileID: 7790624373040861260}
   - {fileID: 5936451545502373132}
   - {fileID: 7088479799434693757}
+  - {fileID: 5283243302579131074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3383,8 +3433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: 2.699993}
-  m_SizeDelta: {x: -35, y: -13}
+  m_AnchoredPosition: {x: 0.7174, y: -0.6}
+  m_SizeDelta: {x: -18.5653, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5740218233055501353
 CanvasRenderer:
@@ -3441,14 +3491,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6727,7 +6777,7 @@ GameObject:
   - component: {fileID: 4399912724469908617}
   - component: {fileID: 7809831400786856348}
   m_Layer: 5
-  m_Name: Resolution (1)
+  m_Name: Language
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
