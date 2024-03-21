@@ -13,17 +13,23 @@ public class PlayerAimer : MonoBehaviour
     private Transform raycastOrigin;
     private Transform raycastDestination;
 
-    [Header("Weapons")] 
+    [Header("Weapons Settings")] 
     [SerializeField] private Weapon[] weaponsOwned;
-    private Weapon activeWeapon;
+    [HideInInspector] public Weapon activeWeapon;
 
+    [Header("Sensitivity Settings")] 
+    [SerializeField] private float normalSensitivity;
+
+    [SerializeField] private float aimSensitivity;
+    
     [Header("Events")]
-    [HideInInspector] public UnityEvent<Weapon> onWeaponChange;
+    [HideInInspector] public UnityEvent onWeaponChange;
     [HideInInspector] public UnityEvent onNoWeapon;
     
     [Header("Components")]
     private PlayerInputHandler inputHandler;
     private RiggingAnimationer riggingAnimationer;
+    [SerializeField] private CameraHandler cameraHandler;
     
 
     private void Awake()
@@ -44,6 +50,7 @@ public class PlayerAimer : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
+        cameraHandler.SetSensitivity(normalSensitivity);
     }
 
     private void LateUpdate()
@@ -68,7 +75,7 @@ public class PlayerAimer : MonoBehaviour
             
             activeWeapon = weaponsOwned[0];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke(activeWeapon);
+            onWeaponChange.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -82,7 +89,7 @@ public class PlayerAimer : MonoBehaviour
             
             activeWeapon = weaponsOwned[1];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke(activeWeapon);
+            onWeaponChange.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -96,7 +103,7 @@ public class PlayerAimer : MonoBehaviour
             
             activeWeapon = weaponsOwned[2];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke(activeWeapon);
+            onWeaponChange.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -110,7 +117,7 @@ public class PlayerAimer : MonoBehaviour
             
             activeWeapon = weaponsOwned[3];
             activeWeapon.gameObject.SetActive(true);
-            onWeaponChange.Invoke(activeWeapon);
+            onWeaponChange.Invoke();
         }
     }
 
@@ -126,11 +133,13 @@ public class PlayerAimer : MonoBehaviour
     private void OnAim()
     {
         riggingAnimationer.PerformAim();
+        cameraHandler.SetSensitivity(aimSensitivity);
     }
 
     private void OnReleaseAim()
     {
        riggingAnimationer.PerformReleaseAim();
+       cameraHandler.SetSensitivity(normalSensitivity); 
     }
 
     private Ray ray;

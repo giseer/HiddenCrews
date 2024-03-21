@@ -13,8 +13,6 @@ public class CameraHandler : MonoBehaviour
     
     private CinemachineCameraOffset cameraOffset;
     
-    
-    
     public static CameraHandler Instance { get; private set; }
 
     private void Awake()
@@ -47,5 +45,11 @@ public class CameraHandler : MonoBehaviour
         DOTween.To(() => cameraOffset.m_Offset.z, 
             x => cameraOffset.m_Offset.z = x, 
             aimCameraZoom, 1f);
+    }
+
+    public void SetSensitivity(float newSensitivity)
+    {
+        thirdPersonCamera.m_XAxis.m_MaxSpeed = newSensitivity * 100;
+        thirdPersonCamera.m_YAxis.m_MaxSpeed = newSensitivity;
     }
 }
