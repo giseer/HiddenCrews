@@ -10,7 +10,25 @@ public class NavigateToAfterTimeOrPress : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(NavigateToNextScene), waitTime);
-        //TODO: responder al skip
+    }
+
+    private void OnEnable()
+    {
+        skip.action.Enable();
+    }
+
+    private void Update()
+    {
+        if(skip.action.WasPerformedThisFrame())
+        {
+            NavigateToNextScene();
+
+        }
+    }
+
+    private void OnDisable()
+    {
+        skip.action.Disable();
     }
 
     void NavigateToNextScene()

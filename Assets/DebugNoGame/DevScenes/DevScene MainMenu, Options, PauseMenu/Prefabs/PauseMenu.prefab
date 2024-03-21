@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 514884103271742726}
   - component: {fileID: 8918751954455080819}
   - component: {fileID: 825487326938303996}
-  - component: {fileID: 2282338242796841612}
+  - component: {fileID: 1232411529576409678}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2282338242796841612
+--- !u!114 &1232411529576409678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,10 +533,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3046400221551023841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f75d4e800fa77943824d194989809e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 504d5aee7809c2b4baf6c183da2de87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: MainMenu
+  sceneToLoad: MainMenu
 --- !u!1 &4550137379993357018
 GameObject:
   m_ObjectHideFlags: 0
