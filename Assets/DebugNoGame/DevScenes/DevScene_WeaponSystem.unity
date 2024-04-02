@@ -387,21 +387,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000019951905
       objectReference: {fileID: 0}
-    - target: {fileID: 7691996447858379587, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
-        type: 3}
-      propertyPath: cameraHandler
-      value: 
-      objectReference: {fileID: 737424603}
-    - target: {fileID: 7691996447858379587, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
-        type: 3}
-      propertyPath: aimSensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7691996447858379587, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
-        type: 3}
-      propertyPath: normalSensitivity
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7937087248718997730, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,18 +442,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d, type: 3}
---- !u!114 &737424603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3158325286468964833, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
-    type: 3}
-  m_PrefabInstance: {fileID: 737424602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c46edd82295292046b548d44772a2f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &860071022
 GameObject:
   m_ObjectHideFlags: 0
