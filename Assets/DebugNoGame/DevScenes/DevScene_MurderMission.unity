@@ -503,6 +503,18 @@ MonoBehaviour:
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
   m_ObsoleteContactShadows: 0
+--- !u!114 &743115444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6984702184931597370, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063520967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &860071022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1419,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb537b8d46dbd148a064493126f7773, type: 3}
+--- !u!114 &1612353126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5329829463757256008, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063520967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1752479347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,6 +1961,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000019951905
       objectReference: {fileID: 0}
+    - target: {fileID: 6375809305280064122, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
+        type: 3}
+      propertyPath: weaponPose.m_Rig
+      value: 
+      objectReference: {fileID: 743115444}
+    - target: {fileID: 6375809305280064122, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
+        type: 3}
+      propertyPath: weaponAiming.m_Rig
+      value: 
+      objectReference: {fileID: 1612353126}
     - target: {fileID: 7937087248718997730, guid: 77dbe33a0a3f5ff498ac9a6f7dd6940d,
         type: 3}
       propertyPath: m_LocalPosition.x

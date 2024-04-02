@@ -59,7 +59,7 @@ public class PlayerMover : MonoBehaviour
         if (characterController.isGrounded)
         {
             _velocity.y = jumpForce;
-            riggingAnimationer.DesactiveRiggings();
+            riggingAnimationer.DeasactiveWeaponPoses();
             animationer.AnimateJump();
         }
     }
