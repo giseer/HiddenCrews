@@ -10,6 +10,11 @@ public class RiggingAnimationer : MonoBehaviour
     [Header("Rig Builder")] 
     [SerializeField] private RigBuilder rigBuilder;
 
+    [Header("Rig Layers")]
+    [SerializeField] private RigLayer weaponPose;
+    [SerializeField] private RigLayer weaponAiming;
+
+
     [Header("Place Holder Riggings")] 
     [SerializeField] private Transform commonPlaceHolder;
     [SerializeField] private MultiParentConstraint placeHolderParentConstraint;
@@ -73,18 +78,34 @@ public class RiggingAnimationer : MonoBehaviour
         leftHandK.data.target = activeWeapon.LeftHandGrip.transform;
         rightHandK.data.target = activeWeapon.RightHandGrip.transform;
         
+        rigBuilder.Clear();
         rigBuilder.Build();
     }
     
     public void ActiveRiggings()
     {
         rigBuilder.enabled = true;
+        rigBuilder.Clear();
         rigBuilder.Build();
     }
     
     public void DesactiveRiggings()
     {
         rigBuilder.enabled = false;
+    }
+
+    public void ActiveWeaponPoses()
+    {
+        weaponPose.rig.weight = 1;
+        weaponAiming.rig.weight = 1;
+        rigBuilder.Clear();
+        rigBuilder.Build();
+    }
+
+    public void DeasactiveWeaponPoses()
+    {
+        weaponPose.rig.weight = 0;
+        weaponAiming.rig.weight = 0;
     }
     
     public void PerformAim()

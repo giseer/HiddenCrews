@@ -74,7 +74,15 @@ public class PlayerAimer : MonoBehaviour
         float cameraRotation = mainCamera.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, cameraRotation, 0), turnSpeed * Time.fixedDeltaTime);
 
-        ActiveWeapon();
+        if (CanChangeWeapon())
+        {
+            ActiveWeapon();
+        }
+    }
+
+    private bool CanChangeWeapon()
+    {
+        return weapon1.action.WasPerformedThisFrame() || weapon2.action.WasPerformedThisFrame() || weapon3.action.WasPerformedThisFrame() || weapon4.action.WasPerformedThisFrame();
     }
 
     private void ActiveWeapon()
@@ -115,6 +123,7 @@ public class PlayerAimer : MonoBehaviour
         if(activeWeapon == weaponsOwned[index])
         {
             activeWeapon = null;
+            desiredWeaponIndex = -1;
             return;    
         }
         
@@ -123,6 +132,11 @@ public class PlayerAimer : MonoBehaviour
     
     private void ActiveCurrentWeapon()
     {
+        if (desiredWeaponIndex == -1)
+        {
+            return;
+        }
+
         activeWeapon.gameObject.SetActive(true);
         onWeaponChange.Invoke();
     }
