@@ -7,8 +7,6 @@ public class RecollectMission : Mission
 
     [SerializeField] private float missionTime;
 
-    [HideInInspector] public static float currentTime;
-
     private bool missionFinished;
 
     [Header("Canvas Settings")]

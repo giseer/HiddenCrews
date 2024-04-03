@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Mission : MonoBehaviour
 {
     protected float totalTime;
+    public float currentTime;
     protected int moneyToEarn;
     protected int reputationToEarn;
     

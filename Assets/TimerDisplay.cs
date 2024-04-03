@@ -7,6 +7,7 @@ using UnityEngine;
 public class TimerDisplay : MonoBehaviour
 {
     private TextMeshProUGUI tmp;
+    [SerializeField] private Mission mision;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class TimerDisplay : MonoBehaviour
 
     private void Update()
     {
-        float remainingTime = MurderMission.currentTime;
+        float remainingTime = mision.currentTime;
         tmp.text = $"Time: {Mathf.FloorToInt(remainingTime)}";
     }
 }
