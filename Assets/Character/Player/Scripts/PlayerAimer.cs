@@ -80,6 +80,8 @@ public class PlayerAimer : MonoBehaviour
         }
     }
 
+    // Esto lo ha de tener el Weapon Manager
+    
     private bool CanChangeWeapon()
     {
         return weapon1.action.WasPerformedThisFrame() || weapon2.action.WasPerformedThisFrame() || weapon3.action.WasPerformedThisFrame() || weapon4.action.WasPerformedThisFrame();
@@ -141,21 +143,26 @@ public class PlayerAimer : MonoBehaviour
         onWeaponChange.Invoke();
     }
 
+    
+    // Esto si que es del aimer
+    
     private void OnAim()
     {
-        riggingAnimationer.PerformAim();
+        //riggingAnimationer.PerformAim();
         cameraHandler.SetSensitivity(aimSensitivity);
     }
 
     private void OnReleaseAim()
     {
-       riggingAnimationer.PerformReleaseAim();
+       //riggingAnimationer.PerformReleaseAim();
        cameraHandler.SetSensitivity(normalSensitivity); 
     }
 
     private Ray ray;
     RaycastHit hitInfo; 
     
+    
+    //Esto tambien ha de estar en el WeaponManager
     private void OnShoot()
     {
         if(activeWeapon != null && activeWeapon.muzzleFlash)

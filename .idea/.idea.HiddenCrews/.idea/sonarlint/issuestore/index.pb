@@ -19,3 +19,7 @@ P
 KAssets/JMO Assets/WarFX/_Effects/MuzzleFlashes/!MuzzleFlash Differences.txt,3\e\3e8029f2eaf3532132a0b7a4685e08074ee8d335
 e
 5Assets/Character/Player/Scripts/RiggingAnimationer.cs,b\5\b59a2f2b4cdc6810221f86edc7f02f5201f8d2f7
+j
+:Assets/Character/Player/Scripts/PlayerAnimationsHandler.cs,e\8\e87ecdac2565dbf50c86153887900541764733e3
+W
+'Assets/Weapons/Scripts/RaycastWeapon.cs,a\a\aa708e1e9f69ce169e6fa8b88ed7b515af37991d
