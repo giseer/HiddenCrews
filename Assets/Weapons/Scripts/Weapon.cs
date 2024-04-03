@@ -17,19 +17,22 @@ public class Weapon : MonoBehaviour
     
     public bool isFiring = false;
 
-    public int fireRate = 25;
+    [SerializeField] private int fireRate = 25;
 
-    public float bulletSpeed = 1000f;
+    [SerializeField] private float bulletSpeed = 1000f;
 
-    public float bulletDrop = 0f;
-    
+    [SerializeField] private float bulletDrop = 0f;
+
     public ParticleSystem muzzleFlash;
 
     public ParticleSystem hitEffect;
 
     public TrailRenderer tracerEffect;
-    
-    public Transform raycastOrigin;
+
+    public AnimationClip weaponAnimation;
+
+    [SerializeField] private Transform raycastOrigin;
+
     public Transform raycastDestination;
     
     
