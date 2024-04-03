@@ -23,3 +23,11 @@ j
 :Assets/Character/Player/Scripts/PlayerAnimationsHandler.cs,e\8\e87ecdac2565dbf50c86153887900541764733e3
 W
 'Assets/Weapons/Scripts/RaycastWeapon.cs,a\a\aa708e1e9f69ce169e6fa8b88ed7b515af37991d
+b
+2Assets/Character/Player/Scripts/CharacterAiming.cs,3\1\31697016155ced85a23a85a7ec334e70d9a85b01
+V
+&Assets/Weapons/Scripts/ActiveWeapon.cs,b\b\bbdb1551d1e45affe3fa50701d26bc2353fd90e7
+G
+Assets/WeaponManager.cs,9\b\9ba9c3c955972e06cb31fac62abd52f31e4fd31b
+U
+%Assets/Inventory/Scripts/WeaponArm.cs,8\a\8ab0bab36a7649a28cbbcf16e0fb7db609d1e380

@@ -38,7 +38,6 @@ public class PlayerAimer : MonoBehaviour
     
     [Header("Components")]
     private PlayerInputHandler inputHandler;
-    private RiggingAnimationer riggingAnimationer;
     [SerializeField] private CameraHandler cameraHandler;
     
 
@@ -46,7 +45,6 @@ public class PlayerAimer : MonoBehaviour
     {
         mainCamera = Camera.main;
         inputHandler = GetComponentInChildren<PlayerInputHandler>();
-        riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -168,7 +166,7 @@ public class PlayerAimer : MonoBehaviour
         if(activeWeapon != null && activeWeapon.muzzleFlash)
         {
             activeWeapon.muzzleFlash.Emit(1);
-            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, activeWeapon.range))
+            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo))
             {
                 if (hitInfo.transform.gameObject.tag.Equals("Rival"))
                 {

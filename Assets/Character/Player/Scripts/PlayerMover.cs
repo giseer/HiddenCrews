@@ -22,13 +22,11 @@ public class PlayerMover : MonoBehaviour
     [Header("Components")]
     [SerializeField] private CharacterController characterController;
     private PlayerAnimationsHandler animationer;
-    private RiggingAnimationer riggingAnimationer;
 
     private void Awake()
     {
         mainCamera = Camera.main.transform;
         animationer = GetComponentInChildren<PlayerAnimationsHandler>();
-        riggingAnimationer = GetComponentInChildren<RiggingAnimationer>();
     }
 
     private void LateUpdate()
@@ -59,7 +57,6 @@ public class PlayerMover : MonoBehaviour
         if (characterController.isGrounded)
         {
             _velocity.y = jumpForce;
-            riggingAnimationer.DeasactiveWeaponPoses();
             animationer.AnimateJump();
         }
     }
