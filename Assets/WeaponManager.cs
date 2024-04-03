@@ -4,8 +4,9 @@ using UnityEngine.Animations.Rigging;
 
 public class WeaponManager : MonoBehaviour
 {
-    public Transform crossHairTarget;
-    public Rig handIk;
+    [SerializeField] private Transform crossHairTarget;
+    [SerializeField] private Rig handIk;
+    [SerializeField] private Transform weapontContainer;
     private Weapon weapon;
     
     private void Awake()
@@ -46,8 +47,17 @@ public class WeaponManager : MonoBehaviour
 
     public void ChangeWeapon(Weapon newWeapon)
     {
+        if(weapon)
+        {
+            Destroy(weapon.gameObject);
+        }
+
         weapon = newWeapon;
         weapon.raycastDestination = crossHairTarget;
+        weapon.transform.parent = weapontContainer;
+        weapon.transform.localPosition = Vector3.zero;
+        weapon.transform.localRotation = Quaternion.identity;
+
         handIk.weight = 1f;
     }
 }
