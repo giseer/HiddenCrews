@@ -8,8 +8,18 @@ public class Prueba : MonoBehaviour
     public float radio = 3f; // Radio del área de detección
     public GameObject mensajeTexto; // Referencia al objeto Text en el Canvas
     public GameObject cubo; // Referencia al cubo
+    public Canvas inventoryCanvas; // Referencia al canvas de inventario
+    public RawImage rawImageInventory; // Referencia a la RawImage en el canvas de inventario
     private bool dentroDelArea = false; // Indicador de si el jugador está dentro del área
     private bool cuboDesaparecido = false; // Indicador de si el cubo ha desaparecido
+
+    void Start()
+    {
+        // Buscar la RawImage dentro del canvas de inventario
+        rawImageInventory = inventoryCanvas.GetComponentInChildren<RawImage>();
+        // Desactivar la RawImage al inicio
+        rawImageInventory.gameObject.SetActive(false);
+    }
 
     void Update()
     {
@@ -42,6 +52,9 @@ public class Prueba : MonoBehaviour
         {
             cubo.SetActive(false);
             cuboDesaparecido = true; // Establecer el indicador de que el cubo ha desaparecido
+            // Activar la RawImage de inventario
+            rawImageInventory.gameObject.SetActive(true);
+
         }
     }
 }
