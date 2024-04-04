@@ -29,7 +29,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (weapon)
         {
@@ -52,8 +52,8 @@ public class WeaponManager : MonoBehaviour
         }
         else
         {
-            handIk.weight = 0f;
-            animator.SetLayerWeight(1, 0f);
+            handIk.weight = 0.0f;
+            animator.SetLayerWeight(1, 0.0f);
         }
     }
 
@@ -70,15 +70,15 @@ public class WeaponManager : MonoBehaviour
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localRotation = Quaternion.identity;
 
-        handIk.weight = 1f;
-        animator.SetLayerWeight(1, 1f);
+        handIk.weight = 1.0f;
+        animator.SetLayerWeight(1, 1.0f);
 
         Invoke(nameof(SetWeaponAnimation), 0.001f);
     }
 
     private void SetWeaponAnimation()
     {
-        weaponOverrideAnimator["weapon_empty"] = weapon.weaponAnimation;
+        weaponOverrideAnimator["weapon_Empty"] = weapon.weaponAnimation;
     }
 
 
@@ -89,7 +89,7 @@ public class WeaponManager : MonoBehaviour
         recorder.BindComponentsOfType<Transform>(weaponContainer.gameObject, false);
         recorder.BindComponentsOfType<Transform>(LeftGrip.gameObject, false);
         recorder.BindComponentsOfType<Transform>(RightGrip.gameObject, false);
-        recorder.TakeSnapshot(0f);
+        recorder.TakeSnapshot(0.0f);
         recorder.SaveToClip(weapon.weaponAnimation);
         UnityEditor.AssetDatabase.SaveAssets();
     }

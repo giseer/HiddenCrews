@@ -17,16 +17,10 @@ P
  Assets/Weapons/Scripts/Weapon.cs,c\0\c0a338613429134f4e38d708ef4731e5acfd6607
 {
 KAssets/JMO Assets/WarFX/_Effects/MuzzleFlashes/!MuzzleFlash Differences.txt,3\e\3e8029f2eaf3532132a0b7a4685e08074ee8d335
-e
-5Assets/Character/Player/Scripts/RiggingAnimationer.cs,b\5\b59a2f2b4cdc6810221f86edc7f02f5201f8d2f7
 j
 :Assets/Character/Player/Scripts/PlayerAnimationsHandler.cs,e\8\e87ecdac2565dbf50c86153887900541764733e3
-W
-'Assets/Weapons/Scripts/RaycastWeapon.cs,a\a\aa708e1e9f69ce169e6fa8b88ed7b515af37991d
 b
 2Assets/Character/Player/Scripts/CharacterAiming.cs,3\1\31697016155ced85a23a85a7ec334e70d9a85b01
-V
-&Assets/Weapons/Scripts/ActiveWeapon.cs,b\b\bbdb1551d1e45affe3fa50701d26bc2353fd90e7
 G
 Assets/WeaponManager.cs,9\b\9ba9c3c955972e06cb31fac62abd52f31e4fd31b
 U
