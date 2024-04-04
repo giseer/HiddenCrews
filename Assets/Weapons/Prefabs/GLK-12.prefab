@@ -5053,7 +5053,8 @@ MonoBehaviour:
   hitEffect: {fileID: 3609338362057999585}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,
     type: 3}
-  weaponAnimation: {fileID: 7400000, guid: 8362ab3140ee4fe46bbf1cbde746dfa0, type: 2}
+  weaponAnimation: {fileID: -203655887218126122, guid: f21f3e6e687e15141b6af590fda10ffa,
+    type: 3}
   raycastOrigin: {fileID: 4471677911166690105}
   raycastDestination: {fileID: 0}
 --- !u!1 &3757435780940360932

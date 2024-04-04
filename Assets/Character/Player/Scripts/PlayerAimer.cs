@@ -104,8 +104,8 @@ public class PlayerAimer : MonoBehaviour
             desiredWeaponIndex = 3;
         }
         
-        DesactiveAllWeapons();
-        ChangeWeapon(desiredWeaponIndex);
+        //DesactiveAllWeapons();
+        //ChangeWeapon(desiredWeaponIndex);
         ActiveCurrentWeapon();
     }
     

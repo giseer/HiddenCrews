@@ -12,7 +12,8 @@ public class CustomMenuAsset : ScriptableObject
     
 
 #if UNITY_EDITOR
-    [MenuItem("Assets/Create/Items/Armas")]
+    //[MenuItem("Assets/Create/Items/Armas")]
+    // deshabilitados temporalmente este y el de productos
     public static void CreateArmaItem()
     {
         WeaponArm item = CreateInstance<WeaponArm>();
@@ -22,7 +23,7 @@ public class CustomMenuAsset : ScriptableObject
         Selection.activeObject = item;
     }
 
-    [MenuItem("Assets/Create/Items/Productos")]
+    //[MenuItem("Assets/Create/Items/Productos")]
     public static void CreateProductoItem()
     {
         Products item = CreateInstance<Products>();

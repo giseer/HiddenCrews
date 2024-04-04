@@ -2,9 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEditor.Animations;
+using UnityEngine.InputSystem;
 
 public class WeaponManager : MonoBehaviour
 {
+    [SerializeField] private InputActionReference shoot;
+    
     [SerializeField] private Transform crossHairTarget;
     [SerializeField] private Rig handIk;
     [SerializeField] private Transform weaponContainer;
@@ -20,6 +23,7 @@ public class WeaponManager : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        
         weaponOverrideAnimator = animator.runtimeAnimatorController as AnimatorOverrideController;
 
         Weapon existingWeapon = GetComponentInChildren<Weapon>();
@@ -29,11 +33,11 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (weapon)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (shoot.action.WasPerformedThisFrame())
             {
                 weapon.StartFiring();
             }
@@ -45,7 +49,7 @@ public class WeaponManager : MonoBehaviour
         
             weapon.UpdateBullets(Time.deltaTime);
         
-            if (Input.GetButtonUp("Fire1"))
+            if (shoot.action.WasReleasedThisFrame())
             {
                 weapon.StopFiring();   
             }   
@@ -69,11 +73,10 @@ public class WeaponManager : MonoBehaviour
         weapon.transform.parent = weaponContainer;
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localRotation = Quaternion.identity;
-
+        
         handIk.weight = 1.0f;
         animator.SetLayerWeight(1, 1.0f);
-
-        Invoke(nameof(SetWeaponAnimation), 0.001f);
+        Invoke(nameof(SetWeaponAnimation), 0.01f);
     }
 
     private void SetWeaponAnimation()
