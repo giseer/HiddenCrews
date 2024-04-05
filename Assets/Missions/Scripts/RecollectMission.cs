@@ -31,6 +31,12 @@ public class RecollectMission : Mission
 
     private Transform jugador;
 
+    public KeyCode teclaAparecer = KeyCode.D; // Tecla para aparecer el cubo
+    public float distanciaDelante = 2f; // Distancia delante del jugador donde aparecerá el cubo
+    public float alturaCubo = 1f; // Altura del cubo por encima del jugador
+
+    private Vector3 posicionInicialCubo; // Posición inicial del cubo
+
     private void Awake()
     {
         currentTime = missionTime;
@@ -41,6 +47,7 @@ public class RecollectMission : Mission
 
     void Start()
     {
+        posicionInicialCubo = cubo.transform.position;
         GameObject jugadorGO = GameObject.FindGameObjectWithTag("Player");
         jugador = jugadorGO.transform;
         flechaInstance = Instantiate(flechaPrefab, jugador.position, Quaternion.identity);
@@ -50,12 +57,27 @@ public class RecollectMission : Mission
     {
         CheckCubeDisappearance();
         MoverFlechaConJugador();
+        CheckCubeAppear();    
     }
 
     protected override void checkFinishConditions()
     {
         CheckMissionTime();
         checkFinishConditions();   
+    }
+
+    private void CheckCubeAppear()
+    {
+        if (Input.GetKeyDown(teclaAparecer))
+        {
+            Vector3 posicionDelante = jugador.position + jugador.forward * distanciaDelante;
+            Vector3 posicionFinal = new Vector3(posicionDelante.x, jugador.position.y + alturaCubo, posicionDelante.z);
+
+            cubo.transform.position = posicionFinal;
+
+            cubo.SetActive(true);
+            OnPassed();
+        }
     }
 
     private void CheckMissionTime()
@@ -104,7 +126,7 @@ public class RecollectMission : Mission
             cuboDesaparecido = true; 
             rawImageInventory.gameObject.SetActive(true);
             flechaInstance.gameObject.SetActive(false);
-            OnPassed();
+            
         }
     }
 
@@ -112,7 +134,7 @@ public class RecollectMission : Mission
     {
         flechaInstance.transform.position = jugador.position;
 
-        if (cubo != null)
+        if (cubo != null && cubo.activeSelf)
         {
             Vector3 directionToCube = (cubo.transform.position - flechaInstance.transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(directionToCube);
