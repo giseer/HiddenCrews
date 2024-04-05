@@ -27,7 +27,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -43,7 +43,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -59,7 +59,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -78,7 +78,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -94,7 +94,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -110,7 +110,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -127,7 +127,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -143,7 +143,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -159,7 +159,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -170,7 +170,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3345032330
+      path: 1345423333
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -179,7 +179,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1214537207
+      path: 893811392
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -188,7 +188,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2775148004
+      path: 497672908
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -197,7 +197,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3345032330
+      path: 1345423333
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -206,7 +206,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1214537207
+      path: 893811392
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -215,7 +215,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2775148004
+      path: 497672908
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -224,7 +224,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3345032330
+      path: 1345423333
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -233,7 +233,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1214537207
+      path: 893811392
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -242,7 +242,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2775148004
+      path: 497672908
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -261,7 +261,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -289,7 +289,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -310,7 +310,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -331,7 +331,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -352,7 +352,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -373,7 +373,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -394,7 +394,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -415,7 +415,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -436,7 +436,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -457,7 +457,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -478,7 +478,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -499,7 +499,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -520,7 +520,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -541,7 +541,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -562,7 +562,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -583,7 +583,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -604,7 +604,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -625,7 +625,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -646,7 +646,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -667,7 +667,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -688,7 +688,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -709,7 +709,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -730,7 +730,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -751,7 +751,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -772,7 +772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -793,7 +793,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -814,7 +814,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -835,7 +835,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -856,7 +856,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -877,7 +877,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -898,7 +898,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -920,7 +920,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -941,7 +941,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -962,7 +962,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -983,7 +983,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1004,7 +1004,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1025,7 +1025,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/LeftHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/LeftHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1046,7 +1046,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1067,7 +1067,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1088,7 +1088,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Visuals/Warrior Idle/WeaponHolder/WeaponPivot/RightHandGrip
+    path: Visuals/Player_Tpose/WeaponHolder/WeaponPivot/RightHandGrip
     classID: 4
     script: {fileID: 0}
     flags: 0
