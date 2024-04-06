@@ -23,8 +23,9 @@ public class WeaponManager : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        
-        weaponOverrideAnimator = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+        weaponOverrideAnimator = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        animator.runtimeAnimatorController = weaponOverrideAnimator;
 
         Weapon existingWeapon = GetComponentInChildren<Weapon>();
         if (existingWeapon)
@@ -88,7 +89,7 @@ public class WeaponManager : MonoBehaviour
     [ContextMenu("Save weapon pose")]
     void SaveWeaponPose()
     {
-        GameObjectRecorder recorder = new GameObjectRecorder(gameObject);
+        GameObjectRecorder recorder = new GameObjectRecorder(animator.gameObject);
         recorder.BindComponentsOfType<Transform>(weaponContainer.gameObject, false);
         recorder.BindComponentsOfType<Transform>(LeftGrip.gameObject, false);
         recorder.BindComponentsOfType<Transform>(RightGrip.gameObject, false);

@@ -2501,7 +2501,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: fdfbb3fada844d347b049af9e8a8c02b,
+      objectReference: {fileID: 22100000, guid: 0cd9ee7c8358ab0419f47db82bda67aa,
         type: 2}
     - target: {fileID: 5866666021909216657, guid: 1667c51742f7cea45b6cfc6e08a5efe5,
         type: 3}
@@ -2708,7 +2708,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148191858781}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
@@ -2793,11 +2793,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RigLayers:
   - m_Rig: {fileID: 947327411}
-    m_Active: 0
+    m_Active: 1
   - m_Rig: {fileID: 54315454}
-    m_Active: 0
+    m_Active: 1
   - m_Rig: {fileID: 828447078}
-    m_Active: 0
+    m_Active: 1
   m_Effectors: []
 --- !u!4 &1415224419 stripped
 Transform:
