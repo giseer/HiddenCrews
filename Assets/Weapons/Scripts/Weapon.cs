@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
 
     public TrailRenderer tracerEffect;
 
-    public AnimationClip weaponAnimation;
+    public string weaponName;
 
     [SerializeField] private Transform raycastOrigin;
 

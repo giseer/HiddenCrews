@@ -53,7 +53,7 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,
     type: 3}
-  weaponAnimation: {fileID: 7400000, guid: 62962f79fbae91e4ea03a29490916208, type: 2}
+  weaponName: bat
   raycastOrigin: {fileID: 0}
   raycastDestination: {fileID: 0}
   meleeWeapon: 1

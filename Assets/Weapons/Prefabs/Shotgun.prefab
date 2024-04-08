@@ -4961,7 +4961,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4044362797880833141}
@@ -5074,9 +5074,10 @@ MonoBehaviour:
   hitEffect: {fileID: 568311721318747666}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,
     type: 3}
-  weaponAnimation: {fileID: 7400000, guid: 3aa6b9a09e660e447b73a1d36fef3e89, type: 2}
+  weaponName: shotgun
   raycastOrigin: {fileID: 1841879860514597327}
   raycastDestination: {fileID: 0}
+  meleeWeapon: 0
 --- !u!1 &3111095726047742973
 GameObject:
   m_ObjectHideFlags: 0

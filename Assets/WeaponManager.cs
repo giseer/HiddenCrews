@@ -7,30 +7,41 @@ using UnityEngine.InputSystem;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference shoot;
+    [SerializeField] private InputActionReference saveWeapon;
     
     [SerializeField] private Transform crossHairTarget;
     [SerializeField] private Rig handIk;
     [SerializeField] private Transform weaponContainer;
     [SerializeField] private Transform LeftGrip;
     [SerializeField] private Transform RightGrip;
+    public Animator rigController;
 
 
     private Weapon weapon;
 
-    private Animator animator;
-    private AnimatorOverrideController weaponOverrideAnimator;
     
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
-
-        weaponOverrideAnimator = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = weaponOverrideAnimator;
-
         Weapon existingWeapon = GetComponentInChildren<Weapon>();
         if (existingWeapon)
         {
             ChangeWeapon(existingWeapon);
+        }
+    }
+
+    private void OnEnable()
+    {
+        saveWeapon.action.Enable();
+    }
+
+    private void Start()
+    {
+        if(rigController)
+        {
+            rigController.updateMode = AnimatorUpdateMode.Fixed;
+            rigController.cullingMode = AnimatorCullingMode.CullUpdateTransforms;
+            rigController.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            rigController.updateMode = AnimatorUpdateMode.Normal;
         }
     }
 
@@ -55,13 +66,14 @@ public class WeaponManager : MonoBehaviour
                 if (shoot.action.WasReleasedThisFrame())
                 {
                     weapon.StopFiring();   
-                } 
+                }   
             }
-        }
-        else
-        {
-            handIk.weight = 0.0f;
-            animator.SetLayerWeight(1, 0.0f);
+
+           if(saveWeapon.action.WasPerformedThisFrame())
+            {
+                bool weaponSaved = rigController.GetBool("save_weapon");
+                rigController.SetBool("save_weapon", !weaponSaved);
+            }
         }
     }
 
@@ -77,27 +89,11 @@ public class WeaponManager : MonoBehaviour
         weapon.transform.parent = weaponContainer;
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localRotation = Quaternion.identity;
-        
-        handIk.weight = 1.0f;
-        animator.SetLayerWeight(1, 1.0f);
-        Invoke(nameof(SetWeaponAnimation), 0.01f);
+        rigController.Play("equip_" + weapon.weaponName);
     }
 
-    private void SetWeaponAnimation()
+    private void OnDisable()
     {
-        weaponOverrideAnimator["weapon_Empty"] = weapon.weaponAnimation;
-    }
-
-
-    [ContextMenu("Save weapon pose")]
-    void SaveWeaponPose()
-    {
-        GameObjectRecorder recorder = new GameObjectRecorder(animator.gameObject);
-        recorder.BindComponentsOfType<Transform>(weaponContainer.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(LeftGrip.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(RightGrip.gameObject, false);
-        recorder.TakeSnapshot(0.0f);
-        recorder.SaveToClip(weapon.weaponAnimation);
-        UnityEditor.AssetDatabase.SaveAssets();
+        saveWeapon.action.Disable();
     }
 }
