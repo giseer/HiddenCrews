@@ -38,22 +38,25 @@ public class WeaponManager : MonoBehaviour
     {
         if (weapon)
         {
-            if (shoot.action.WasPerformedThisFrame())
+            if (!weapon.meleeWeapon)
             {
-                weapon.StartFiring();
-            }
+                if (shoot.action.WasPerformedThisFrame())
+                {
+                    weapon.StartFiring();
+                }
 
-            if (weapon.isFiring)
-            {
-                weapon.UpdateFiring(Time.deltaTime);
+                if (weapon.isFiring)
+                {
+                    weapon.UpdateFiring(Time.deltaTime);
+                }
+        
+                weapon.UpdateBullets(Time.deltaTime);
+        
+                if (shoot.action.WasReleasedThisFrame())
+                {
+                    weapon.StopFiring();   
+                } 
             }
-        
-            weapon.UpdateBullets(Time.deltaTime);
-        
-            if (shoot.action.WasReleasedThisFrame())
-            {
-                weapon.StopFiring();   
-            }   
         }
         else
         {

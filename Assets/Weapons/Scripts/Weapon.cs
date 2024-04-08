@@ -34,7 +34,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform raycastOrigin;
 
     public Transform raycastDestination;
-    
+
+    public bool meleeWeapon;
     
     private Ray ray;
     private RaycastHit hitInfo;
