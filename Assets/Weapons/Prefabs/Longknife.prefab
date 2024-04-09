@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a883449e12bf74c94bafd4e9b629cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlot: 4
   isFiring: 0
   fireRate: 10
   bulletSpeed: 350
@@ -138,7 +139,7 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,
     type: 3}
-  weaponAnimation: {fileID: 7400000, guid: 62962f79fbae91e4ea03a29490916208, type: 2}
+  weaponName: 
   raycastOrigin: {fileID: 0}
   raycastDestination: {fileID: 0}
   meleeWeapon: 1

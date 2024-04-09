@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
         public Vector3 initialVelocity;
         public TrailRenderer tracer;
     }
+
+    public WeaponManager.WeaponSlot weaponSlot;
     
     public bool isFiring = false;
 
