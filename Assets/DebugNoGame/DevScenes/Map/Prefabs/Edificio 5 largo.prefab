@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60969409449066218}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.26806048, z: -0, w: 0.96340215}
+  m_LocalRotation: {x: 0, y: -0.2680624, z: 0, w: 0.96340156}
   m_LocalPosition: {x: -6.1, y: 0, z: -3.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -101,6 +101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Edificio2_Derecha
       objectReference: {fileID: 0}
+    - target: {fileID: 3886289777199196827, guid: 1270dbb1d0001f44ea8db9abda2d4579,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fa853f237e7465438c8b25794f0b4da, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -313,6 +318,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183936263981844388, guid: 88f59a67329c4eb45b5ab106d2dc2b86,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 24b52dd7145e1e0468ca63b7f40243bd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

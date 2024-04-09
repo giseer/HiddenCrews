@@ -16,32 +16,34 @@ public class RecollectMission : Mission
     [SerializeField] private Transform failedCanvas;
     [SerializeField] private Transform passedCanvas;
 
-    
-    public float radio = 3f; 
-    public GameObject mensajeTexto; 
-    public GameObject cubo; 
-    public Canvas inventoryCanvas; 
-    public RawImage rawImageInventory; 
-    private bool dentroDelArea = false; 
-    private bool cuboDesaparecido = false; 
+
+    public float radio = 3f;
+    public GameObject mensajeTexto;
+    public GameObject cubo;
+    public Canvas inventoryCanvas;
+    public RawImage rawImageInventory;
+    private bool dentroDelArea = false;
+    private bool cuboDesaparecido = false;
+
+    public float distanciaDelante = 2f;
+    public float distanciaPermitida = 2f;
+    public float alturaCubo = 1f;
+    public float distanciaFlecha = 3f;
+
+    private Vector3 posicionInicialCubo;
 
 
-    public GameObject flechaPrefab; 
-    private GameObject flechaInstance; 
+    public GameObject flechaPrefab;
+    private GameObject flechaInstance;
+    public GameObject puntoFinal;
 
     private Transform jugador;
 
-    public KeyCode teclaAparecer = KeyCode.D; // Tecla para aparecer el cubo
-    public float distanciaDelante = 2f; // Distancia delante del jugador donde aparecerá el cubo
-    public float alturaCubo = 1f; // Altura del cubo por encima del jugador
-
-    private Vector3 posicionInicialCubo; // Posición inicial del cubo
 
     private void Awake()
     {
         currentTime = missionTime;
         missionFinished = false;
-        rawImageInventory = inventoryCanvas.GetComponentInChildren<RawImage>();
         rawImageInventory.gameObject.SetActive(false);
     }
 
@@ -57,28 +59,34 @@ public class RecollectMission : Mission
     {
         CheckCubeDisappearance();
         MoverFlechaConJugador();
-        CheckCubeAppear();    
+
+        AparecerCubo();
+
+        
+
     }
 
     protected override void checkFinishConditions()
     {
         CheckMissionTime();
-        checkFinishConditions();   
+        checkFinishConditions();
     }
 
-    private void CheckCubeAppear()
+
+    private void AparecerCubo()
     {
-        if (Input.GetKeyDown(teclaAparecer))
+        float distanciaAlPuntoFinal = Vector3.Distance(jugador.position, puntoFinal.transform.position);
+
+        if (distanciaAlPuntoFinal < distanciaPermitida && Input.GetKeyDown(KeyCode.F))
         {
             Vector3 posicionDelante = jugador.position + jugador.forward * distanciaDelante;
             Vector3 posicionFinal = new Vector3(posicionDelante.x, jugador.position.y + alturaCubo, posicionDelante.z);
-
             cubo.transform.position = posicionFinal;
-
             cubo.SetActive(true);
             OnPassed();
         }
     }
+    
 
     private void CheckMissionTime()
     {
@@ -113,19 +121,22 @@ public class RecollectMission : Mission
 
         if (dentroDelArea && !cuboDesaparecido)
         {
-            mensajeTexto.SetActive(true); 
+            mensajeTexto.SetActive(true);
         }
         else
         {
-            mensajeTexto.SetActive(false); 
+            mensajeTexto.SetActive(false);
         }
 
         if (mensajeTexto.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
             cubo.SetActive(false);
-            cuboDesaparecido = true; 
+            cuboDesaparecido = true;
             rawImageInventory.gameObject.SetActive(true);
             flechaInstance.gameObject.SetActive(false);
+            puntoFinal.gameObject.SetActive(true);
+
+
             
         }
     }
