@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
         public Vector3 initialVelocity;
         public TrailRenderer tracer;
     }
+
+    public WeaponManager.WeaponSlot weaponSlot;
     
     public bool isFiring = false;
 
@@ -29,12 +31,13 @@ public class Weapon : MonoBehaviour
 
     public TrailRenderer tracerEffect;
 
-    public AnimationClip weaponAnimation;
+    public string weaponName;
 
     [SerializeField] private Transform raycastOrigin;
 
     public Transform raycastDestination;
-    
+
+    public bool meleeWeapon;
     
     private Ray ray;
     private RaycastHit hitInfo;

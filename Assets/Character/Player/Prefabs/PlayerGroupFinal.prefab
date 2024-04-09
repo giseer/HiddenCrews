@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 5178706533751592251}
   - component: {fileID: 7646265986265888807}
   - component: {fileID: 1539278337299163427}
-  - component: {fileID: 308920606262515593}
   - component: {fileID: 7626175922879811632}
   m_Layer: 0
   m_Name: Player
@@ -297,20 +296,6 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &308920606262515593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406542139181727954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6252cd58d658a84d8b01563e6ae969c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimDuration: 0.3
-  aimLayer: {fileID: 5300660689506257200}
 --- !u!114 &7626175922879811632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,9 +308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600d14562616bcb4dbb2532e78cf960e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: {fileID: 0}
   crossHairTarget: {fileID: 0}
   handIk: {fileID: 4454218347540142159}
-  weapontContainer: {fileID: 30691801573518972}
+  weaponContainer: {fileID: 0}
+  LeftGrip: {fileID: 0}
+  RightGrip: {fileID: 0}
+  rigController: {fileID: 0}
 --- !u!1 &634038582004609120
 GameObject:
   m_ObjectHideFlags: 0
