@@ -4,6 +4,7 @@ using UnityEngine.Animations.Rigging;
 using UnityEditor.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using System.Collections;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -19,15 +20,20 @@ public class WeaponManager : MonoBehaviour
     
     [SerializeField] private InputActionReference shoot;
     [SerializeField] private InputActionReference saveWeapon;
+    [SerializeField] private InputActionReference Weapon1;
+    [SerializeField] private InputActionReference Weapon2;
+    [SerializeField] private InputActionReference Weapon3;
+    [SerializeField] private InputActionReference Weapon4;
+    [SerializeField] private InputActionReference WeaponScroll;
     
     [SerializeField] private Transform crossHairTarget;
     public Animator rigController;
     
     [SerializeField] private Transform[] weaponSlots;
 
-    private Weapon[] ownedWeapons;
+    public Weapon[] ownedWeapons;
 
-    private int activeWeaponIndex;
+    public int activeWeaponIndex;
 
     
     private void Awake()
@@ -43,7 +49,13 @@ public class WeaponManager : MonoBehaviour
 
     private void OnEnable()
     {
+        shoot.action.Enable();
         saveWeapon.action.Enable();
+        Weapon1.action.Enable();
+        Weapon2.action.Enable();
+        Weapon3.action.Enable();
+        Weapon4.action.Enable();
+        WeaponScroll.action.Enable();    
     }
 
     private void Start()
@@ -93,9 +105,30 @@ public class WeaponManager : MonoBehaviour
 
             if(saveWeapon.action.WasPerformedThisFrame())
             {
-                bool weaponSaved = rigController.GetBool("save_weapon");
-                rigController.SetBool("save_weapon", !weaponSaved);
+                ToggleSelectedWeapon();
             }
+
+
+        }
+
+        if(Weapon1.action.WasPerformedThisFrame())
+        {
+            SelectWeapon(WeaponSlot.Primary);
+        }
+        
+        if(Weapon2.action.WasPerformedThisFrame())
+        {
+            SelectWeapon(WeaponSlot.Secondary);
+        }
+
+        if (Weapon3.action.WasPerformedThisFrame())
+        {
+            SelectWeapon(WeaponSlot.Tertiary);
+        }
+
+        if (Weapon4.action.WasPerformedThisFrame())
+        {
+            SelectWeapon(WeaponSlot.Quaternary);
         }
     }
 
@@ -112,17 +145,89 @@ public class WeaponManager : MonoBehaviour
 
         weapon = newWeapon;
         weapon.raycastDestination = crossHairTarget;
-        weapon.transform.parent = weaponSlots[weaponSlotIndex];
-        weapon.transform.localPosition = Vector3.zero;
-        weapon.transform.localRotation = Quaternion.identity;
-        rigController.Play("equip_" + weapon.weaponName);
-
+        weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
         ownedWeapons[weaponSlotIndex] = weapon;
-        activeWeaponIndex = weaponSlotIndex;
+
+        SelectWeapon(newWeapon.weaponSlot);
+    }
+
+    private void ToggleSelectedWeapon()
+    {
+        bool isSaved = rigController.GetBool("save_weapon");
+        if(isSaved)
+        {
+            StartCoroutine(SelectedWeapon(activeWeaponIndex));
+        }
+        else
+        {
+            StartCoroutine(SaveWeapon(activeWeaponIndex));
+        }
+    }
+
+    private void SelectWeapon(WeaponSlot weaponSlot)
+    {
+        int saveWeaponIndex = activeWeaponIndex;
+        int selectedWeaponIndex = (int)weaponSlot;
+
+        StartCoroutine(SwitchWeapon(saveWeaponIndex, selectedWeaponIndex));
+    }
+
+    private void SelectWeaponByScroll()
+    {
+        Vector2 prevNextWeaponValue = WeaponScroll.action.ReadValue<Vector2>();
+        if (prevNextWeaponValue.y > 0)
+        {
+            SelectWeapon((WeaponSlot)activeWeaponIndex + 1);
+        }
+        else if(prevNextWeaponValue.y < 0)
+        {
+            SelectWeapon((WeaponSlot)activeWeaponIndex - 1);
+        }
+    }
+
+    IEnumerator SwitchWeapon(int saveWeaponIndex, int selectedWeaponIndex)
+    {
+        yield return StartCoroutine(SaveWeapon(saveWeaponIndex));
+        yield return StartCoroutine(SelectedWeapon(selectedWeaponIndex));
+        activeWeaponIndex = selectedWeaponIndex;
+    }
+
+    IEnumerator SaveWeapon(int index)
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        Weapon weapon = GetWeaponByIndex(index);
+        if(weapon)
+        {
+            rigController.SetBool("save_weapon", true);
+            do
+            {
+                yield return new WaitForEndOfFrame();
+            } while (rigController.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
+        }
+    }
+    IEnumerator SelectedWeapon(int index)
+    {
+        Weapon weapon = GetWeaponByIndex(index);
+        if (weapon)
+        {
+            rigController.SetBool("save_weapon", false);
+            rigController.Play("equip_" + weapon.weaponName);
+            do
+            {
+                yield return new WaitForEndOfFrame();
+            } while (rigController.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
+        }
     }
 
     private void OnDisable()
     {
+        shoot.action.Disable();
         saveWeapon.action.Disable();
+        Weapon1.action.Disable();
+        Weapon2.action.Disable();
+        Weapon3.action.Disable();
+        Weapon4.action.Disable();
+        WeaponScroll.action.Disable();
     }
 }
