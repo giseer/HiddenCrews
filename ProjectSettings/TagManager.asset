@@ -9,6 +9,8 @@ TagManager:
   - Rival
   - Ally
   - Product
+  - FxTemporaire
+  - Enemy
   layers:
   - Default
   - TransparentFX
