@@ -46,6 +46,13 @@ public class Weapon : MonoBehaviour
     List<Bullet> bullets = new List<Bullet>();
     private float maxLifeTime = 3f;
 
+    [Header("Magazine Settings")]
+    public GameObject magazine;
+    public int currentAmmo;
+    public int clipSize;
+
+
+
     Vector3 GetPosition(Bullet bullet)
     {
         Vector3 gravity = Vector3.down * bulletDrop;
@@ -112,7 +119,6 @@ public class Weapon : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitInfo, distance))
         {
-            //   Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1.0f);
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;
             hitEffect.Emit(1);
@@ -121,6 +127,12 @@ public class Weapon : MonoBehaviour
             {
                 bullet.tracer.transform.position = hitInfo.point;
                 bullet.time = maxLifeTime;   
+            }
+
+            Rigidbody rigidbody = hitInfo.collider.GetComponent<Rigidbody>();
+            if (rigidbody)
+            {
+                rigidbody.AddForceAtPosition(ray.direction * 20, hitInfo.point, ForceMode.Impulse);
             }
         }
         else
@@ -134,6 +146,13 @@ public class Weapon : MonoBehaviour
 
     private void FireBullet()
     {
+        if(currentAmmo <= 0)
+        {
+            return;
+        }
+
+        currentAmmo--;
+
         muzzleFlash.Emit(1);
 
         Vector3 velocity = (raycastDestination.position - raycastOrigin.position).normalized * bulletSpeed;

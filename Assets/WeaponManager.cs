@@ -17,7 +17,8 @@ public class WeaponManager : MonoBehaviour
         Quinary = 4,
         Senary = 5
     }
-    
+
+    [Header("Input Actions")]
     [SerializeField] private InputActionReference shoot;
     [SerializeField] private InputActionReference saveWeapon;
     [SerializeField] private InputActionReference Weapon1;
@@ -25,7 +26,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private InputActionReference Weapon3;
     [SerializeField] private InputActionReference Weapon4;
     [SerializeField] private InputActionReference WeaponScroll;
-    
+
+    [Header("Weapon settings")]
     [SerializeField] private Transform crossHairTarget;
     public Animator rigController;
     
@@ -33,9 +35,12 @@ public class WeaponManager : MonoBehaviour
 
     public Weapon[] ownedWeapons;
 
-    public int activeWeaponIndex;
+    public int currentWeaponIndex;
 
     private bool isWeaponSaved = false;
+
+    [Header("Display Settings")]
+    [SerializeField] AmmoDisplayer ammoDisplayer;
     
     private void Awake()
     {
@@ -72,7 +77,7 @@ public class WeaponManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        Weapon weapon = GetWeaponByIndex(activeWeaponIndex);
+        Weapon weapon = GetWeaponByIndex(currentWeaponIndex);
         if (weapon && !isWeaponSaved)
         {
             if (!weapon.meleeWeapon)
@@ -148,6 +153,8 @@ public class WeaponManager : MonoBehaviour
         ownedWeapons[weaponSlotIndex] = weapon;
 
         SelectWeapon(newWeapon.weaponSlot);
+
+        ammoDisplayer.updateAmmoHUD(weapon.currentAmmo, weapon.clipSize);
     }
 
     private void ToggleSelectedWeapon()
@@ -155,17 +162,17 @@ public class WeaponManager : MonoBehaviour
         bool isSaved = rigController.GetBool("save_weapon");
         if(isSaved)
         {
-            StartCoroutine(SelectedWeapon(activeWeaponIndex));
+            StartCoroutine(SelectedWeapon(currentWeaponIndex));
         }
         else
         {
-            StartCoroutine(SaveWeapon(activeWeaponIndex));
+            StartCoroutine(SaveWeapon(currentWeaponIndex));
         }
     }
 
     private void SelectWeapon(WeaponSlot weaponSlot)
     {
-        int saveWeaponIndex = activeWeaponIndex;
+        int saveWeaponIndex = currentWeaponIndex;
         int selectedWeaponIndex = (int)weaponSlot;
         
         if(saveWeaponIndex == selectedWeaponIndex)
@@ -181,11 +188,11 @@ public class WeaponManager : MonoBehaviour
         Vector2 prevNextWeaponValue = WeaponScroll.action.ReadValue<Vector2>();
         if (prevNextWeaponValue.y > 0)
         {
-            SelectWeapon((WeaponSlot)activeWeaponIndex + 1);
+            SelectWeapon((WeaponSlot)currentWeaponIndex + 1);
         }
         else if(prevNextWeaponValue.y < 0)
         {
-            SelectWeapon((WeaponSlot)activeWeaponIndex - 1);
+            SelectWeapon((WeaponSlot)currentWeaponIndex - 1);
         }
     }
 
@@ -193,7 +200,7 @@ public class WeaponManager : MonoBehaviour
     {
         yield return StartCoroutine(SaveWeapon(saveWeaponIndex));
         yield return StartCoroutine(SelectedWeapon(selectedWeaponIndex));
-        activeWeaponIndex = selectedWeaponIndex;
+        currentWeaponIndex = selectedWeaponIndex;
     }
 
     IEnumerator SaveWeapon(int index)
@@ -224,6 +231,11 @@ public class WeaponManager : MonoBehaviour
             } while (rigController.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
             isWeaponSaved = false;
         }
+    }
+
+    public Weapon GetCurrentWeapon()
+    {
+        return GetWeaponByIndex(currentWeaponIndex);
     }
 
     private void OnDisable()
