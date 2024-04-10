@@ -35,6 +35,7 @@ public class WeaponManager : MonoBehaviour
 
     public int activeWeaponIndex;
 
+    private bool isWeaponSaved = false;
     
     private void Awake()
     {
@@ -69,19 +70,10 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private Weapon GetWeaponByIndex(int index)
-    {
-        if (index < 0 || index >= ownedWeapons.Length)
-        {
-            return null;
-        }
-        return ownedWeapons[index];
-    }
-
     private void LateUpdate()
     {
         Weapon weapon = GetWeaponByIndex(activeWeaponIndex);
-        if (weapon)
+        if (weapon && !isWeaponSaved)
         {
             if (!weapon.meleeWeapon)
             {
@@ -102,13 +94,11 @@ public class WeaponManager : MonoBehaviour
                     weapon.StopFiring();   
                 }   
             }
-
-            if(saveWeapon.action.WasPerformedThisFrame())
-            {
-                ToggleSelectedWeapon();
-            }
-
-
+        }
+        
+        if(saveWeapon.action.WasPerformedThisFrame())
+        {
+            ToggleSelectedWeapon();
         }
 
         if(Weapon1.action.WasPerformedThisFrame())
@@ -130,6 +120,15 @@ public class WeaponManager : MonoBehaviour
         {
             SelectWeapon(WeaponSlot.Quaternary);
         }
+    }
+    
+    private Weapon GetWeaponByIndex(int index)
+    {
+        if (index < 0 || index >= ownedWeapons.Length)
+        {
+            return null;
+        }
+        return ownedWeapons[index];
     }
 
     public void ChangeWeapon(Weapon newWeapon)
@@ -168,6 +167,11 @@ public class WeaponManager : MonoBehaviour
     {
         int saveWeaponIndex = activeWeaponIndex;
         int selectedWeaponIndex = (int)weaponSlot;
+        
+        if(saveWeaponIndex == selectedWeaponIndex)
+        {
+            saveWeaponIndex = -1;
+        }
 
         StartCoroutine(SwitchWeapon(saveWeaponIndex, selectedWeaponIndex));
     }
@@ -194,6 +198,7 @@ public class WeaponManager : MonoBehaviour
 
     IEnumerator SaveWeapon(int index)
     {
+        isWeaponSaved = true;
         yield return new WaitForSeconds(0.1f);
 
         Weapon weapon = GetWeaponByIndex(index);
@@ -217,6 +222,7 @@ public class WeaponManager : MonoBehaviour
             {
                 yield return new WaitForEndOfFrame();
             } while (rigController.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
+            isWeaponSaved = false;
         }
     }
 
