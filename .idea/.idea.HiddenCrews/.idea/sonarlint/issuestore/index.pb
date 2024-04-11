@@ -25,3 +25,9 @@ G
 Assets/WeaponManager.cs,9\b\9ba9c3c955972e06cb31fac62abd52f31e4fd31b
 U
 %Assets/Inventory/Scripts/WeaponArm.cs,8\a\8ab0bab36a7649a28cbbcf16e0fb7db609d1e380
+a
+1Assets/Character/Player/Scripts/WeaponReloader.cs,1\0\10ff0c38b63c302f12779b5cba23dccd5e922a1f
+F
+Assets/WeaponPickUp.cs,8\6\862a99d08cd8ac621fe88c3226cce3925f986bb1
+G
+Assets/AmmoDisplayer.cs,4\8\486d9e1e0db5ad5b5cb7900c5e0b61a6490e4038

@@ -37,7 +37,7 @@ public class WeaponReloader : MonoBehaviour
         
         if (currentWeapon) 
         {
-            if (reload.action.WasPerformedThisFrame() || currentWeapon.currentAmmo <= 0)
+            if (reload.action.WasPerformedThisFrame() || currentWeapon.currentAmmo <= 0 && !currentWeapon.meleeWeapon)
             {
                 rigController.SetTrigger("reload_weapon");
             }
@@ -52,8 +52,6 @@ public class WeaponReloader : MonoBehaviour
 
     private void OnAnimationEvent(string eventName)
     {
-        Debug.Log(eventName);
-
         switch (eventName)
         {
             case "AttachMagazine":
@@ -79,7 +77,11 @@ public class WeaponReloader : MonoBehaviour
     {
         Weapon currentWeapon = weaponManager.GetCurrentWeapon();
         currentWeapon.magazine.SetActive(true);
-        Destroy(magazine);
+
+        if (magazine)
+        {
+            Destroy(magazine);
+        }
 
         currentWeapon.currentAmmo = currentWeapon.clipSize;
         rigController.ResetTrigger("reload_weapon");
@@ -96,6 +98,12 @@ public class WeaponReloader : MonoBehaviour
 
     private void GetMagazine()
     {
+        if (!magazine)
+        {
+            Weapon currentWeapon = weaponManager.GetCurrentWeapon();
+            magazine = Instantiate(currentWeapon.magazine, leftHand, true);
+        }
+        
         magazine.SetActive(true);
     }
 
@@ -106,7 +114,10 @@ public class WeaponReloader : MonoBehaviour
         droppedMagazine.AddComponent<BoxCollider>();
         magazine.SetActive(false);
 
-        Destroy(droppedMagazine, 15f);
+        if (droppedMagazine)
+        {
+            Destroy(droppedMagazine, 15f);   
+        }
     }
 
 

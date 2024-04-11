@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -52,6 +53,10 @@ public class Weapon : MonoBehaviour
     public int clipSize;
 
 
+    private void Awake()
+    {
+        currentAmmo = clipSize;
+    }
 
     Vector3 GetPosition(Bullet bullet)
     {

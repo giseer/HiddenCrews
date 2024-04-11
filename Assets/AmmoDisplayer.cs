@@ -16,4 +16,9 @@ public class AmmoDisplayer : MonoBehaviour
     {
         ammoText.text = $"{currentAmmo}/{clipSize}";
     }
+
+    public void updateMeleeHUD()
+    {
+        ammoText.text = "\u221e";        
+    }
 }

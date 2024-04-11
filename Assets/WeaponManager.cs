@@ -154,7 +154,14 @@ public class WeaponManager : MonoBehaviour
 
         SelectWeapon(newWeapon.weaponSlot);
 
-        ammoDisplayer.updateAmmoHUD(weapon.currentAmmo, weapon.clipSize);
+        if (!weapon.meleeWeapon)
+        {
+            ammoDisplayer.updateAmmoHUD(weapon.currentAmmo, weapon.clipSize);   
+        }
+        else
+        {
+            ammoDisplayer.updateMeleeHUD();
+        }
     }
 
     private void ToggleSelectedWeapon()
@@ -163,10 +170,13 @@ public class WeaponManager : MonoBehaviour
         if(isSaved)
         {
             StartCoroutine(SelectedWeapon(currentWeaponIndex));
+            ammoDisplayer.updateAmmoHUD(GetWeaponByIndex(currentWeaponIndex).currentAmmo, 
+                GetWeaponByIndex(currentWeaponIndex).clipSize);
         }
         else
         {
             StartCoroutine(SaveWeapon(currentWeaponIndex));
+            ammoDisplayer.updateMeleeHUD();
         }
     }
 
@@ -181,6 +191,16 @@ public class WeaponManager : MonoBehaviour
         }
 
         StartCoroutine(SwitchWeapon(saveWeaponIndex, selectedWeaponIndex));
+
+        if (!GetWeaponByIndex(selectedWeaponIndex).meleeWeapon)
+        {
+            ammoDisplayer.updateAmmoHUD(GetWeaponByIndex(selectedWeaponIndex).currentAmmo, 
+                GetWeaponByIndex(selectedWeaponIndex).clipSize);   
+        }
+        else
+        {
+            ammoDisplayer.updateMeleeHUD();
+        }
     }
 
     private void SelectWeaponByScroll()
