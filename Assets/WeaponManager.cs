@@ -91,9 +91,10 @@ public class WeaponManager : MonoBehaviour
                 {
                     weapon.UpdateFiring(Time.deltaTime);
                 }
-        
+
                 weapon.UpdateBullets(Time.deltaTime);
-        
+          
+       
                 if (shoot.action.WasReleasedThisFrame())
                 {
                     weapon.StopFiring();   
@@ -124,6 +125,11 @@ public class WeaponManager : MonoBehaviour
         if (Weapon4.action.WasPerformedThisFrame())
         {
             SelectWeapon(WeaponSlot.Quaternary);
+        }
+
+        if (WeaponScroll.action.ReadValue<float>() > 0)
+        {
+            SelectWeaponByScroll();
         }
     }
     

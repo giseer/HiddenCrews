@@ -8,7 +8,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Weapon : MonoBehaviour
 {
-    class Bullet
+    public class Bullet
     {
         public float time;
         public Vector3 initialPosition;
@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour
     private RaycastHit hitInfo;
     private float accumulatedTime;
     
-    List<Bullet> bullets = new List<Bullet>();
+    public List<Bullet> bullets = new List<Bullet>();
     private float maxLifeTime = 3f;
 
     [Header("Magazine Settings")]
@@ -139,12 +139,19 @@ public class Weapon : MonoBehaviour
             {
                 rigidbody.AddForceAtPosition(ray.direction * 20, hitInfo.point, ForceMode.Impulse);
             }
+
+            Debug.Log(hitInfo.collider.gameObject.name);
+
+            if (hitInfo.transform.tag.Equals("Rival"))
+            {
+                hitInfo.transform.GetComponentInChildren<EnemyHealther>().TakeDamage();
+            }
         }
         else
         {
             if (bullet.tracer)
             {
-                bullet.tracer.transform.position = end;   
+                bullet.tracer.transform.position = end;
             }
         }
     }
