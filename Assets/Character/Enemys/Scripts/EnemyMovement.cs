@@ -8,8 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     public Transform target; // El objeto a seguir (usualmente el jugador)
     public GameObject enemyPrefab; // Prefab del enemigo
-    public GameObject starPrefab; // Prefab de la estrella
-    public GameObject starPrefab1; // Prefab de la estrella
+    public StarManager starManager;
     public float detectionRange = 7f;
     public float spawnRadius = 5f;
 
@@ -42,8 +41,21 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            SpawnEnemiesAndStars();
+            starManager.SpawnTwoEnemiesAndStars();
         }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            starManager.SpawnThreeEnemiesAndStars();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            starManager.SpawnFourEnemiesAndStars();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            starManager.SpawnFiveEnemiesAndStars();
+        }
+
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
@@ -122,57 +134,11 @@ public class EnemyMovement : MonoBehaviour
 
     void ActivateStar()
     {
-        if (starPrefab != null)
-        {
-            starPrefab.SetActive(true);
-        }
+        starManager.ActivateStars();
     }
 
     void DeactivateStar()
     {
-        if (starPrefab != null)
-        {
-            starPrefab.SetActive(false);
-        }
-    }
-
-    void SpawnEnemiesAndStars()
-    {
-        // Obtener todos los enemigos en la escena
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        // Si ya hay 2 o más enemigos, no generamos más
-        if (enemies.Length >= 2)
-        {
-            Debug.Log("Ya hay 2 enemigos en la escena.");
-            return;
-        }
-
-        // Obtenemos la posición actual del jugador
-        Vector3 playerPosition = target.position;
-
-        // Instanciamos dos enemigos cerca del jugador
-        for (int i = 0; i < 2 - enemies.Length; i++)
-        {
-            // Generamos una posición aleatoria dentro de un radio especificado alrededor del jugador
-            Vector3 spawnPosition = playerPosition + Random.insideUnitSphere * spawnRadius;
-
-            // Aseguramos que la posición generada esté en el suelo
-            spawnPosition.y = 0f;
-
-            // Instanciamos el enemigo en la posición generada
-            GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            enemyList.Add(newEnemy);
-        }
-
-        // Si ahora hay 2 enemigos, activamos dos estrellas
-        if (enemyList.Count >= 1)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                starPrefab.SetActive(true);
-                starPrefab1.SetActive(true);
-            }
-        }
+        starManager.DeactivateStars();
     }
 }
