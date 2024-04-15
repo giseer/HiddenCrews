@@ -127,10 +127,10 @@ public class WeaponManager : MonoBehaviour
             SelectWeapon(WeaponSlot.Quaternary);
         }
 
-        if (WeaponScroll.action.ReadValue<float>() > 0)
-        {
-            SelectWeaponByScroll();
-        }
+        //if (WeaponScroll.action.ReadValue<float>() > 0)
+        //{
+        //    SelectWeaponByScroll();
+        //}
     }
     
     private Weapon GetWeaponByIndex(int index)

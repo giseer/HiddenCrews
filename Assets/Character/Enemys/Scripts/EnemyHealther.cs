@@ -6,7 +6,7 @@ public class EnemyHealther : MonoBehaviour
 {
     [SerializeField] private int maxHealthPoints;
     private int healthPoints;
-    [SerializeField] private MeshRenderer renderer;
+    [SerializeField] private SkinnedMeshRenderer renderer;
 
     public static int enemyCount;
 

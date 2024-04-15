@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     public float minSpeed = 1f; // Velocidad m�nima permitida
     public float decreaseRate = 1f; // Tasa de disminuci�n gradual
 
-    public float moveSpeed = 5f;
+    private float previousSpeed;
     public Transform[] waypoints;
     private int currentWaypoint = 0;
 
@@ -72,8 +72,6 @@ public class EnemyMovement : MonoBehaviour
                 SetDestinationToNextWaypoint();
             }
         }
-
-        
     }
 
     IEnumerator ChangeSpeedOverTime()
@@ -100,6 +98,19 @@ public class EnemyMovement : MonoBehaviour
 
             yield return new WaitForSeconds(decreaseDuration);
         }
+    }
+
+    public void Stop()
+    {
+        previousSpeed = normalSpeed;
+        normalSpeed = 0f;
+        boostedSpeed = 0f;
+    }
+
+    public void Move()
+    {
+        normalSpeed = previousSpeed;
+        //boostedSpeed = 3f;
     }
 
     void SetDestinationToNextWaypoint()

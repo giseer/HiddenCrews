@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Sight Settings")]
+    public Transform sight;
+
     [Header("Components")]
     [SerializeField] private PlayerInputHandler inputHandler;
     [SerializeField] private PlayerMover mover;

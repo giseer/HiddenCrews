@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
 
     public string weaponName;
 
-    [SerializeField] private Transform raycastOrigin;
+    public Transform raycastOrigin;
 
     public Transform raycastDestination;
 
@@ -140,8 +140,6 @@ public class Weapon : MonoBehaviour
                 rigidbody.AddForceAtPosition(ray.direction * 20, hitInfo.point, ForceMode.Impulse);
             }
 
-            Debug.Log(hitInfo.collider.gameObject.name);
-
             if (hitInfo.transform.tag.Equals("Rival"))
             {
                 hitInfo.transform.GetComponentInChildren<EnemyHealther>().TakeDamage();
@@ -158,18 +156,21 @@ public class Weapon : MonoBehaviour
 
     private void FireBullet()
     {
-        if(currentAmmo <= 0)
+        if(raycastDestination)
         {
-            return;
-        }
+            if (currentAmmo <= 0)
+            {
+                return;
+            }
 
-        currentAmmo--;
+            currentAmmo--;
 
-        muzzleFlash.Emit(1);
+            muzzleFlash.Emit(1);
 
-        Vector3 velocity = (raycastDestination.position - raycastOrigin.position).normalized * bulletSpeed;
-        Bullet bullet = CreateBullet(raycastOrigin.position, velocity);
-        bullets.Add(bullet);
+            Vector3 velocity = (raycastDestination.position - raycastOrigin.position).normalized * bulletSpeed;
+            Bullet bullet = CreateBullet(raycastOrigin.position, velocity);
+            bullets.Add(bullet);
+        }        
     }
 
     public void StopFiring()
