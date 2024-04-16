@@ -31,3 +31,9 @@ F
 Assets/WeaponPickUp.cs,8\6\862a99d08cd8ac621fe88c3226cce3925f986bb1
 G
 Assets/AmmoDisplayer.cs,4\8\486d9e1e0db5ad5b5cb7900c5e0b61a6490e4038
+_
+/Assets/Character/Enemys/Scripts/EnemyShooter.cs,8\5\85a4e776b0687989627c7fa64a5c7d13a90cbe0d
+`
+0Assets/Character/Enemys/Scripts/EnemyMovement.cs,f\5\f59aff9d8cecfe547479b855b711ab7e3c52e39c
+f
+6Assets/Character/Enemys/Scripts/EnemyWeaponReloader.cs,0\5\05bcf5154ec5b4971a4f8d742ee50662c377c12f

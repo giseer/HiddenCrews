@@ -7,6 +7,7 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] Weapon weapon;
 
     [SerializeField] float shootDistance;
+    [SerializeField] private float aimSpeed;
 
     [SerializeField] LayerMask targetLayerMask;
 
@@ -16,19 +17,29 @@ public class EnemyShooter : MonoBehaviour
 
     Transform targetSightTransform;
 
+    private EnemyWeaponReloader reloader;
+
     private void Awake()
     {
-        mover = GetComponentInChildren<EnemyMovement>();
+        mover    = GetComponentInChildren<EnemyMovement>();
+        reloader = GetComponentInChildren<EnemyWeaponReloader>();
     }
 
     private void FixedUpdate()
     {
-        RaycastHit hitInfo;
         RaycastHit raycastHitInfo;
 
-        if (Physics.SphereCast(weapon.raycastOrigin.position, shootDistance, transform.forward, out hitInfo, shootDistance, targetLayerMask))
+        Collider[] detectedColliders = Physics.OverlapSphere(
+                                        weapon.raycastOrigin.position + transform.forward * shootDistance,
+                                        shootDistance,
+                                        targetLayerMask);
+        
+        if (detectedColliders.Length > 0)
         {
-            targetSightTransform = hitInfo.transform.GetComponentInChildren<PlayerController>().sight;
+            foreach (Collider detectedCollider in detectedColliders)
+            {
+                targetSightTransform = detectedCollider.transform.GetComponentInChildren<PlayerController>().sight;    
+            }
            
             //Debug.DrawLine(sight.position, targetSightTransform.position);
             if (Physics.Raycast(sight.position, targetSightTransform.position - sight.position, out raycastHitInfo, shootDistance * 2, targetLayerMask))
@@ -40,7 +51,7 @@ public class EnemyShooter : MonoBehaviour
                 
             }else
             {
-                StopFiring();
+                //StopFiring();
             }
         }
         else
@@ -48,14 +59,26 @@ public class EnemyShooter : MonoBehaviour
             StopFiring();
         }
         
+        
         if (isfiring)
         {
             Debug.Log("Firing");
             weapon.raycastDestination = targetSightTransform;
-            transform.forward = targetSightTransform.position - sight.position;
+            AimTarget();
             weapon.UpdateFiring(Time.deltaTime);
             weapon.UpdateBullets(Time.deltaTime);
+
+            if (weapon.currentAmmo <= 0)
+            {
+                reloader.Reload(weapon);
+            }
         }
+    }
+
+    private void AimTarget()
+    {
+        Vector3 desiredDirection = targetSightTransform.position - sight.position;
+        transform.forward = Vector3.Slerp(sight.transform.forward, desiredDirection, Time.deltaTime) * aimSpeed;
     }
 
     private void StopFiring()
