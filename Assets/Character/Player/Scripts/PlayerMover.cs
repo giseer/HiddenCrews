@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 
+
 public class PlayerMover : MonoBehaviour
 {
     [Header("Movement Values")]
@@ -92,7 +93,7 @@ public class PlayerMover : MonoBehaviour
         Vector3 normalizedLocalDirection = transform.InverseTransformDirection(direction).normalized;
 
         normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
-        
+
         animationer.AnimateMovement(normalizedLocalDirection);
     }
 }
