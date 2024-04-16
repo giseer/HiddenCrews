@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerAnimationsHandler : MonoBehaviour
 {
@@ -6,8 +7,16 @@ public class PlayerAnimationsHandler : MonoBehaviour
 
     public void AnimateMovement(Vector3 normalizedLocalDirection)
     {
-        animator.SetFloat("x", normalizedLocalDirection.x);
-        animator.SetFloat("z", normalizedLocalDirection.z);
+        DOTween.To(() => animator.GetFloat("x"),
+            x => animator.SetFloat("x", x),
+            normalizedLocalDirection.x, 1f);
+
+        DOTween.To(() => animator.GetFloat("z"),
+            x => animator.SetFloat("z", x),
+            normalizedLocalDirection.z, 1f);
+
+        //animator.SetFloat("x", normalizedLocalDirection.x);
+        //animator.SetFloat("z", normalizedLocalDirection.z);
     }
 
     public void AnimateJump()
