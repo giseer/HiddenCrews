@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
@@ -33,25 +34,29 @@ public class EnemyShooter : MonoBehaviour
                                         weapon.raycastOrigin.position + transform.forward * shootDistance,
                                         shootDistance,
                                         targetLayerMask);
-        
+
         if (detectedColliders.Length > 0)
         {
             foreach (Collider detectedCollider in detectedColliders)
             {
-                targetSightTransform = detectedCollider.transform.GetComponentInChildren<PlayerController>().sight;    
-            }
-           
-            //Debug.DrawLine(sight.position, targetSightTransform.position);
-            if (Physics.Raycast(sight.position, targetSightTransform.position - sight.position, out raycastHitInfo, shootDistance * 2, targetLayerMask))
-            {
-                isfiring = true;
-                mover.Stop();
-                weapon.StartFiring();
-                
-                
-            }else
-            {
-                //StopFiring();
+                targetSightTransform = detectedCollider.transform.GetComponentInChildren<PlayerController>().sight;
+
+                //Debug.DrawLine(sight.position, targetSightTransform.position);
+                if (Physics.Raycast(sight.position, targetSightTransform.position - sight.position, out raycastHitInfo, shootDistance * 2))
+                {
+
+                    if (LayerMask.GetMask(LayerMask.LayerToName(raycastHitInfo.transform.gameObject.layer)) == targetLayerMask)
+                    {
+                        isfiring = true;
+                        mover.Stop();
+                        weapon.StartFiring();
+                        raycastHitInfo.transform.GetComponentInChildren<PlayerHealther>().TakeDamage(10);
+                    }
+                    else
+                    {
+                        StopFiring();
+                    }
+                }
             }
         }
         else
@@ -61,8 +66,7 @@ public class EnemyShooter : MonoBehaviour
         
         
         if (isfiring)
-        {
-            Debug.Log("Firing");
+        {          
             weapon.raycastDestination = targetSightTransform;
             AimTarget();
             weapon.UpdateFiring(Time.deltaTime);
@@ -78,7 +82,7 @@ public class EnemyShooter : MonoBehaviour
     private void AimTarget()
     {
         Vector3 desiredDirection = targetSightTransform.position - sight.position;
-        transform.forward = Vector3.Slerp(sight.transform.forward, desiredDirection, Time.deltaTime) * aimSpeed;
+        transform.forward = Vector3.Slerp(sight.transform.forward, desiredDirection, aimSpeed * Time.deltaTime);
     }
 
     private void StopFiring()

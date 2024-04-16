@@ -14,7 +14,9 @@ public class ArrowController : MonoBehaviour
     {
         GameObject jugadorGO = GameObject.FindGameObjectWithTag("Player");
         jugador = jugadorGO.transform;
-        flechaInstance = Instantiate(flechaPrefab, jugador.position, Quaternion.identity);
+
+        Quaternion arrowRotation = Quaternion.Euler(0f, -90f, 0f);
+        flechaInstance = Instantiate(flechaPrefab, jugador.position, arrowRotation);
     }
 
     void Update()
