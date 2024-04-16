@@ -101,12 +101,16 @@ public class Weapon : MonoBehaviour
 
     void SimulateBullets(float deltaTime)
     {
+        bullets.RemoveAll(x => x == null);
+
         bullets.ForEach(bullet =>
         {
             Vector3 p0 = GetPosition(bullet);
             bullet.time += deltaTime;
             Vector3 p1 = GetPosition(bullet);
-            RaycastSegment(p0,p1,bullet);
+            Debug.Log($"Bullet: {bullet}, p0: {p0}, p1: {p1}");
+            RaycastSegment(p0, p1, bullet);
+            
         });
     }
     
