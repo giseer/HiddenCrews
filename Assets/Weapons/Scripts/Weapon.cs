@@ -26,6 +26,12 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private float bulletDrop = 0f;
 
+    [SerializeField] private float weaponRange = 50f;
+
+    [SerializeField] private float weaponDispersion = 0.25f;
+
+    [SerializeField] private int weaponDamage = 10;
+
     public ParticleSystem muzzleFlash;
 
     public ParticleSystem hitEffect;
@@ -108,7 +114,7 @@ public class Weapon : MonoBehaviour
             Vector3 p0 = GetPosition(bullet);
             bullet.time += deltaTime;
             Vector3 p1 = GetPosition(bullet);
-            Debug.Log($"Bullet: {bullet}, p0: {p0}, p1: {p1}");
+            //Debug.Log($"Bullet: {bullet}, p0: {p0}, p1: {p1}");
             RaycastSegment(p0, p1, bullet);
             
         });
@@ -128,9 +134,12 @@ public class Weapon : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitInfo, distance))
         {
-            hitEffect.transform.position = hitInfo.point;
-            hitEffect.transform.forward = hitInfo.normal;
-            hitEffect.Emit(1);
+            if(!hitInfo.transform.GetComponentInChildren<Healther>())
+            {
+                hitEffect.transform.position = hitInfo.point;
+                hitEffect.transform.forward = hitInfo.normal;
+                hitEffect.Emit(1);
+            }
 
             if (bullet.tracer)
             {
@@ -143,11 +152,6 @@ public class Weapon : MonoBehaviour
             {
                 rigidbody.AddForceAtPosition(ray.direction * 20, hitInfo.point, ForceMode.Impulse);
             }
-
-            if (hitInfo.transform.tag.Equals("Rival"))
-            {
-                hitInfo.transform.GetComponentInChildren<EnemyHealther>().TakeDamage();
-            }
         }
         else
         {
@@ -158,6 +162,8 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    private bool alreadyDamage = false;
+
     private void FireBullet()
     {
         if(raycastDestination)
@@ -167,13 +173,47 @@ public class Weapon : MonoBehaviour
                 return;
             }
 
+            alreadyDamage = false;
+
             currentAmmo--;
 
             muzzleFlash.Emit(1);
 
-            Vector3 velocity = (raycastDestination.position - raycastOrigin.position).normalized * bulletSpeed;
+            int decideDispersionRandomNumber = UnityEngine.Random.Range(0, 100);
+
+            Vector3 finalDestinationPosition = raycastDestination.position;
+
+            if(decideDispersionRandomNumber <= 10)
+            {
+                finalDestinationPosition += Vector3.up * weaponDispersion;
+            }
+            else if (decideDispersionRandomNumber <= 20 && decideDispersionRandomNumber > 10)
+            {
+                finalDestinationPosition += Vector3.down * weaponDispersion;
+            }
+            else if (decideDispersionRandomNumber <= 30 && decideDispersionRandomNumber > 20)
+            {
+                finalDestinationPosition += Vector3.right * weaponDispersion;
+            }
+            else if (decideDispersionRandomNumber <= 40 && decideDispersionRandomNumber > 30)
+            {
+                finalDestinationPosition += Vector3.left * weaponDispersion;
+            }
+
+            Vector3 velocity = (finalDestinationPosition - raycastOrigin.position).normalized * bulletSpeed;
             Bullet bullet = CreateBullet(raycastOrigin.position, velocity);
             bullets.Add(bullet);
+
+            RaycastHit hitInfo;
+
+            if(Physics.Raycast(raycastOrigin.position, (finalDestinationPosition - raycastOrigin.position).normalized, out hitInfo, weaponRange) && !alreadyDamage)
+            {
+                if(hitInfo.transform.GetComponentInParent<Healther>())
+                {
+                    hitInfo.transform.GetComponentInParent<Healther>().TakeDamage(weaponDamage);
+                    alreadyDamage = true;
+                }
+            }
         }        
     }
 
