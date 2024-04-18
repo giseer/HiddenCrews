@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
-    private PlayerMover playerMover;
+    public PlayerInputHandler playerInputHandler;
     public Transform target; // El objeto a seguir (usualmente el jugador)
     public GameObject enemyPrefab; // Prefab del enemigo
     public StarManager starManager;
@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     private int currentWaypoint = 0;
 
     public GameObject canvasSoborno;
+    public GameObject canvasArrow;
     private bool isFollowingPlayer = false;
 
     public List<GameObject> enemyList = new List<GameObject>();
@@ -76,6 +77,7 @@ public class EnemyMovement : MonoBehaviour
             if (distanceToTarget < contactDistance)
             {
                 canvasSoborno.SetActive(true);
+
                 StopEnemy();
                 
                 Cursor.visible = true;
@@ -139,11 +141,17 @@ public class EnemyMovement : MonoBehaviour
     public void StopEnemy()
     {
         navMeshAgent.isStopped = true;
+        playerInputHandler.enabled = false;
     }
 
     public void OnClick()
     {
         canvasSoborno.gameObject.SetActive(false);
+        canvasArrow.gameObject.SetActive(true);
+        starManager.starPrefab.SetActive(false);
+        starManager.starPrefab1.SetActive(false);
+        starManager.starPrefab2.SetActive(false);
+        playerInputHandler.enabled = true;
         detectionRange = 0f;
         isFollowingPlayer = false;
         navMeshAgent.isStopped = false;
