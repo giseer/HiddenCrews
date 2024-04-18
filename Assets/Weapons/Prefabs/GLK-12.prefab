@@ -5051,6 +5051,8 @@ MonoBehaviour:
   fireRate: 10
   bulletSpeed: 350
   bulletDrop: 9.8
+  weaponRange: 50
+  weaponDispersion: 0.25
   muzzleFlash: {fileID: 1967368315985223643}
   hitEffect: {fileID: 3609338362057999585}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,

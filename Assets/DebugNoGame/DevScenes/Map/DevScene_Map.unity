@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 5112.887, g: 3268.2427, b: 2396.965, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> de031610a61ba0633255d10f09819faf79f54773
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5635,7 +5639,11 @@ Transform:
   m_GameObject: {fileID: 458924891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -1475, y: -18, z: -1440}
+=======
+  m_LocalPosition: {x: -1475, y: -10, z: -1440}
+>>>>>>> de031610a61ba0633255d10f09819faf79f54773
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14990,7 +14998,11 @@ PrefabInstance:
     - target: {fileID: 5322896019932097925, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].x
+<<<<<<< HEAD
       value: 47.449593
+=======
+      value: 47.449635
+>>>>>>> de031610a61ba0633255d10f09819faf79f54773
       objectReference: {fileID: 0}
     - target: {fileID: 5322896019932097925, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -15035,12 +15047,12 @@ PrefabInstance:
     - target: {fileID: 5481771262325894322, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.14980996
+      value: 0.14980999
       objectReference: {fileID: 0}
     - target: {fileID: 5481771262325894322, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.01972646
+      value: 0.019726466
       objectReference: {fileID: 0}
     - target: {fileID: 5481771262325894322, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -15050,7 +15062,7 @@ PrefabInstance:
     - target: {fileID: 5481771262325894322, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.12905069
+      value: 0.1290507
       objectReference: {fileID: 0}
     - target: {fileID: 5748261146034919498, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -15104,6 +15116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879055067893974915, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
+<<<<<<< HEAD
       propertyPath: m_RotationAtRest.x
       value: -1.2866875
       objectReference: {fileID: 0}
@@ -15126,6 +15139,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TranslationAtRest.z
       value: -0.12962882
+=======
+      propertyPath: m_RotationAtRest.z
+      value: 133.64432
+>>>>>>> de031610a61ba0633255d10f09819faf79f54773
       objectReference: {fileID: 0}
     - target: {fileID: 5879055067893974915, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
