@@ -49,7 +49,8 @@ public class EnemyShooter : MonoBehaviour
                     {
                         isfiring = true;
                         mover.Stop();
-                        weapon.StartFiring();                       
+                        weapon.StartFiring();
+                        raycastHitInfo.transform.GetComponentInChildren<PlayerHealther>().TakeDamage(10);
                     }
                     else
                     {

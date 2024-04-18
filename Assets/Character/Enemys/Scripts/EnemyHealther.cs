@@ -2,23 +2,48 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyHealther : Healther
+public class EnemyHealther : MonoBehaviour
 {
+    [SerializeField] private int maxHealthPoints;
+    private int healthPoints;
+    [SerializeField] private SkinnedMeshRenderer renderer;
+
     public static int enemyCount;
 
     private void Awake()
     {
-        base.Awake();
         enemyCount++;
     }
 
-
-    protected override void Die()
+    private void Start()
     {
-        //Die animation - Temporalmente se usa destroy directamente pero lo que se tendria que hacer es activar
-        //                  el trigger de la animacion de muerte y esta cuando acabara salir del juego al menu principal o algun otro
+        healthPoints = maxHealthPoints;
+    }
 
+    [ContextMenu(nameof(TakeDamage))]
+    public void TakeDamage()
+    {
+        healthPoints -= 10;
+        if (healthPoints <= 0)
+        {
+            Die();
+        }
+        
+        StartCoroutine(Blink());
+    }
+
+    private void Die()
+    {
+        //Animacion de muerte
         enemyCount--;
         Destroy(gameObject);
+    }
+
+    IEnumerator Blink()
+    {
+        Color originalColor = renderer.material.color;
+        renderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.4f);
+        renderer.material.color = originalColor;
     }
 }
