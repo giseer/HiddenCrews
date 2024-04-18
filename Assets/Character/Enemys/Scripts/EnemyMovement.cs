@@ -78,7 +78,6 @@ public class EnemyMovement : MonoBehaviour
                 canvasSoborno.SetActive(true);
                 StopEnemy();
                 
-                detectionRange = 0f;
                 Cursor.visible = true;
                 Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
 
@@ -144,19 +143,12 @@ public class EnemyMovement : MonoBehaviour
 
     public void OnClick()
     {
-        // Desactivar el canvas de soborno
         canvasSoborno.gameObject.SetActive(false);
-
-        // Detener el seguimiento del jugador
+        detectionRange = 0f;
         isFollowingPlayer = false;
-
-        // Reactivar el movimiento del enemigo y establecer el destino al siguiente punto del camino predeterminado
         navMeshAgent.isStopped = false;
         SetDestinationToNextWaypoint();
-
-        // Hacer el cursor visible
         Cursor.visible = true;
-        // Restaurar el estado del cursor dependiendo de si el canvas de soborno está activo o no
         Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
     }
 

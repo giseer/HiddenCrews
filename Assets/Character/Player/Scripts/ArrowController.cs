@@ -4,35 +4,29 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    public Transform jugador; // Referencia al personaje que la flecha debe seguir
-    public GameObject objetivo; // Referencia al objetivo al que la flecha debe apuntar
-    private Vector3 posicionInicial; // Posición inicial de la flecha
-    private GameObject flechaInstance;
-    public GameObject flechaPrefab;
-
-    void Start()
-    {
-        GameObject jugadorGO = GameObject.FindGameObjectWithTag("Player");
-        jugador = jugadorGO.transform;
-
-        Quaternion arrowRotation = Quaternion.Euler(0f, -90f, 0f);
-        flechaInstance = Instantiate(flechaPrefab, jugador.position, arrowRotation);
-    }
+    public Transform player; // Referencia al jugador
+    public Transform target; // Objetivo al que la flecha debe apuntar
+    public Vector3 offset; // Desplazamiento de la flecha respecto al jugador
 
     void Update()
     {
-        MoverFlechaConJugador();
-    }
-
-    private void MoverFlechaConJugador()
-    {
-        flechaInstance.transform.position = jugador.position;
-
-        if (objetivo != null && objetivo.activeSelf)
+        // Si el jugador y el objetivo están definidos
+        if (player != null && target != null)
         {
-            Vector3 directionToCube = (objetivo.transform.position - flechaInstance.transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(directionToCube);
-            flechaInstance.transform.rotation = lookRotation;
+            // Calculamos la dirección hacia el objetivo desde la posición del jugador
+            Vector3 directionToTarget = (target.position - player.position).normalized;
+
+            // Calculamos la rotación hacia el objetivo
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+
+            // Aplicamos la rotación a la flecha, pero solo en el eje X
+            transform.rotation = Quaternion.Euler(90f, targetRotation.eulerAngles.y, 0f);
+
+            // Calculamos la posición adelante del jugador con un desplazamiento
+            Vector3 posicionAdelante = player.position + player.forward * offset.x + player.up * offset.y + player.right * offset.z;
+
+            // Posicionamos la flecha adelante del jugador con el desplazamiento
+            transform.position = posicionAdelante;
         }
     }
 }

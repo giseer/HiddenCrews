@@ -11,6 +11,7 @@ TagManager:
   - Product
   - FxTemporaire
   - Enemy
+  - Arrow
   layers:
   - Default
   - TransparentFX
