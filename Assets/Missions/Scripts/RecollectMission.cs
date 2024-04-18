@@ -30,12 +30,13 @@ public class RecollectMission : Mission
     public float alturaCubo = 1f;
     public float distanciaFlecha = 3f;
 
+    private int deactivatedProductCount = 0;
+
     private Vector3 posicionInicialCubo;
 
-
-    public GameObject flechaPrefab;
-    private GameObject flechaInstance;
     public GameObject puntoFinal;
+
+    private int entranceCount = 0;
 
     private Transform jugador;
 
@@ -52,13 +53,11 @@ public class RecollectMission : Mission
         posicionInicialCubo = cubo.transform.position;
         GameObject jugadorGO = GameObject.FindGameObjectWithTag("Player");
         jugador = jugadorGO.transform;
-        flechaInstance = Instantiate(flechaPrefab, jugador.position, Quaternion.identity);
     }
 
     private void Update()
     {
         CheckCubeDisappearance();
-        MoverFlechaConJugador();
 
         AparecerCubo();
 
@@ -130,26 +129,12 @@ public class RecollectMission : Mission
 
         if (mensajeTexto.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
+
             cubo.SetActive(false);
             cuboDesaparecido = true;
             rawImageInventory.gameObject.SetActive(true);
-            flechaInstance.gameObject.SetActive(false);
-            puntoFinal.gameObject.SetActive(true);
-
-
-            
-        }
-    }
-
-    private void MoverFlechaConJugador()
-    {
-        flechaInstance.transform.position = jugador.position;
-
-        if (cubo != null && cubo.activeSelf)
-        {
-            Vector3 directionToCube = (cubo.transform.position - flechaInstance.transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(directionToCube);
-            flechaInstance.transform.rotation = lookRotation;
+            mensajeTexto.SetActive(false);
+            puntoFinal.gameObject.SetActive(true);         
         }
     }
 

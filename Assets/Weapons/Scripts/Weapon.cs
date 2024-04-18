@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     }
 
     public WeaponManager.WeaponSlot weaponSlot;
-    
+
     public bool isFiring = false;
 
     [SerializeField] private int fireRate = 25;
@@ -29,6 +29,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float weaponRange = 50f;
 
     [SerializeField] private float weaponDispersion = 0.25f;
+
+    [SerializeField] private int precisionPercentage = 60;
 
     [SerializeField] private int weaponDamage = 10;
 
@@ -45,11 +47,11 @@ public class Weapon : MonoBehaviour
     public Transform raycastDestination;
 
     public bool meleeWeapon;
-    
+
     private Ray ray;
     private RaycastHit hitInfo;
     private float accumulatedTime;
-    
+
     public List<Bullet> bullets = new List<Bullet>();
     private float maxLifeTime = 3f;
 
@@ -80,7 +82,7 @@ public class Weapon : MonoBehaviour
         bullet.tracer.AddPosition(position);
         return bullet;
     }
-    
+
     public void StartFiring()
     {
         isFiring = true;
@@ -116,10 +118,10 @@ public class Weapon : MonoBehaviour
             Vector3 p1 = GetPosition(bullet);
             //Debug.Log($"Bullet: {bullet}, p0: {p0}, p1: {p1}");
             RaycastSegment(p0, p1, bullet);
-            
+
         });
     }
-    
+
     private void DestroyBullets()
     {
         bullets.RemoveAll(bullet => bullet.time >= maxLifeTime);
@@ -131,10 +133,10 @@ public class Weapon : MonoBehaviour
         float distance = (end - start).magnitude;
         ray.origin = start;
         ray.direction = direction;
-        
+
         if (Physics.Raycast(ray, out hitInfo, distance))
         {
-            if(!hitInfo.transform.GetComponentInChildren<Healther>())
+            if (!hitInfo.transform.GetComponentInChildren<Healther>())
             {
                 hitEffect.transform.position = hitInfo.point;
                 hitEffect.transform.forward = hitInfo.normal;
@@ -144,7 +146,7 @@ public class Weapon : MonoBehaviour
             if (bullet.tracer)
             {
                 bullet.tracer.transform.position = hitInfo.point;
-                bullet.time = maxLifeTime;   
+                bullet.time = maxLifeTime;
             }
 
             Rigidbody rigidbody = hitInfo.collider.GetComponent<Rigidbody>();
@@ -166,7 +168,7 @@ public class Weapon : MonoBehaviour
 
     private void FireBullet()
     {
-        if(raycastDestination)
+        if (raycastDestination)
         {
             if (currentAmmo <= 0)
             {
@@ -183,19 +185,17 @@ public class Weapon : MonoBehaviour
 
             Vector3 finalDestinationPosition = raycastDestination.position;
 
-            if(decideDispersionRandomNumber <= 10)
+            int inversePrecisionPercentage = (100 - precisionPercentage);
+
+            if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3)
             {
                 finalDestinationPosition += Vector3.up * weaponDispersion;
             }
-            else if (decideDispersionRandomNumber <= 20 && decideDispersionRandomNumber > 10)
-            {
-                finalDestinationPosition += Vector3.down * weaponDispersion;
-            }
-            else if (decideDispersionRandomNumber <= 30 && decideDispersionRandomNumber > 20)
+            else if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3 + inversePrecisionPercentage && decideDispersionRandomNumber > inversePrecisionPercentage / 3)
             {
                 finalDestinationPosition += Vector3.right * weaponDispersion;
             }
-            else if (decideDispersionRandomNumber <= 40 && decideDispersionRandomNumber > 30)
+            else if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3 + inversePrecisionPercentage * 2 && decideDispersionRandomNumber > inversePrecisionPercentage / 3 + inversePrecisionPercentage * 3)
             {
                 finalDestinationPosition += Vector3.left * weaponDispersion;
             }
@@ -206,15 +206,15 @@ public class Weapon : MonoBehaviour
 
             RaycastHit hitInfo;
 
-            if(Physics.Raycast(raycastOrigin.position, (finalDestinationPosition - raycastOrigin.position).normalized, out hitInfo, weaponRange) && !alreadyDamage)
+            if (Physics.Raycast(raycastOrigin.position, (finalDestinationPosition - raycastOrigin.position).normalized, out hitInfo, weaponRange) && !alreadyDamage)
             {
-                if(hitInfo.transform.GetComponentInParent<Healther>())
+                if (hitInfo.transform.GetComponentInParent<Healther>())
                 {
                     hitInfo.transform.GetComponentInParent<Healther>().TakeDamage(weaponDamage);
                     alreadyDamage = true;
                 }
             }
-        }        
+        }
     }
 
     public void StopFiring()

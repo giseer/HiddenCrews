@@ -22,6 +22,8 @@ public class Healther : MonoBehaviour
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
 
+        Debug.Log("They damage: " + amount);
+
         StartCoroutine(Blood());
 
         if (currentHealth == 0)
@@ -38,9 +40,9 @@ public class Healther : MonoBehaviour
     private IEnumerator Blood()
     {
         meshRenderer.material.color = Color.red;
-        
+
         yield return new WaitForSeconds(1f);
-        
+
         meshRenderer.material.color = originalColor;
     }
 }

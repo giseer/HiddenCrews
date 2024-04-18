@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f30ac9acd5b104a80eb2db777d9843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 0
   currentHealth: 0
 --- !u!195 &376563160078816533
 NavMeshAgent:
@@ -253,7 +253,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4145795566532405158}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
+  m_Radius: 0.25
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
@@ -581,10 +581,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.22671954
-  m_Height: 1.8402399
+  m_Radius: 0.2
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: -0.015389056, y: 0.92011994, z: 0.011330485}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &8963335968788954746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,17 +796,17 @@ PrefabInstance:
     - target: {fileID: 182415790221715079, guid: a769796e2b695ff42b4a415eb1da5bc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.079999715
+      value: 0.07999992
       objectReference: {fileID: 0}
     - target: {fileID: 182415790221715079, guid: a769796e2b695ff42b4a415eb1da5bc8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5010002
+      value: 1.5010004
       objectReference: {fileID: 0}
     - target: {fileID: 182415790221715079, guid: a769796e2b695ff42b4a415eb1da5bc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04000051
+      value: 0.04000044
       objectReference: {fileID: 0}
     - target: {fileID: 182415790221715079, guid: a769796e2b695ff42b4a415eb1da5bc8,
         type: 3}
@@ -856,7 +856,12 @@ PrefabInstance:
     - target: {fileID: 2655542422117794691, guid: a769796e2b695ff42b4a415eb1da5bc8,
         type: 3}
       propertyPath: weaponDispersion
-      value: 0.5
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655542422117794691, guid: a769796e2b695ff42b4a415eb1da5bc8,
+        type: 3}
+      propertyPath: precisionPercentage
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1013,6 +1018,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItalianMember1
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: d23e600319a00af46be063322661c188,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dca79c855cdcfb438737f9dfdb9f556, type: 2}
+    - target: {fileID: 8417361359673230750, guid: d23e600319a00af46be063322661c188,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1678ffdfac04adf4684db30ec72ef6f7, type: 2}
+    - target: {fileID: 8417361359673230750, guid: d23e600319a00af46be063322661c188,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 292265cff7bf3ec47b4495a322d8a94e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

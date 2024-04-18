@@ -5,7 +5,6 @@ using UnityEditor.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using System.Collections;
-using DG.Tweening;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -45,12 +44,13 @@ public class WeaponManager : MonoBehaviour
     
     private void Awake()
     {
-        ownedWeapons = new Weapon[weaponSlots.Length];
-        
-        foreach(Weapon weapon in GetComponentsInChildren<Weapon>())
+        Weapon existingWeapon = GetComponentInChildren<Weapon>();
+        if (existingWeapon)
         {
-            ChangeWeapon(weapon);
+            ChangeWeapon(existingWeapon);
         }
+        
+        ownedWeapons = new Weapon[weaponSlots.Length];
     }
 
     private void OnEnable()

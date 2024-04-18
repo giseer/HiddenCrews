@@ -22,7 +22,7 @@ public class EnemyShooter : MonoBehaviour
 
     private void Awake()
     {
-        mover    = GetComponentInChildren<EnemyMovement>();
+        mover = GetComponentInChildren<EnemyMovement>();
         reloader = GetComponentInChildren<EnemyWeaponReloader>();
     }
 
@@ -41,7 +41,6 @@ public class EnemyShooter : MonoBehaviour
             {
                 targetSightTransform = detectedCollider.transform.GetComponentInChildren<PlayerController>().sight;
 
-                //Debug.DrawLine(sight.position, targetSightTransform.position);
                 if (Physics.Raycast(sight.position, targetSightTransform.position - sight.position, out raycastHitInfo, shootDistance * 2))
                 {
 
@@ -49,7 +48,7 @@ public class EnemyShooter : MonoBehaviour
                     {
                         isfiring = true;
                         mover.Stop();
-                        weapon.StartFiring();                       
+                        weapon.StartFiring();
                     }
                     else
                     {
@@ -62,10 +61,10 @@ public class EnemyShooter : MonoBehaviour
         {
             StopFiring();
         }
-        
-        
+
+
         if (isfiring)
-        {          
+        {
             weapon.raycastDestination = targetSightTransform;
             AimTarget();
             weapon.UpdateFiring(Time.deltaTime);
