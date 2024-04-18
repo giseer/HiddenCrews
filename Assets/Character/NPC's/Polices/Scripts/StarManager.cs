@@ -16,31 +16,31 @@ public class StarManager : MonoBehaviour
     public void ActivateStars()
     {
         int numEnemies = enemyMovement.enemyList.Count;
-        if (numEnemies >= 1)
+        if (numEnemies == 1)
+        {
+            starPrefab.SetActive(true);
+            
+        }
+        if (numEnemies == 2)
         {
             starPrefab.SetActive(true);
             starPrefab1.SetActive(true);
+            
         }
-        if (numEnemies >= 2)
+        if (numEnemies == 3)
         {
             starPrefab.SetActive(true);
             starPrefab1.SetActive(true);
             starPrefab2.SetActive(true);
+            
         }
-        if (numEnemies >= 3)
+        if (numEnemies == 4)
         {
             starPrefab.SetActive(true);
             starPrefab1.SetActive(true);
             starPrefab2.SetActive(true);
             starPrefab3.SetActive(true);
-        }
-        if (numEnemies >= 4)
-        {
-            starPrefab.SetActive(true);
-            starPrefab1.SetActive(true);
-            starPrefab2.SetActive(true);
-            starPrefab3.SetActive(true);
-            starPrefab4.SetActive(true);
+            
         }
 
         else

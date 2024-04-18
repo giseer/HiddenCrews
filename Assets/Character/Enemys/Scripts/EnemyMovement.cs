@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
+    private PlayerMover playerMover;
     public Transform target; // El objeto a seguir (usualmente el jugador)
     public GameObject enemyPrefab; // Prefab del enemigo
     public StarManager starManager;
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     public float boostedSpeed = 6f;
     public float boostDuration = 2f; // Duraci�n de la velocidad aumentada
     public float decreaseDuration = 2f; // Duraci�n de la disminuci�n de velocidad
+    public float contactDistance = 1f;
     public float minSpeed = 1f; // Velocidad m�nima permitida
     public float decreaseRate = 1f; // Tasa de disminuci�n gradual
 
@@ -23,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform[] waypoints;
     private int currentWaypoint = 0;
 
+    public GameObject canvasSoborno;
     private bool isFollowingPlayer = false;
 
     public List<GameObject> enemyList = new List<GameObject>();
@@ -69,6 +72,20 @@ public class EnemyMovement : MonoBehaviour
 
             navMeshAgent.speed = boostedSpeed;
             navMeshAgent.SetDestination(target.position);
+
+            if (distanceToTarget < contactDistance)
+            {
+                canvasSoborno.SetActive(true);
+                StopEnemy();
+                
+                detectionRange = 0f;
+                Cursor.visible = true;
+                Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
+
+
+            }
+
+
         }
         else
         {
@@ -83,6 +100,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 SetDestinationToNextWaypoint();
             }
+            
         }
     }
 
@@ -117,6 +135,29 @@ public class EnemyMovement : MonoBehaviour
         previousSpeed = normalSpeed;
         normalSpeed = 0f;
         boostedSpeed = 0f;
+    }
+
+    public void StopEnemy()
+    {
+        navMeshAgent.isStopped = true;
+    }
+
+    public void OnClick()
+    {
+        // Desactivar el canvas de soborno
+        canvasSoborno.gameObject.SetActive(false);
+
+        // Detener el seguimiento del jugador
+        isFollowingPlayer = false;
+
+        // Reactivar el movimiento del enemigo y establecer el destino al siguiente punto del camino predeterminado
+        navMeshAgent.isStopped = false;
+        SetDestinationToNextWaypoint();
+
+        // Hacer el cursor visible
+        Cursor.visible = true;
+        // Restaurar el estado del cursor dependiendo de si el canvas de soborno está activo o no
+        Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
     }
 
     public void Move()
