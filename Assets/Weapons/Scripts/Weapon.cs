@@ -30,6 +30,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private float weaponDispersion = 0.25f;
 
+    [SerializeField] private int precisionPercentage = 60;
+
     [SerializeField] private int weaponDamage = 10;
 
     public ParticleSystem muzzleFlash;
@@ -183,19 +185,17 @@ public class Weapon : MonoBehaviour
 
             Vector3 finalDestinationPosition = raycastDestination.position;
 
-            if (decideDispersionRandomNumber <= 10)
+            int inversePrecisionPercentage = (100 - precisionPercentage);
+
+            if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3)
             {
                 finalDestinationPosition += Vector3.up * weaponDispersion;
             }
-            else if (decideDispersionRandomNumber <= 20 && decideDispersionRandomNumber > 10)
-            {
-                finalDestinationPosition += Vector3.down * weaponDispersion;
-            }
-            else if (decideDispersionRandomNumber <= 30 && decideDispersionRandomNumber > 20)
+            else if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3 + inversePrecisionPercentage && decideDispersionRandomNumber > inversePrecisionPercentage / 3)
             {
                 finalDestinationPosition += Vector3.right * weaponDispersion;
             }
-            else if (decideDispersionRandomNumber <= 40 && decideDispersionRandomNumber > 30)
+            else if (decideDispersionRandomNumber <= inversePrecisionPercentage / 3 + inversePrecisionPercentage * 2 && decideDispersionRandomNumber > inversePrecisionPercentage / 3 + inversePrecisionPercentage * 3)
             {
                 finalDestinationPosition += Vector3.left * weaponDispersion;
             }

@@ -22,6 +22,8 @@ public class Healther : MonoBehaviour
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
 
+        Debug.Log("They damage: " + amount);
+
         StartCoroutine(Blood());
 
         if (currentHealth == 0)
