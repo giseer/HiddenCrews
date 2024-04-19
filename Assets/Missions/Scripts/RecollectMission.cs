@@ -62,7 +62,7 @@ public class RecollectMission : Mission
     {
         CheckCubeDisappearance();
 
-        AparecerCubo();
+        //AparecerCubo();
 
         
 
@@ -137,7 +137,7 @@ public class RecollectMission : Mission
             cuboDesaparecido = true;
             rawImageInventory.gameObject.SetActive(true);
             mensajeTexto.SetActive(false);
-            puntoFinal.gameObject.SetActive(true);         
+            //puntoFinal.gameObject.SetActive(true);         
         }
     }
 
