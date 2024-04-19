@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5110.196, g: 3267.0278, b: 2396.555, a: 1}
+  m_IndirectSpecularColor: {r: 4604.1313, g: 3253.3774, b: 3225.7192, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4752,6 +4752,8 @@ Transform:
   - {fileID: 2070342393}
   - {fileID: 1921134704}
   - {fileID: 302879060}
+  - {fileID: 1165573485}
+  - {fileID: 1702777346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &373277171 stripped
@@ -5545,12 +5547,17 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 359430596}
     m_Modifications:
     - target: {fileID: 3160525105014393502, guid: 05942ef8a7343bb4597f7aed16f10ae1,
         type: 3}
       propertyPath: m_Name
       value: FBX_valla de metal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0163653
       objectReference: {fileID: 0}
     - target: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
         type: 3}
@@ -7527,7 +7534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649017918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11249429, y: 0.000000032263564, z: -0.000000003652652, w: 0.9936524}
+  m_LocalRotation: {x: 0.11249429, y: -0.000000035291794, z: 0.0000000039954866, w: 0.9936524}
   m_LocalPosition: {x: -16.273651, y: 2.561587, z: -21.241917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12519,6 +12526,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1778813986}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1165573485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1438121098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1167600183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1416197233782677242, guid: c3c5195f95921054c88218ceb8c41d5c,
@@ -16123,12 +16136,12 @@ PrefabInstance:
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.15014403
+      value: 0.150144
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.01699824
+      value: 0.016998237
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -16222,12 +16235,17 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 359430596}
     m_Modifications:
     - target: {fileID: 3160525105014393502, guid: 05942ef8a7343bb4597f7aed16f10ae1,
         type: 3}
       propertyPath: m_Name
       value: FBX_valla de metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0163653
       objectReference: {fileID: 0}
     - target: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
         type: 3}
@@ -18575,6 +18593,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c5195f95921054c88218ceb8c41d5c, type: 3}
+--- !u!4 &1702777346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5778141886318086837, guid: 05942ef8a7343bb4597f7aed16f10ae1,
+    type: 3}
+  m_PrefabInstance: {fileID: 442953907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1710684387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1416197233782677242, guid: c3c5195f95921054c88218ceb8c41d5c,
@@ -23897,7 +23921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1286638997412349304 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+  m_CorrespondingSourceObject: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
     type: 3}
   m_PrefabInstance: {fileID: 6645376049922222923}
   m_PrefabAsset: {fileID: 0}
@@ -24466,57 +24490,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 359430596}
     m_Modifications:
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 66.3
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 71.8
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.27711186
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00000001871669
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.96083766
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000011285246
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 147.824
       objectReference: {fileID: 0}
-    - target: {fileID: 1905951195410364021, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7179926612706803567, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2124534817636540527, guid: 2c8ae44984fc72942b1f3224849caca7,
+    - target: {fileID: 7561519147104036309, guid: 946ec4a795e187540a528ddefa2b56d0,
         type: 3}
       propertyPath: m_Name
       value: Sede_Latinos_Exterior
@@ -24525,7 +24549,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2c8ae44984fc72942b1f3224849caca7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 946ec4a795e187540a528ddefa2b56d0, type: 3}
 --- !u!1001 &8067585027850491134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24765,5 +24789,3 @@ SceneRoots:
   - {fileID: 1983318941}
   - {fileID: 1848106949}
   - {fileID: 1607967033}
-  - {fileID: 1438121098}
-  - {fileID: 442953907}
