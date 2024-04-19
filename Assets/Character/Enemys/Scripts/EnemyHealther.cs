@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyHealther : Healther
 {
     public static int enemyCount;
+    public GameObject canvasProduct;
+    public GameObject canvasProductSmall;
+    public GameObject canvasEnemy;
+    public float timeDuration = 2f;
 
     private void Awake()
     {
@@ -20,5 +24,13 @@ public class EnemyHealther : Healther
 
         enemyCount--;
         Destroy(gameObject);
+
+        if(enemyCount <= 0)
+        {
+            canvasProduct.SetActive(true);
+            canvasEnemy.SetActive(false);
+        }
     }
+
+    
 }

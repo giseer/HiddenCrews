@@ -29,5 +29,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DebugNoGame/DevScenes/DevScene_PoliceWithMap.unity
     guid: 295cfcadc29a3af46bd4e232258615e0
+  - enabled: 1
+    path: Assets/DebugNoGame/DevScenes/DevScene_SceneTutorial.unity
+    guid: 6d95656947bfa0347a837a46c0880110
+  - enabled: 1
+    path: Assets/DebugNoGame/DevScenes/DevScene_Gameplay.unity
+    guid: 18c968be163b53541a2fee2f2bd8401c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

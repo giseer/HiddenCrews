@@ -31,7 +31,6 @@ public class StarManager : MonoBehaviour
         {
             starPrefab.SetActive(true);
             starPrefab1.SetActive(true);
-            starPrefab2.SetActive(true);
             
         }
         if (numEnemies == 4)

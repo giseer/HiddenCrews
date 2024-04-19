@@ -21,6 +21,8 @@ public class RecollectMission : Mission
     public float radio = 3f;
     public GameObject mensajeTexto;
     public GameObject cubo;
+    public GameObject canvasTextProduct;
+    public GameObject canvasTextProductSmall;
     public Canvas inventoryCanvas;
     public RawImage rawImageInventory;
     private bool dentroDelArea = false;
@@ -124,6 +126,7 @@ public class RecollectMission : Mission
         if (dentroDelArea && !cuboDesaparecido)
         {
             mensajeTexto.SetActive(true);
+            canvasTextProduct.SetActive(false);
         }
         else
         {
@@ -132,7 +135,7 @@ public class RecollectMission : Mission
 
         if (mensajeTexto.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
-
+            canvasTextProductSmall.SetActive(true);
             cubo.SetActive(false);
             cuboDesaparecido = true;
             rawImageInventory.gameObject.SetActive(true);
