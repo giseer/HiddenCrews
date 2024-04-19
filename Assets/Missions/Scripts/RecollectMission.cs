@@ -7,6 +7,7 @@ public class RecollectMission : Mission
 {
     private Products product;
     private Transform location;
+    public CanvasController canvasController;
 
     [SerializeField] private float missionTime;
 
@@ -28,13 +29,15 @@ public class RecollectMission : Mission
     public float distanciaDelante = 2f;
     public float distanciaPermitida = 2f;
     public float alturaCubo = 1f;
-    public float distanciaFlecha = 3f;
+
+    public GameObject systemDoor;
 
     private int deactivatedProductCount = 0;
 
     private Vector3 posicionInicialCubo;
 
     public GameObject puntoFinal;
+    public GameObject arrow;
 
     private int entranceCount = 0;
 
@@ -59,7 +62,7 @@ public class RecollectMission : Mission
     {
         CheckCubeDisappearance();
 
-        AparecerCubo();
+        //AparecerCubo();
 
         
 
@@ -134,7 +137,28 @@ public class RecollectMission : Mission
             cuboDesaparecido = true;
             rawImageInventory.gameObject.SetActive(true);
             mensajeTexto.SetActive(false);
-            puntoFinal.gameObject.SetActive(true);         
+            //puntoFinal.gameObject.SetActive(true);         
+        }
+    }
+
+    void OnDisable()
+    {
+        int activeProductCount = 0;
+        foreach (GameObject product in GameObject.FindGameObjectsWithTag("Product"))
+        {
+            if (product.activeInHierarchy)
+            {
+                activeProductCount++;
+            }
+        }
+
+        activeProductCount--;
+
+        if (activeProductCount == -1)
+        {
+            systemDoor.SetActive(true);
+            arrow.SetActive(true);
+            canvasController.ActivateCanvasForDuration();
         }
     }
 

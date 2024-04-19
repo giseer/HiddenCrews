@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DebugNoGame/DevScenes/DevScene Timelines/DevScene_TalkinWithBoss.unity
     guid: 0dc16e28afdda7e48a76152c5cd0f5df
+  - enabled: 1
+    path: Assets/DebugNoGame/DevScenes/DevScene_PoliceWithMap.unity
+    guid: 295cfcadc29a3af46bd4e232258615e0
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
