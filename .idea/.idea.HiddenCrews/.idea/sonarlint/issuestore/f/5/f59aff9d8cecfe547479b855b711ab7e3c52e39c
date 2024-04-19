@@ -1,3 +1,4 @@
 
-Ocsharpsquid:S2190Y"2Add a way to break out of this method's recursion.(ù—ò¦
-:csharpsquid:S125}"Remove this commented out code.(Ò¯¶
+{csharpsquid:S3776,"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(®±®“üÿÿÿÿ8âü‰ºï1
+Ocsharpsquid:S2190l"2Add a way to break out of this method's recursion.(ù—ò¦
+;csharpsquid:S125¦"Remove this commented out code.(Ò¯¶
