@@ -16,14 +16,11 @@ public class InventoryInteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            player.SetActive(inventoryCanvas.gameObject.activeSelf);
+            //player.SetActive(inventoryCanvas.gameObject.activeSelf);
 
             inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
 
-            Cursor.visible = inventoryCanvas.gameObject.activeSelf;
-
-            // Bloquear o desbloquear el cursor según el estado del mercado
-            Cursor.lockState = inventoryCanvas.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
+            
 
         }
     }

@@ -27,6 +27,9 @@ public class EnemyMovement : MonoBehaviour
 
     public GameObject canvasSoborno;
     public GameObject canvasArrow;
+    public GameObject canvasTextPolice;
+    public GameObject controllerDoor;
+    public CanvasController canvasController;
     private bool isFollowingPlayer = false;
 
     public List<GameObject> enemyList = new List<GameObject>();
@@ -43,22 +46,22 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            starManager.SpawnTwoEnemiesAndStars();
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            starManager.SpawnThreeEnemiesAndStars();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            starManager.SpawnFourEnemiesAndStars();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            starManager.SpawnFiveEnemiesAndStars();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    starManager.SpawnTwoEnemiesAndStars();
+        //}
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    starManager.SpawnThreeEnemiesAndStars();
+        //}
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    starManager.SpawnFourEnemiesAndStars();
+        //}
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    starManager.SpawnFiveEnemiesAndStars();
+        //}
 
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
@@ -151,10 +154,13 @@ public class EnemyMovement : MonoBehaviour
         starManager.starPrefab.SetActive(false);
         starManager.starPrefab1.SetActive(false);
         starManager.starPrefab2.SetActive(false);
+        canvasTextPolice.gameObject.SetActive(false);
+        controllerDoor.gameObject.SetActive(true);
         playerInputHandler.enabled = true;
         detectionRange = 0f;
         isFollowingPlayer = false;
         navMeshAgent.isStopped = false;
+        canvasController.enabled = true;
         SetDestinationToNextWaypoint();
         Cursor.visible = true;
         Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;

@@ -8,6 +8,7 @@ public class EnemyHealther : Healther
     public GameObject canvasProduct;
     public GameObject canvasProductSmall;
     public GameObject canvasEnemy;
+    public GameObject doorController;
     public float timeDuration = 2f;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class EnemyHealther : Healther
         {
             canvasProduct.SetActive(true);
             canvasEnemy.SetActive(false);
+            doorController.SetActive(true);
         }
     }
 

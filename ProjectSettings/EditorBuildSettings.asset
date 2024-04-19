@@ -35,5 +35,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DebugNoGame/DevScenes/DevScene_Gameplay.unity
     guid: 18c968be163b53541a2fee2f2bd8401c
+  - enabled: 1
+    path: Assets/DebugNoGame/DevScenes/DevScene Timelines/DevScene_DeadGang.unity
+    guid: a46526ae07d93c5488afe9e8ab3a4dff
+  - enabled: 1
+    path: Assets/DebugNoGame/DevScenes/DevScene_GameplayFinal.unity
+    guid: cae8889a90f683049b0a4d704035fcde
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -7,7 +7,7 @@ public class RecollectMission : Mission
 {
     private Products product;
     private Transform location;
-    public CanvasController canvasController;
+    public Controller controller;
 
     [SerializeField] private float missionTime;
 
@@ -133,7 +133,7 @@ public class RecollectMission : Mission
             mensajeTexto.SetActive(false);
         }
 
-        if (mensajeTexto.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if (mensajeTexto.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
             canvasTextProductSmall.SetActive(true);
             cubo.SetActive(false);
@@ -161,7 +161,7 @@ public class RecollectMission : Mission
         {
             systemDoor.SetActive(true);
             arrow.SetActive(true);
-            canvasController.ActivateCanvasForDuration();
+            controller.ActivateCanvasForDuration();
         }
     }
 

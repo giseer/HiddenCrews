@@ -11,7 +11,7 @@ public class ObjectActivationInfo
     public float activationDuration;
 }
 
-public class Prueba : MonoBehaviour
+public class CanvasController : MonoBehaviour
 {
     public List<ObjectActivationInfo> activationInfos = new List<ObjectActivationInfo>();
 
