@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InventoryInteraction : MonoBehaviour
@@ -8,23 +11,27 @@ public class InventoryInteraction : MonoBehaviour
     public GameObject inventoryCanvas;
 
     public GameObject player;
-    // Start is called before the first frame update
 
+    public InputActionReference inventory;
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        inventory.action.Enable();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (inventory.action.WasPerformedThisFrame())
         {
-            //player.SetActive(inventoryCanvas.gameObject.activeSelf);
-
             inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
 
-            
-
+            Cursor.lockState = inventoryCanvas.gameObject.activeSelf? CursorLockMode.None: CursorLockMode.Locked;
         }
     }
     
-
+    private void OnDisable()
+    {
+        inventory.action.Disable();
+    }
     
 }

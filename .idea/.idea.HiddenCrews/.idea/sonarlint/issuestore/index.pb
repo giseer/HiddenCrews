@@ -39,3 +39,7 @@ f
 6Assets/Character/Enemys/Scripts/EnemyWeaponReloader.cs,0\5\05bcf5154ec5b4971a4f8d742ee50662c377c12f
 T
 $Assets/Character/Scripts/Healther.cs,a\3\a314e31e51e108e2a71d6832aae1007590fb68b7
+`
+0Assets/Inventory/Scripts/InventoryInteraction.cs,e\a\ea7fbaaa7433884faba3f92d49c1d278f029f875
+]
+-Assets/Navigation/Scripts/NavigatorManager.cs,2\0\207ed7a59fc3f2010ac290d7011702e679c5bf95
