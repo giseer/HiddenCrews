@@ -3751,14 +3751,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.35177112, b: 0.35177112, a: 1}
+  m_Color: {r: 1, g: 0.80182916, b: 0.5330188, a: 0.8156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 24fc1119b332e3e4aa69c5081ac03b6e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1ac57f9d249c92d41b174bd8b7bf4774, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

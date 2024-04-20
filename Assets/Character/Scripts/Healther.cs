@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,7 +23,7 @@ public class Healther : MonoBehaviour
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
 
-        Debug.Log("Me estan haciendo dañoo");
+        Debug.Log("Me estan haciendo daï¿½oo");
 
         StartCoroutine(Blood());
 

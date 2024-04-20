@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
-using UnityEditor.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using System.Collections;
