@@ -37,3 +37,5 @@ _
 0Assets/Character/Enemys/Scripts/EnemyMovement.cs,f\5\f59aff9d8cecfe547479b855b711ab7e3c52e39c
 f
 6Assets/Character/Enemys/Scripts/EnemyWeaponReloader.cs,0\5\05bcf5154ec5b4971a4f8d742ee50662c377c12f
+T
+$Assets/Character/Scripts/Healther.cs,a\3\a314e31e51e108e2a71d6832aae1007590fb68b7

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   subtitleText: 'Boss: Necesito que vayas y te encargues de recuperar nuestros productos
-    que habian en el almacen '
+    que habian en el almacen. Hazlo por nuestra familia'
 --- !u!114 &-8550505604180105668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a5c6f01a6c8324da9d336a16e22d50, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Khalid: Que ha pasado?'
+  subtitleText: 'Khalil: Que ha pasado?'
 --- !u!74 &1654033833577907162
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a5c6f01a6c8324da9d336a16e22d50, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Khalid: En el almacen? Como puede ser?'
+  subtitleText: 'Khalil: En el almacen? Como puede ser?'
 --- !u!114 &8288454718609591712
 MonoBehaviour:
   m_ObjectHideFlags: 1

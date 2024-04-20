@@ -1,3 +1,4 @@
 
-{csharpsquid:S3776N"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ôá‡ııÿÿÿÿ8¬ß½µì1
-Rcsharpsquid:S1066S"/Merge this if statement with the enclosing one.(´ï†|8â»çµì1
+{csharpsquid:S3776M"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ôá‡ııÿÿÿÿ8¬ß½µì1
+Rcsharpsquid:S1066R"/Merge this if statement with the enclosing one.(´ï†|8â»çµì1
+Ccsharpsquid:S125"Remove this commented out code.(Ş‘ö‡8¥ÜÔĞï1
