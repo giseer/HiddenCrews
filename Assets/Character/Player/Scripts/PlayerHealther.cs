@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealther : Healther
 {
     [SerializeField] HealthDisplayer healthDisplayer;
 
     [SerializeField] GameObject dieCanvas;
+
+    [SerializeField] string sceneToLoad;
 
     private void UpdateHealthHUD(int healthPoints)
     {
@@ -19,5 +22,13 @@ public class PlayerHealther : Healther
 
         Time.timeScale = 0.5f;
         dieCanvas.SetActive(true);
+
+        Invoke(nameof(GoToMainMenu), 5f);
+    }
+
+    private void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

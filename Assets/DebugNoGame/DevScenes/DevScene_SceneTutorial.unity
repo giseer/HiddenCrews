@@ -4894,6 +4894,7 @@ MonoBehaviour:
   currentHealth: 0
   healthDisplayer: {fileID: 0}
   dieCanvas: {fileID: 35577670}
+  sceneToLoad: DevScene_SceneTutorial
 --- !u!1001 &1384380109
 PrefabInstance:
   m_ObjectHideFlags: 0
