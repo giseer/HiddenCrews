@@ -9,9 +9,7 @@ using UnityEngine.UI;
 public class InventoryInteraction : MonoBehaviour
 {
     public GameObject inventoryCanvas;
-
     public GameObject player;
-
     public InputActionReference inventory;
 
     private void OnEnable()

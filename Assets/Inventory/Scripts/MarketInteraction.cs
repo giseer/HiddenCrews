@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class MarketInteraction : MonoBehaviour
 {
     public GameObject marketCanvas;
-    public List<Canvas> listaDeCanvas;
-    public List<Button> armaMarket1;
-    public RawImage otroCanvas;
+    public List<Canvas> listCanvas;
+    public List<Button> WeaponMarket1;
+    public RawImage otherCanvas;
     public GameObject player;
 
-    private Canvas canvasActivo;
+    private Canvas canvasActive;
 
     void Start()
     {
-        foreach (var canvas in listaDeCanvas)
+        foreach (var canvas in listCanvas)
         {
             Button button = canvas.GetComponentInChildren<Button>();
             if (button != null)
@@ -25,9 +25,9 @@ public class MarketInteraction : MonoBehaviour
             }
         }
 
-        if (listaDeCanvas.Count > 0)
+        if (listCanvas.Count > 0)
         {
-            canvasActivo = listaDeCanvas[0];
+            canvasActive = listCanvas[0];
         }
     }
 
@@ -39,42 +39,42 @@ public class MarketInteraction : MonoBehaviour
         }
     }
 
-    public void OnClick(Canvas nuevoCanvas)
+    public void OnClick(Canvas newCanvas)
     {
-        DesactivarTodosLosCanvas();
+        DisableAllCanvas();
 
-        ActivarCanvasMensaje(nuevoCanvas);
+        ActivateCanvasMessage(newCanvas);
 
-        canvasActivo = nuevoCanvas;
+        canvasActive = newCanvas;
     }
 
     public void OnClickButton(Button armaMarket2)
     {
-        if (armaMarket1.Contains(armaMarket2))
+        if (WeaponMarket1.Contains(armaMarket2))
         {
             armaMarket2.GetComponent<Button>().enabled = false;
 
             armaMarket2.onClick = new Button.ButtonClickedEvent();
 
-            armaMarket2.transform.SetParent(otroCanvas.transform, false);
+            armaMarket2.transform.SetParent(otherCanvas.transform, false);
             armaMarket2.gameObject.SetActive(true);
 
-            int index = armaMarket1.IndexOf(armaMarket2);
+            int index = WeaponMarket1.IndexOf(armaMarket2);
 
-            if (index >= 0 && index < listaDeCanvas.Count)
+            if (index >= 0 && index < listCanvas.Count)
             {
-                Canvas canvasMensaje = listaDeCanvas[index];
+                Canvas canvasMensaje = listCanvas[index];
 
-                ActivarCanvasMensaje(canvasMensaje);
+                ActivateCanvasMessage(canvasMensaje);
             }
         }
     }
 
-    void DesactivarTodosLosCanvas()
+    void DisableAllCanvas()
     {
-        foreach (var canvas in listaDeCanvas)
+        foreach (var canvas in listCanvas)
         {
-            DesactivarCanvasMensaje(canvas);
+            DisableCanvasMessage(canvas);
         }
     }
 
@@ -90,12 +90,12 @@ public class MarketInteraction : MonoBehaviour
 
         if (!marketCanvas.gameObject.activeSelf)
         {
-            DesactivarCanvasMensaje(canvasActivo);
-            DesactivarTodosLosCanvas();
+            DisableCanvasMessage(canvasActive);
+            DisableAllCanvas();
         }
     }
 
-    public void ActivarCanvasMensaje(Canvas canvas)
+    public void ActivateCanvasMessage(Canvas canvas)
     {
         if (canvas != null)
         {
@@ -103,7 +103,7 @@ public class MarketInteraction : MonoBehaviour
         }
     }
 
-    public void DesactivarCanvasMensaje(Canvas canvas)
+    public void DisableCanvasMessage(Canvas canvas)
     {
         if (canvas != null)
         {

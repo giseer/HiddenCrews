@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class EnemyHealther : Healther
 {
+    [Header("Enemy Count")]
     public static int enemyCount;
+
+    [Header("GameObjects Canvas")]
     public GameObject canvasProduct;
     public GameObject canvasProductSmall;
     public GameObject canvasEnemy;
     public GameObject doorController;
+
+    [Header("Time")]
     public float timeDuration = 2f;
 
     private void Awake()
@@ -20,9 +25,6 @@ public class EnemyHealther : Healther
 
     protected override void Die()
     {
-        //Die animation - Temporalmente se usa destroy directamente pero lo que se tendria que hacer es activar
-        //                  el trigger de la animacion de muerte y esta cuando acabara salir del juego al menu principal o algun otro
-
         enemyCount--;
         Destroy(gameObject);
 
