@@ -14,9 +14,17 @@ public class PlayerAnimationsHandler : MonoBehaviour
         DOTween.To(() => animator.GetFloat("z"),
             x => animator.SetFloat("z", x),
             normalizedLocalDirection.z, 1f);
+    }
 
-        //animator.SetFloat("x", normalizedLocalDirection.x);
-        //animator.SetFloat("z", normalizedLocalDirection.z);
+    public void StopAnimateMovement()
+    {
+        DOTween.To(() => animator.GetFloat("x"),
+            x => animator.SetFloat("x", x),
+            0, 1f);
+
+        DOTween.To(() => animator.GetFloat("z"),
+            x => animator.SetFloat("z", x),
+            0, 1f);
     }
 
     public void AnimateJump()

@@ -5,6 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public enum EnemyType
+    {
+        Police,
+        BandMember
+    }
+    
+    public EnemyType enemyType;
+    
     private NavMeshAgent navMeshAgent;
     public PlayerInputHandler playerInputHandler;
     public Transform target; // El objeto a seguir (usualmente el jugador)
@@ -32,6 +40,8 @@ public class EnemyMovement : MonoBehaviour
     public CanvasController canvasController;
     private bool isFollowingPlayer = false;
 
+    public Animator animator;
+
     public List<GameObject> enemyList = new List<GameObject>();
     
 
@@ -46,30 +56,13 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    starManager.SpawnTwoEnemiesAndStars();
-        //}
-        //if (Input.GetKeyDown(KeyCode.U))
-        //{
-        //    starManager.SpawnThreeEnemiesAndStars();
-        //}
-        //if (Input.GetKeyDown(KeyCode.I))
-        //{
-        //    starManager.SpawnFourEnemiesAndStars();
-        //}
-        //if (Input.GetKeyDown(KeyCode.O))
-        //{
-        //    starManager.SpawnFiveEnemiesAndStars();
-        //}
-
-
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
         if (distanceToTarget < detectionRange)
         {
-            if (!isFollowingPlayer)
+            if (!isFollowingPlayer && enemyType == EnemyType.Police)
             {
+                animator.SetBool("IsRunning", true);                
                 isFollowingPlayer = true;
                 ActivateStar(); // Activar la estrella cuando el enemigo detecta al jugador
             }
@@ -77,23 +70,21 @@ public class EnemyMovement : MonoBehaviour
             navMeshAgent.speed = boostedSpeed;
             navMeshAgent.SetDestination(target.position);
 
-            if (distanceToTarget < contactDistance)
+            if (distanceToTarget < contactDistance && enemyType == EnemyType.Police)
             {
                 canvasSoborno.SetActive(true);
 
                 StopEnemy();
                 
                 Cursor.visible = true;
-                Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
-
-
+                Cursor.lockState = CursorLockMode.None;
             }
 
 
         }
         else
         {
-            if (isFollowingPlayer)
+            if (isFollowingPlayer && enemyType == EnemyType.Police)
             {
                 isFollowingPlayer = false;
                 DeactivateStar(); // Desactivar la estrella cuando el enemigo pierde al jugador
@@ -145,6 +136,8 @@ public class EnemyMovement : MonoBehaviour
     {
         navMeshAgent.isStopped = true;
         playerInputHandler.enabled = false;
+        animator.SetBool("IsRunning", false);
+        target.GetComponentInChildren<PlayerAnimationsHandler>().StopAnimateMovement();
     }
 
     public void OnClick()
@@ -163,7 +156,7 @@ public class EnemyMovement : MonoBehaviour
         canvasController.enabled = true;
         SetDestinationToNextWaypoint();
         Cursor.visible = true;
-        Cursor.lockState = canvasSoborno.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Move()
@@ -177,6 +170,11 @@ public class EnemyMovement : MonoBehaviour
         navMeshAgent.SetDestination(waypoints[currentWaypoint].position);
 
         currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+
+        if (enemyType == EnemyType.Police)
+        {
+            animator.SetBool("IsRunning", true);
+        }
     }
 
     void ActivateStar()

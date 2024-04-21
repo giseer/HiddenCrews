@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5421.6978, g: 3674.938, b: 3241.4458, a: 1}
+  m_IndirectSpecularColor: {r: 5439.6313, g: 3671.4263, b: 3196.934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21179,6 +21179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4550137379993357018, guid: cdc5c68a756cfd547b91565d9d052c70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6783509065827075108, guid: cdc5c68a756cfd547b91565d9d052c70,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -24485,6 +24490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fc642dc6e15bc4e900ed92d076427e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactuar: {fileID: -6895632394837720059, guid: 28b03a8539433db4092c7a5f5aafa48d,
+    type: 3}
   sceneName: DevScene_SceneTutorial
   canvasAlmacen: {fileID: 592657182}
   canvasDoor: {fileID: 8871201169627442052}

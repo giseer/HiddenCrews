@@ -43,3 +43,15 @@ $Assets/Character/Scripts/Healther.cs,a\3\a314e31e51e108e2a71d6832aae1007590fb6
 0Assets/Inventory/Scripts/InventoryInteraction.cs,e\a\ea7fbaaa7433884faba3f92d49c1d278f029f875
 ]
 -Assets/Navigation/Scripts/NavigatorManager.cs,2\0\207ed7a59fc3f2010ac290d7011702e679c5bf95
+D
+Assets/DoorSystem.cs,1\2\12c3c04a39a63b6fd3a6012f57ec06586af0e0f1
+e
+5Assets/Character/NPC's/Polices/Scripts/StarManager.cs,c\3\c3266b95146377dfd294e62d5fd63bd74b38cad3
+[
++Assets/Missions/Scripts/RecollectMission.cs,c\5\c5bb7f2eec96655fbc0f82df17157ad5fb416193
+Z
+*Assets/SistemaDialogo/Script/Controller.cs,1\1\117dd365bfcfd1b9389234b7ffc5c1d06b00d517
+S
+#Assets/Canvas/Scripts/ShowCursor.cs,6\8\68bdf8fc036b885445f07fc339dfe8bf46cb48f1
+Z
+*Assets/Canvas/Scripts/ShowCursorOnAwake.cs,9\7\97a1c1248fba4a691f04750c361a9bf64874d476

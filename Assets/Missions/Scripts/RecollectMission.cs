@@ -161,6 +161,7 @@ public class RecollectMission : Mission
         {
             systemDoor.SetActive(true);
             arrow.SetActive(true);
+            canvasTextProductSmall.SetActive(false);
             controller.ActivateCanvasForDuration();
         }
     }
