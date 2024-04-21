@@ -10,40 +10,49 @@ public class EnemyMovement : MonoBehaviour
         Police,
         BandMember
     }
-    
-    public EnemyType enemyType;
-    
-    private NavMeshAgent navMeshAgent;
-    public PlayerInputHandler playerInputHandler;
-    public Transform target; // El objeto a seguir (usualmente el jugador)
-    public GameObject enemyPrefab; // Prefab del enemigo
-    public StarManager starManager;
-    public float detectionRange = 7f;
-    public float spawnRadius = 5f;
 
-    public float normalSpeed = 3f;
-    public float boostedSpeed = 6f;
-    public float boostDuration = 2f; // Duraci�n de la velocidad aumentada
-    public float decreaseDuration = 2f; // Duraci�n de la disminuci�n de velocidad
-    public float contactDistance = 1f;
-    public float minSpeed = 1f; // Velocidad m�nima permitida
-    public float decreaseRate = 1f; // Tasa de disminuci�n gradual
+    public EnemyType enemyType;
+
+    private NavMeshAgent navMeshAgent;
+
+    [Header("Components")]
+    public PlayerInputHandler playerInputHandler;
+    public Transform target; 
+    public GameObject enemyPrefab; 
+    public StarManager starManager;
+
+    [Header("Detection Settings")]
+    public float detectionRange = 7f; // Rango de detección del enemigo con el jugador
+    public float spawnRadius = 5f; // Aparición de los enemigos 
+
+    [Header("Speed Settings")]
+    public float normalSpeed = 3f; // Velocidad normal del enemigo
+    public float boostedSpeed = 6f; // Velocidad aumentada del enemigo
+    public float boostDuration = 2f; // Duración de la velocidad aumentada
+    public float decreaseDuration = 2f; // Duración de la disminución de velocidad
+    public float contactDistance = 1f; // Distancia entre el enemigo y el jugador
+    public float minSpeed = 1f; // Velocidad mínima permitida
+    public float decreaseRate = 1f; // Disminución gradual
 
     private float previousSpeed;
     public Transform[] waypoints;
     private int currentWaypoint = 0;
 
+    [Header("UI Elements")]
     public GameObject canvasSoborno;
     public GameObject canvasArrow;
     public GameObject canvasTextPolice;
     public GameObject controllerDoor;
     public CanvasController canvasController;
+
     private bool isFollowingPlayer = false;
 
+    [Header("Animations")]
     public Animator animator;
 
+    [Header("Enemy List")]
     public List<GameObject> enemyList = new List<GameObject>();
-    
+
 
     void Start()
     {
@@ -64,7 +73,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 animator.SetBool("IsRunning", true);                
                 isFollowingPlayer = true;
-                ActivateStar(); // Activar la estrella cuando el enemigo detecta al jugador
+                ActivateStar(); 
             }
 
             navMeshAgent.speed = boostedSpeed;
@@ -87,7 +96,7 @@ public class EnemyMovement : MonoBehaviour
             if (isFollowingPlayer && enemyType == EnemyType.Police)
             {
                 isFollowingPlayer = false;
-                DeactivateStar(); // Desactivar la estrella cuando el enemigo pierde al jugador
+                DeactivateStar(); 
             }
 
             navMeshAgent.speed = normalSpeed;
