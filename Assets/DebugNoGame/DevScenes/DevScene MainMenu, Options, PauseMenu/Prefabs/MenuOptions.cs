@@ -10,13 +10,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] InputActionReference pause;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionsCourse;
-    [SerializeField] bool menuOpened;
 
     // Start is called before the first frame update
-    private void Awake()
-    {
-        menuOpened = false;
-    }
     private void OnEnable()
     {
         pause.action.performed += PauseGame;
@@ -31,25 +26,20 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        Cursor.visible = pauseMenu.gameObject.activeSelf;
-
-        Cursor.lockState = pauseMenu.gameObject.activeSelf ? CursorLockMode.Locked : CursorLockMode.None;
-
-        if (menuOpened)
+        if (pauseMenu.activeSelf == false)
         {
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
-            menuOpened = false;
-
         }
         else
         {
-            menuOpened = true;
             ResumeGameplay();
         }
     }
     public void ResumeGameplay()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
         pauseMenu.SetActive(false);
     }
@@ -62,9 +52,6 @@ public class PauseMenu : MonoBehaviour
     {
         optionsCourse.SetActive(true);
         pauseMenu.SetActive(false);
-        Cursor.visible = optionsCourse.gameObject.activeSelf;
-
-        Cursor.lockState = optionsCourse.gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.None;
     }
 
 }

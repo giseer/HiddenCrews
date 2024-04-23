@@ -13,6 +13,7 @@ public class ButtonNavigation : MonoBehaviour
 
     void LoadScene()
     {
+        Time.timeScale = 1f;
         NavigatorManager.LoadScene(sceneToLoad);
     }
 

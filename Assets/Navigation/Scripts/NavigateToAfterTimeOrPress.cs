@@ -47,6 +47,8 @@ public class NavigateToAfterTimeOrPress : MonoBehaviour
 
     void NavigateToNextScene()
     {
+        Time.timeScale = 1f;
+
         NavigatorManager.LoadScene(sceneToNavigateTo); 
 
         if(unblockMouseAfterTransition)
