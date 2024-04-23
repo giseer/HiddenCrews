@@ -8,7 +8,9 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float speed = 1.1f;
 
     [SerializeField] private float sprintSpeed = 3f;
-    
+
+    private float initialSpeed;
+
     private Vector3 _velocity;
     
     [Header("Jump Values")]
@@ -28,6 +30,11 @@ public class PlayerMover : MonoBehaviour
     {
         mainCamera = Camera.main.transform;
         animationer = GetComponentInChildren<PlayerAnimationsHandler>();
+    }
+
+    private void Start()
+    {
+        initialSpeed = speed;
     }
 
     private void LateUpdate()
@@ -95,5 +102,17 @@ public class PlayerMover : MonoBehaviour
         normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
 
         animationer.AnimateMovement(normalizedLocalDirection);
+    }
+
+    [ContextMenu(nameof(SpeedCheat))]
+    private void SpeedCheat()
+    {
+        speed = 50f;
+    }
+
+    [ContextMenu(nameof(NormalSpeed))]
+    private void NormalSpeed()
+    {
+        speed = initialSpeed;
     }
 }

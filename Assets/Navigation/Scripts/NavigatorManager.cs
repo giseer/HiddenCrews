@@ -19,7 +19,7 @@ public class NavigatorManager : MonoBehaviour
 
     private void Start()
     {
-        LoadScene(firstSceneToLoad);
+        StartCoroutine(LoadSceneCoroutine(firstSceneToLoad));
     }
 
     public static void LoadScene(string sceneName)
@@ -29,10 +29,9 @@ public class NavigatorManager : MonoBehaviour
 
     private void LoadSceneInternal(string sceneName)
     {
-        Debug.Log(_lastLoadedScene.name);
         if (!sceneName.Equals(""))
         {
-            StartCoroutine(LoadSceneCoroutine(sceneName));
+            StartCoroutine(LoadSceneCoroutine(sceneName));         
         }        
     }
 
@@ -46,27 +45,28 @@ public class NavigatorManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(sceneName));
     }
 
-
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        if(_lastLoadedScene.isLoaded)
+        if (_lastLoadedScene.isLoaded)
         {
             Tween fadeOut = _canvasGroup.DOFade(1f, 3f);
             Debug.Log("Descargo " + _lastLoadedScene);
+
             while (!fadeOut.playedOnce)
             {
                 yield return null;
             }
+
             yield return new WaitForSeconds(3f);
-            
+
             AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(_lastLoadedScene);
             while (!unloadOperation.isDone)
             {
                 yield return null;
             }
         }
-        
-        
+
+
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!loadOperation.isDone)
         {

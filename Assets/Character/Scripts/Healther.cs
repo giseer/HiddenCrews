@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class Healther : MonoBehaviour
 {
-    [SerializeField] int maxHealth;
-    [SerializeField] int currentHealth;
+    [SerializeField] protected int maxHealth;
+    [SerializeField] protected int currentHealth;
 
     protected UnityEvent<int> OnHealthChanged = new();
 
@@ -19,7 +19,7 @@ public class Healther : MonoBehaviour
         originalColor = meshRenderer.material.color;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
 

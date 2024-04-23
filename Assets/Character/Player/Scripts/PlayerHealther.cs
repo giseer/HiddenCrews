@@ -15,6 +15,13 @@ public class PlayerHealther : Healther
         healthDisplayer.updateHealthHUD(healthPoints);
     }
 
+    public override void TakeDamage(int amount)
+    {
+        base.TakeDamage(amount);
+
+        UpdateHealthHUD(currentHealth);
+    }
+
     protected override void Die()
     {
         //Die animation - Temporalmente se usa destroy directamente pero lo que se tendria que hacer es activar

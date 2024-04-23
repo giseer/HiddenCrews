@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 1560114988318120162}
   - component: {fileID: 6375630070483237315}
   - component: {fileID: 2510503876452902025}
+  - component: {fileID: 7944549136917938384}
   m_Layer: 5
   m_Name: FailedCanvas
   m_TagString: Untagged
@@ -238,6 +239,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7944549136917938384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960268886990163034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae0c06d63fbbff4fbe71cf4074be416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToNavigateTo: MainMenu
+  waitTime: 1.5
+  skip: {fileID: 0}
+  unblockMouseAfterTransition: 1
 --- !u!1 &9047098106712144920
 GameObject:
   m_ObjectHideFlags: 0
