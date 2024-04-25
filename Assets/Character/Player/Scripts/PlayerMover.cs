@@ -26,6 +26,9 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     private PlayerAnimationsHandler animationer;
 
+    [Header("Debug")]
+    private bool cheatActive;
+
     private void Awake()
     {
         mainCamera = Camera.main.transform;
@@ -40,6 +43,20 @@ public class PlayerMover : MonoBehaviour
     private void LateUpdate()
     {
         UpdateVerticalMovement();
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            if(cheatActive)
+            {
+                cheatActive = false;
+                NormalSpeed();
+            }
+            else
+            {
+                cheatActive = true;
+                SpeedCheat();
+            }
+        }
     }
 
     private void UpdateVerticalMovement()
