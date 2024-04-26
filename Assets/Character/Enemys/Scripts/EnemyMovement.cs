@@ -67,44 +67,47 @@ public class EnemyMovement : MonoBehaviour
     {
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-        if (distanceToTarget < detectionRange)
+        if(navMeshAgent != null && navMeshAgent.enabled)
         {
-            if (!isFollowingPlayer && enemyType == EnemyType.Police)
+            if (distanceToTarget < detectionRange)
             {
-                animator.SetBool("IsRunning", true);                
-                isFollowingPlayer = true;
-                ActivateStar(); 
+                if (!isFollowingPlayer && enemyType == EnemyType.Police)
+                {
+                    animator.SetBool("IsRunning", true);
+                    isFollowingPlayer = true;
+                    ActivateStar();
+                }
+
+                navMeshAgent.speed = boostedSpeed;
+                navMeshAgent.SetDestination(target.position);
+
+                if (distanceToTarget < contactDistance && enemyType == EnemyType.Police)
+                {
+                    canvasSoborno.SetActive(true);
+
+                    StopEnemy();
+
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+
+
             }
-
-            navMeshAgent.speed = boostedSpeed;
-            navMeshAgent.SetDestination(target.position);
-
-            if (distanceToTarget < contactDistance && enemyType == EnemyType.Police)
+            else
             {
-                canvasSoborno.SetActive(true);
+                if (isFollowingPlayer && enemyType == EnemyType.Police)
+                {
+                    isFollowingPlayer = false;
+                    DeactivateStar();
+                }
 
-                StopEnemy();
-                
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                navMeshAgent.speed = normalSpeed;
+                if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+                {
+                    SetDestinationToNextWaypoint();
+                }
+
             }
-
-
-        }
-        else
-        {
-            if (isFollowingPlayer && enemyType == EnemyType.Police)
-            {
-                isFollowingPlayer = false;
-                DeactivateStar(); 
-            }
-
-            navMeshAgent.speed = normalSpeed;
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
-            {
-                SetDestinationToNextWaypoint();
-            }
-            
         }
     }
 
