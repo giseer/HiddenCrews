@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504d5aee7809c2b4baf6c183da2de87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: DevScene_TalkinWithBoss
+  sceneToLoad: Cinematic1
 --- !u!1 &1050719681
 GameObject:
   m_ObjectHideFlags: 0

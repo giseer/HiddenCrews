@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5439.637, g: 3671.3853, b: 3196.8638, a: 1}
+  m_IndirectSpecularColor: {r: 5439.602, g: 3671.4302, b: 3196.934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9263,7 +9263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649017918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11249429, y: 0.00000004237613, z: -0.000000004797525, w: 0.9936524}
+  m_LocalRotation: {x: 0.11249429, y: 0.000000032263564, z: -0.000000003652652, w: 0.9936524}
   m_LocalPosition: {x: 111.409996, y: 2.561587, z: 76.49773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18960,12 +18960,12 @@ PrefabInstance:
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.15014404
+      value: 0.15014403
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.016998243
+      value: 0.01699824
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -23782,7 +23782,7 @@ MonoBehaviour:
   pause: {fileID: -596437754790805892, guid: 28b03a8539433db4092c7a5f5aafa48d, type: 3}
   pauseMenu: {fileID: 1017845590}
   optionsCourse: {fileID: 93533913}
-  player: {fileID: 1937856240}
+  playerInput: {fileID: 0}
 --- !u!4 &1806156568
 Transform:
   m_ObjectHideFlags: 0
@@ -27353,7 +27353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactuar: {fileID: -6895632394837720059, guid: 28b03a8539433db4092c7a5f5aafa48d,
     type: 3}
-  sceneName: DevScene_DeadGang
+  sceneName: Cinematic2
   canvasAlmacen: {fileID: 592657182}
   canvasDoor: {fileID: 8871201169627442052}
 --- !u!65 &2043049132

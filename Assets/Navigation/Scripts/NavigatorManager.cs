@@ -34,7 +34,8 @@ public class NavigatorManager : MonoBehaviour
         if (!sceneName.Equals("") && !loading)
         {
             loading = true;
-            StartCoroutine(LoadSceneCoroutine(sceneName));         
+
+            StartCoroutine(LoadSceneCoroutine(sceneName));       
         }        
     }
 
