@@ -11,10 +11,16 @@ public class DoorSystem : MonoBehaviour
     public string sceneName;
     public GameObject canvasAlmacen;
     public GameObject canvasDoor;
+    private bool open;
 
     private void OnEnable()
     {
         interactuar.action.Enable();
+    }
+
+    private void Start()
+    {
+        open = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,8 +44,9 @@ public class DoorSystem : MonoBehaviour
 
     private void Update()
     {
-        if (canvasDoor.activeSelf && interactuar.action.WasPerformedThisFrame())
+        if (canvasDoor.activeSelf && interactuar.action.WasPerformedThisFrame() && !open)
         {
+            open = true;
             NavigatorManager.LoadScene(sceneName);
         }
     }

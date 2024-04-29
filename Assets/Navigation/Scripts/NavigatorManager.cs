@@ -10,6 +10,7 @@ public class NavigatorManager : MonoBehaviour
     [SerializeField] private string firstSceneToLoad;
     private CanvasGroup _canvasGroup;
     private Scene _lastLoadedScene;
+    private bool loading;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class NavigatorManager : MonoBehaviour
 
     private void Start()
     {
+        loading = false;
         StartCoroutine(LoadSceneCoroutine(firstSceneToLoad));
     }
 
@@ -29,8 +31,9 @@ public class NavigatorManager : MonoBehaviour
 
     private void LoadSceneInternal(string sceneName)
     {
-        if (!sceneName.Equals(""))
+        if (!sceneName.Equals("") && !loading)
         {
+            loading = true;
             StartCoroutine(LoadSceneCoroutine(sceneName));         
         }        
     }
@@ -70,6 +73,7 @@ public class NavigatorManager : MonoBehaviour
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!loadOperation.isDone)
         {
+            loading = false;
             yield return null;
         }
         
