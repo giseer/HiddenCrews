@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] InputActionReference pause;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionsCourse;
+    [SerializeField] PlayerInputHandler playerInput;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -26,11 +27,13 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        if (pauseMenu.activeSelf == false)
+        if (pauseMenu.activeSelf == false && optionsCourse.activeSelf == false)
         {
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
+            playerInput.enabled = false;
+            
         }
         else
         {
@@ -42,16 +45,22 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
         pauseMenu.SetActive(false);
+        optionsCourse.SetActive(false);
+        playerInput.enabled = true;
+
     }
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        playerInput.enabled = true;
     }
 
     public void Options()
     {
         optionsCourse.SetActive(true);
         pauseMenu.SetActive(false);
+        playerInput.enabled = false;
+
     }
 
 }
