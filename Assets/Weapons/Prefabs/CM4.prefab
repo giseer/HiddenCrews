@@ -4974,7 +4974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: cf9ca3216b0ab9241a7f7a101fafcc50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5050,6 +5050,10 @@ MonoBehaviour:
   fireRate: 10
   bulletSpeed: 350
   bulletDrop: 9.8
+  weaponRange: 50
+  weaponDispersion: 0.25
+  precisionPercentage: 60
+  weaponDamage: 10
   muzzleFlash: {fileID: 1967368315985223643}
   hitEffect: {fileID: 3609338362057999585}
   tracerEffect: {fileID: 3779087554190095981, guid: cb16f119e2437e24dac1ac653d0240df,
@@ -5124,7 +5128,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: cf9ca3216b0ab9241a7f7a101fafcc50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
