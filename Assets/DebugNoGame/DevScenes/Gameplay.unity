@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5440.272, g: 3671.4067, b: 3196.3794, a: 1}
+  m_IndirectSpecularColor: {r: 5434.0396, g: 3668.0923, b: 3194.727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26663,7 +26663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactuar: {fileID: -6895632394837720059, guid: 28b03a8539433db4092c7a5f5aafa48d,
     type: 3}
-  sceneName: DevScene_SceneTutorial
+  sceneName: TutorialScene
   canvasAlmacen: {fileID: 592657182}
   canvasDoor: {fileID: 8871201169627442052}
 --- !u!65 &2043049132

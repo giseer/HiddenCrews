@@ -869,7 +869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &805163742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,6 +2442,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d78bf42d5f19644950e03d688c307f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XSensSlider: {fileID: 0}
+  minXSens: 0
+  maxXSens: 0
+  YSensSlider: {fileID: 0}
+  minYSens: 0
+  maxYSens: 0
+  camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
