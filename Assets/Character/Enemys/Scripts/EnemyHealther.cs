@@ -13,6 +13,8 @@ public class EnemyHealther : Healther
     public GameObject canvasEnemy;
     public GameObject doorController;
 
+    public Reputation reputation;
+
     [Header("Time")]
     public float timeDuration = 2f;
 
@@ -20,6 +22,9 @@ public class EnemyHealther : Healther
     {
         base.Awake();
         enemyCount++;
+
+
+
     }
 
 
@@ -28,7 +33,13 @@ public class EnemyHealther : Healther
         enemyCount--;
         Destroy(gameObject);
 
-        if(enemyCount <= 0)
+        if (reputation != null)
+        {
+            
+            reputation.AumentarReputacion();
+        }
+
+        if (enemyCount <= 0)
         {
             canvasProduct.SetActive(true);
             canvasEnemy.SetActive(false);

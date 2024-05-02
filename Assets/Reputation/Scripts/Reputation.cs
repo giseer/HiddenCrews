@@ -11,8 +11,6 @@ public class Reputation : MonoBehaviour
     private int reputacion = 0;
     public int cantidadDeSubida = 10;
     public int valorMaximo = 0;
-    public KeyCode teclaAumento = KeyCode.Space;
-    public KeyCode teclaBajar = KeyCode.DownArrow;
 
     public static Reputation Instance { get; private set; }
 
@@ -31,41 +29,15 @@ public class Reputation : MonoBehaviour
         UpdateText();
     }
 
-
-    void Update()
+    public void AumentarReputacion()
     {
-        if (Input.GetKeyDown(teclaAumento))
-        {
-            if (reputacion < valorMaximo && sliderReputacionSubeBaja.value == sliderReputacionSube.value)
-            {
-                reputacion += cantidadDeSubida;
-                AumentarReputacion();
-            }
-            else
-            {
-                Debug.Log("No puedes aumentar la reputación en este momento.");
-            }
-        }
+        Debug.Log("SUBIENDO REPUTACION!");
 
-        if (Input.GetKeyDown(teclaAumento))
-        {
-            sliderReputacionSubeBaja.value += cantidadDeSubida;
-        }
-
-        if (Input.GetKeyDown(teclaBajar))
-        {
-            sliderReputacionSubeBaja.value -= cantidadDeSubida;
-        }
-    }
-
-    void AumentarReputacion()
-    {
-              
         reputacion = Mathf.Max(0, reputacion);
-        UpdateText();
-        
+        reputacion += cantidadDeSubida;
+        sliderReputacionSube.value = reputacion; // Actualiza el valor del Slider
         PlayerPrefs.SetInt("reputacion", reputacion);
-      
+
     }
 
     private void UpdateText()
