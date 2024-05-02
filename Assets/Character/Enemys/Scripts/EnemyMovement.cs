@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class EnemyMovement : MonoBehaviour
     public CanvasController canvasController;
 
     private bool isFollowingPlayer = false;
+
+    public TextMeshProUGUI dineroText;
 
     [Header("Animations")]
     public Animator animator;
@@ -163,6 +166,7 @@ public class EnemyMovement : MonoBehaviour
         controllerDoor.gameObject.SetActive(true);
         playerInputHandler.enabled = true;
         detectionRange = 0f;
+        dineroText.text = "$0";
         isFollowingPlayer = false;
         navMeshAgent.isStopped = false;
         canvasController.enabled = true;
