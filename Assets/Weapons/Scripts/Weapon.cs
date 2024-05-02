@@ -34,6 +34,12 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private int weaponDamage = 10;
 
+    [SerializeField] private AudioClip weaponSound;
+
+    public AudioClip reloadSound;
+
+    public AudioSource audioSource;
+
     public ParticleSystem muzzleFlash;
 
     public ParticleSystem hitEffect;
@@ -64,6 +70,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         currentAmmo = clipSize;
+        audioSource.clip = weaponSound;
     }
 
     Vector3 GetPosition(Bullet bullet)
@@ -178,6 +185,9 @@ public class Weapon : MonoBehaviour
             alreadyDamage = false;
 
             currentAmmo--;
+
+            audioSource.clip = weaponSound;
+            audioSource.Play();
 
             muzzleFlash.Emit(1);
 

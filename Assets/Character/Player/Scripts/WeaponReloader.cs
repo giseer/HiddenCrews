@@ -40,6 +40,8 @@ public class WeaponReloader : MonoBehaviour
             if (reload.action.WasPerformedThisFrame() || currentWeapon.currentAmmo <= 0 && !currentWeapon.meleeWeapon)
             {
                 rigController.SetTrigger("reload_weapon");
+                currentWeapon.audioSource.clip = currentWeapon.reloadSound;
+                currentWeapon.audioSource.Play();
             }
 
             if (currentWeapon.isFiring)

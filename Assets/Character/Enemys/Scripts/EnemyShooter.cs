@@ -72,6 +72,7 @@ public class EnemyShooter : MonoBehaviour
             if (weapon.currentAmmo <= 0)
             {
                 reloader.Reload(weapon);
+
             }
         }
     }
