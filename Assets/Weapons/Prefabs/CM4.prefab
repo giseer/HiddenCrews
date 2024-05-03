@@ -5185,6 +5185,7 @@ MonoBehaviour:
   precisionPercentage: 60
   weaponDamage: 10
   weaponSound: {fileID: 8300000, guid: 9de1a08344450a44f96381bb3eb5d361, type: 3}
+  reloadSound: {fileID: 8300000, guid: ce8d0daace84a8845b466f861245b97d, type: 3}
   audioSource: {fileID: 2939969588484496157}
   muzzleFlash: {fileID: 1967368315985223643}
   hitEffect: {fileID: 3609338362057999585}
