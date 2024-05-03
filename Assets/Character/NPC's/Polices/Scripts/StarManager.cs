@@ -8,8 +8,8 @@ public class StarManager : MonoBehaviour
     public GameObject starPrefab;
     public GameObject starPrefab1;
     public GameObject starPrefab2;
-    public GameObject starPrefab3;
-    public GameObject starPrefab4;
+    //public GameObject starPrefab3;
+    //public GameObject starPrefab4;
     private bool isPlayerInsideRange = false;
 
     
@@ -38,7 +38,7 @@ public class StarManager : MonoBehaviour
             starPrefab.SetActive(true);
             starPrefab1.SetActive(true);
             starPrefab2.SetActive(true);
-            starPrefab3.SetActive(true);
+            //starPrefab3.SetActive(true);
             
         }
 
@@ -54,8 +54,8 @@ public class StarManager : MonoBehaviour
         starPrefab.SetActive(false);
         starPrefab1.SetActive(false);
         starPrefab2.SetActive(false);
-        starPrefab3.SetActive(false);
-        starPrefab4.SetActive(false);
+        //starPrefab3.SetActive(false);
+        //starPrefab4.SetActive(false);
 
     }
 
@@ -145,7 +145,7 @@ public class StarManager : MonoBehaviour
         int numEnemies = enemyMovement.enemyList.Count;
         if (numEnemies >= 3)
         {
-            starPrefab3.SetActive(true);
+            //starPrefab3.SetActive(true);
         }
 
     }
@@ -175,7 +175,7 @@ public class StarManager : MonoBehaviour
         int numEnemies = enemyMovement.enemyList.Count;
         if (numEnemies >= 4)
         {
-            starPrefab4.SetActive(true);
+            //starPrefab4.SetActive(true);
         }
 
     }

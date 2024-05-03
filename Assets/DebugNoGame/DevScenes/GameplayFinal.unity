@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5430.6196, g: 3673.184, b: 3217.7466, a: 1}
+  m_IndirectSpecularColor: {r: 5406.678, g: 3679.2095, b: 3285.9653, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9368,7 +9368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649017918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11249429, y: -0.000000035291794, z: 0.0000000039954866, w: 0.9936524}
+  m_LocalRotation: {x: 0.11249429, y: 0.00000004237613, z: -0.000000004797525, w: 0.9936524}
   m_LocalPosition: {x: 111.409996, y: 2.561587, z: 76.49773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15836,6 +15836,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1488760869}
   m_LocalEulerAnglesHint: {x: 0, y: 83.67, z: 0}
+--- !u!114 &1221766307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1421910181200680038, guid: 6459cf48105618f4bb528938d82beb7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2023434333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1225347328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5076911904854226812, guid: 56a4ec0b9d4319846b0a8cb6c0aeddee,
@@ -17885,6 +17897,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReputationController
       objectReference: {fileID: 0}
+    - target: {fileID: 9136314247394307205, guid: ecff5c40fb9fd7540b79dc62d82e5597,
+        type: 3}
+      propertyPath: sliderReputacionSube
+      value: 
+      objectReference: {fileID: 2050865065}
+    - target: {fileID: 9136314247394307205, guid: ecff5c40fb9fd7540b79dc62d82e5597,
+        type: 3}
+      propertyPath: sliderReputacionSubeBaja
+      value: 
+      objectReference: {fileID: 2050865065}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19135,12 +19157,12 @@ PrefabInstance:
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.150144
+      value: 0.15014404
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.016998237
+      value: 0.016998243
       objectReference: {fileID: 0}
     - target: {fileID: 8015415329337315378, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -21824,7 +21846,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dineroText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1221766307}
     - target: {fileID: 1864732381788090309, guid: cdf27ffca6e4a0042bf01157a46a3929,
         type: 3}
       propertyPath: canvasArrow
@@ -23962,7 +23984,7 @@ MonoBehaviour:
   pause: {fileID: -596437754790805892, guid: 28b03a8539433db4092c7a5f5aafa48d, type: 3}
   pauseMenu: {fileID: 1017845590}
   optionsCourse: {fileID: 93533913}
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 1937856247}
 --- !u!4 &1806156568
 Transform:
   m_ObjectHideFlags: 0
@@ -27708,6 +27730,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 715001342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2050865065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8713757564031628586, guid: aabd85d46dcb3b64bb777e86587d4ddf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2406475900296380879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2054680365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29135,7 +29169,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dineroText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1221766307}
     - target: {fileID: 1864732381788090309, guid: cdf27ffca6e4a0042bf01157a46a3929,
         type: 3}
       propertyPath: canvasArrow

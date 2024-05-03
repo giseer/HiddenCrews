@@ -51,7 +51,7 @@ e
 +Assets/Missions/Scripts/RecollectMission.cs,c\5\c5bb7f2eec96655fbc0f82df17157ad5fb416193
 Z
 *Assets/SistemaDialogo/Script/Controller.cs,1\1\117dd365bfcfd1b9389234b7ffc5c1d06b00d517
-S
-#Assets/Canvas/Scripts/ShowCursor.cs,6\8\68bdf8fc036b885445f07fc339dfe8bf46cb48f1
 Z
 *Assets/Canvas/Scripts/ShowCursorOnAwake.cs,9\7\97a1c1248fba4a691f04750c361a9bf64874d476
+W
+'Assets/Reputation/Scripts/Reputation.cs,1\0\108d8ae2f1871f7e50ead97c3b5c5590b64f8764

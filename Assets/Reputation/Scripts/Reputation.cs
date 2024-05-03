@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Reputation : MonoBehaviour
 {
-    public Text reputacionText;
+    //public Text reputacionText;
     public Slider sliderReputacionSubeBaja;
     public Slider sliderReputacionSube;
     private int reputacion = 0;
@@ -42,7 +42,7 @@ public class Reputation : MonoBehaviour
 
     private void UpdateText()
     {
-        reputacionText.text = "Reputación: " + reputacion;
+        //reputacionText.text = "Reputacion: " + reputacion;
         sliderReputacionSube.value = reputacion;
     }
 
