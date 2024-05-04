@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7218084089388423864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -104.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000014305115
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -96.83
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.048340198
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9988309
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 174.458
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d77c4d388151e5f4aa65a41b9641bd5a,
+        type: 3}
+      propertyPath: m_Name
+      value: PersonajeItaliano1@Smoking
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d77c4d388151e5f4aa65a41b9641bd5a, type: 3}
