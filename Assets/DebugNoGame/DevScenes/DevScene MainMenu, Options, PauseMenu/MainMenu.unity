@@ -178,8 +178,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: HIDDEN CREWS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -774,8 +775,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: SALIR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1529,7 +1531,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369553608}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6387142266249371442, guid: 30b33ba573a6b834cb0873f9a9e12fc4,
     type: 2}
@@ -1810,8 +1812,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "CR\xC9DITOS"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1954,8 +1957,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2179,8 +2183,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: JUGAR DEMO
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

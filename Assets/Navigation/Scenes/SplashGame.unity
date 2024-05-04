@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 288566942}
   - component: {fileID: 288566941}
   - component: {fileID: 288566940}
+  - component: {fileID: 288566944}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -221,6 +222,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!81 &288566944
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288566939}
+  m_Enabled: 1
 --- !u!1 &311975056
 GameObject:
   m_ObjectHideFlags: 0
