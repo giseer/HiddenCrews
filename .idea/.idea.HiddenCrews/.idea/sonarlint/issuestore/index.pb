@@ -59,3 +59,5 @@ W
 QAssets/DebugNoGame/DevScenes/DevScene MainMenu, Options, PauseMenu/Resolutions.cs,0\8\089384ad262aa51ae36d4590d3e9a57301f54797
 y
 ILibrary/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorUtility.cs,a\2\a26b24129e695191d213c94ac3b1ef6642115363
+~
+NAssets/DebugNoGame/DevScenes/DevScene Timelines/Cinematic1/Voices/RecordMic.cs,4\0\40d448df4c6bfa05e9d69cbb7d85bd00324baffe
