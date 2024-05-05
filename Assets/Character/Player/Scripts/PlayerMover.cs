@@ -18,6 +18,7 @@ public class PlayerMover : MonoBehaviour
     public float jumpForce = 1f;
     private bool isGround = true;
     private bool alreadyJump = false;
+    [SerializeField] private float groundDistanceDetection = 1f;
     
     [Header("Camera Values")]
     [HideInInspector] public Transform mainCamera;
@@ -45,6 +46,16 @@ public class PlayerMover : MonoBehaviour
 
     private void LateUpdate()
     {
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, groundDistanceDetection))
+        {
+            if (hitInfo.transform.tag.Equals("ground") && alreadyJump)
+            {
+                isGround = true;
+                alreadyJump = false;
+            }
+        }
+        
         UpdateVerticalMovement();
 
         if(Input.GetKeyDown(KeyCode.L))
@@ -84,7 +95,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (isGround && !alreadyJump)
         {
-            Debug.Log("alreadyJump: " + alreadyJump);
+            isGround = false;
             alreadyJump = true;
             _velocity.y = jumpForce;
             animationer.AnimateJump();
@@ -124,26 +135,6 @@ public class PlayerMover : MonoBehaviour
         normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
 
         animationer.AnimateMovement(normalizedLocalDirection);
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Hola");
-        if (other.transform.tag.Equals("ground"))
-        {
-            Debug.Log("On collisionEnter " + alreadyJump + " isground: " + isGround);
-            isGround = true;
-            alreadyJump = false;
-        }
-    }
-    
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.transform.tag.Equals("ground"))
-        {
-            Debug.Log("On collisionExit " + alreadyJump + " isground: " + isGround);
-            isGround = false;
-        }
     }
 
     [ContextMenu(nameof(SpeedCheat))]
