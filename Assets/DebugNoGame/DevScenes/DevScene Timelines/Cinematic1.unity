@@ -461,6 +461,17 @@ PrefabInstance:
       propertyPath: m_TranslationOffsets.Array.data[0].z
       value: -0.10502434
       objectReference: {fileID: 0}
+    - target: {fileID: 5405677587532612844, guid: 944c8954c68055e499649ddf8cff7f83,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+        type: 2}
+    - target: {fileID: 5405677587532612844, guid: 944c8954c68055e499649ddf8cff7f83,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5481771262325894322, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,6 +626,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538401802558839800, guid: 944c8954c68055e499649ddf8cff7f83,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+        type: 2}
+    - target: {fileID: 7538401802558839800, guid: 944c8954c68055e499649ddf8cff7f83,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7626175922879811632, guid: 944c8954c68055e499649ddf8cff7f83,
         type: 3}
@@ -1105,17 +1127,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Jefe: La banda japonesa ha vuelto a hacerlo.. necesito tu ayuda'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2356,17 +2379,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Khalil: Hey Jefe, como estamos?'
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3572,6 +3596,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1544876374}
     m_Modifications:
+    - target: {fileID: 236385531368811132, guid: e1ae56efd802ae74ba6e4a5c74725c44,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+        type: 2}
+    - target: {fileID: 236385531368811132, guid: e1ae56efd802ae74ba6e4a5c74725c44,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+        type: 2}
+    - target: {fileID: 236385531368811132, guid: e1ae56efd802ae74ba6e4a5c74725c44,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1424534882455238636, guid: e1ae56efd802ae74ba6e4a5c74725c44,
         type: 3}
       propertyPath: m_Name

@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToNavigateTo: SplashGame
-  waitTime: 10
+  waitTime: 8
   skip: {fileID: 4669503841117340608, guid: 842291e356cdb014d973214bcc245b84, type: 3}
   unblockMouseAfterTransition: 0
 --- !u!1001 &3458007539899727719

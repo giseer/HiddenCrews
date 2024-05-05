@@ -13,14 +13,14 @@ public class Resolutions : MonoBehaviour
 
     private void Awake()
     {
-        canvas = GetComponent<Canvas>();
+        canvas = GetComponentInParent<Canvas>();
     }
 
     void Start()
     {
         int currentResolution = -1;
 
-        List<TMP_Dropdown.OptionData> options = new(); // o así es lo mismo: List<TMP_Dropdown.OptionData> options = new List<TMP_Dropdown.OptionData>();
+        List<TMP_Dropdown.OptionData> options = new(); // o asï¿½ es lo mismo: List<TMP_Dropdown.OptionData> options = new List<TMP_Dropdown.OptionData>();
 
         for (int i = 0; i < QualitySettings.count; i++)
         {

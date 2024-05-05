@@ -55,5 +55,7 @@ Z
 *Assets/Canvas/Scripts/ShowCursorOnAwake.cs,9\7\97a1c1248fba4a691f04750c361a9bf64874d476
 W
 'Assets/Reputation/Scripts/Reputation.cs,1\0\108d8ae2f1871f7e50ead97c3b5c5590b64f8764
-O
-Assets/Music/NotDestroyMusic.cs,c\0\c0b41f0c1263d324a6f197c45993b9f7b9f78ef2
+Å
+QAssets/DebugNoGame/DevScenes/DevScene MainMenu, Options, PauseMenu/Resolutions.cs,0\8\089384ad262aa51ae36d4590d3e9a57301f54797
+y
+ILibrary/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorUtility.cs,a\2\a26b24129e695191d213c94ac3b1ef6642115363
