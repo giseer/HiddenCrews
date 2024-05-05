@@ -538,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MainMenu
+  shutdownMusicWhenPress: 0
 --- !u!1 &4550137379993357018
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1250042664936682935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -920,8 +921,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75bd763ef368dca41b4d0856ea74c0ab, type: 2}
-  m_sharedMaterial: {fileID: -9161682890778976230, guid: 75bd763ef368dca41b4d0856ea74c0ab,
+  m_fontAsset: {fileID: 11400000, guid: 9e813987e0c58ab4185aed829233dfc2, type: 2}
+  m_sharedMaterial: {fileID: -9161682890778976230, guid: 9e813987e0c58ab4185aed829233dfc2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

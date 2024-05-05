@@ -9,10 +9,10 @@ public class PlayerAimer : MonoBehaviour
 
     private Camera mainCamera;
 
-    [Header("Sensitivity Settings")] 
-    [SerializeField] private float normalSensitivity;
+    [Header("Sensitivity Settings")]
+    public float normalSensitivity = 2f;
 
-    [SerializeField] private float aimSensitivity;
+    public float aimSensitivity = 1.5f;
     
     [Header("Components")]
     private PlayerInputHandler inputHandler;

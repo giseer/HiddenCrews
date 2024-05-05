@@ -1,50 +1,77 @@
+using System;
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SensitivitySetter : MonoBehaviour
 {
     [Header("X Sensitivity Settings")]
-    [SerializeField] private Slider XSensSlider;
-    [SerializeField] private float minXSens;
-    [SerializeField] private float maxXSens;
-
+    [SerializeField] private Slider NormalSensSlider;
+    [SerializeField] private float minNormalSens;
+    [SerializeField] private float maxNormalSens;
+    
     [Header("Y Sensitivity Settings")]
-    [SerializeField] private Slider YSensSlider;
-    [SerializeField] private float minYSens;
-    [SerializeField] private float maxYSens;
+    [SerializeField] private Slider AimSensSlider;
+    
+    [SerializeField] private float minAimSens;
+    [SerializeField] private float maxAimSens;
 
-    [Header("Camera Settings")]
-    [SerializeField] private CinemachineFreeLook camera;
+    [Header("Player Settings")]
+    [SerializeField] private PlayerAimer aimer;
 
     private void Awake()
     {
+        AddSliderListeners();
+        SetSliderLimits();
         LoadPlayerPrefsValues();
     }
-
-    private void OnEnable()
+    
+    private void AddSliderListeners()
     {
-        XSensSlider.onValueChanged.AddListener(ChangeXPlayerPrefs);
-        YSensSlider.onValueChanged.AddListener(ChangeYPlayerPrefs);
+        NormalSensSlider.onValueChanged.AddListener(ChangeNormalSensPlayerPrefs);
+        AimSensSlider.onValueChanged.AddListener(ChangeAimSensPlayerPrefs);
     }
 
+    private void SetSliderLimits()
+    {
+        NormalSensSlider.value = aimer.normalSensitivity;
+        AimSensSlider.value = aimer.aimSensitivity; 
+        
+        NormalSensSlider.minValue = minNormalSens;
+        NormalSensSlider.maxValue = maxNormalSens;
+        
+        AimSensSlider.minValue = minAimSens;
+        AimSensSlider.maxValue = maxAimSens;
+    }
+    
     private void LoadPlayerPrefsValues()
     {
-        XSensSlider.value = PlayerPrefs.GetFloat("XSens");
-        YSensSlider.value = PlayerPrefs.GetFloat("YSens");
+        NormalSensSlider.value = PlayerPrefs.GetFloat("normalSensitivity");
+        AimSensSlider.value = PlayerPrefs.GetFloat("aimSensitivity");
+        UpdateSens();
     }
 
-    private void ChangeXPlayerPrefs(float newValue)
-    {
-        PlayerPrefs.SetFloat("XSens", newValue);
-        camera.m_XAxis.m_MaxSpeed = newValue;
+    private void ChangeNormalSensPlayerPrefs(float newValue)
+    {   
+        PlayerPrefs.SetFloat("normalSensitivity", newValue);
+        UpdateSens();
     }
 
-    private void ChangeYPlayerPrefs(float newValue)
+    private void ChangeAimSensPlayerPrefs(float newValue)
     {
-        PlayerPrefs.SetFloat("YSens", newValue);
-        camera.m_YAxis.m_MaxSpeed = newValue;
+        PlayerPrefs.SetFloat("aimSensitivity", newValue);
+        UpdateSens();
+    }
+    
+    private void UpdateSens()
+    {
+        if (aimer != null)
+        {
+               aimer.normalSensitivity = PlayerPrefs.GetFloat("normalSensitivity");
+               aimer.aimSensitivity = PlayerPrefs.GetFloat("aimSensitivity");
+        }
     }
 }

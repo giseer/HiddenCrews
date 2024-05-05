@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 
@@ -15,6 +16,8 @@ public class PlayerMover : MonoBehaviour
     
     [Header("Jump Values")]
     public float jumpForce = 1f;
+    private bool isGround = true;
+    private bool alreadyJump = false;
     
     [Header("Camera Values")]
     [HideInInspector] public Transform mainCamera;
@@ -79,8 +82,10 @@ public class PlayerMover : MonoBehaviour
     
     public void Jump()
     {
-        if (characterController.isGrounded)
+        if (isGround && !alreadyJump)
         {
+            Debug.Log("alreadyJump: " + alreadyJump);
+            alreadyJump = true;
             _velocity.y = jumpForce;
             animationer.AnimateJump();
         }
@@ -119,6 +124,26 @@ public class PlayerMover : MonoBehaviour
         normalizedLocalDirection = isSprinting ? normalizedLocalDirection * 2 : normalizedLocalDirection;
 
         animationer.AnimateMovement(normalizedLocalDirection);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Hola");
+        if (other.transform.tag.Equals("ground"))
+        {
+            Debug.Log("On collisionEnter " + alreadyJump + " isground: " + isGround);
+            isGround = true;
+            alreadyJump = false;
+        }
+    }
+    
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.transform.tag.Equals("ground"))
+        {
+            Debug.Log("On collisionExit " + alreadyJump + " isground: " + isGround);
+            isGround = false;
+        }
     }
 
     [ContextMenu(nameof(SpeedCheat))]
