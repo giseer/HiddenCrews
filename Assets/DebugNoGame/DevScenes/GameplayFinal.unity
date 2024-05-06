@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5419.1724, g: 3676.6, b: 3251.77, a: 1}
+  m_IndirectSpecularColor: {r: 5437.975, g: 3670.9927, b: 3197.1099, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -119,6 +119,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &69206748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 17989400749110096, guid: 18ec8602a42e56f40ad8001a1bd04584,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465382057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &93533913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3387902839438971152, guid: 9e3ed99320e352c49abbaf79687cfab5,
@@ -2505,11 +2511,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowController
       objectReference: {fileID: 0}
-    - target: {fileID: 3071924902652959904, guid: ce4d965053205574788afd85163dc9d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5943305560269197950, guid: ce4d965053205574788afd85163dc9d3,
         type: 3}
       propertyPath: player
@@ -2519,17 +2520,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5943305560269197950, guid: ce4d965053205574788afd85163dc9d3,
-        type: 3}
-      propertyPath: offset.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7477880371248011474, guid: ce4d965053205574788afd85163dc9d3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1865195
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 69206748}
     - target: {fileID: 7477880371248011474, guid: ce4d965053205574788afd85163dc9d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3604,6 +3595,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 548297850}
     m_Modifications:
+    - target: {fileID: 1421910181200680038, guid: 6459cf48105618f4bb528938d82beb7e,
+        type: 3}
+      propertyPath: m_text
+      value: $100
+      objectReference: {fileID: 0}
     - target: {fileID: 3112450376393823396, guid: 6459cf48105618f4bb528938d82beb7e,
         type: 3}
       propertyPath: m_Pivot.x

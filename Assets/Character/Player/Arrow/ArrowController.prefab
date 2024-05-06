@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7477880371248011474
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.707054, y: -0.008638693, z: 0.008638693, w: 0.707054}
   m_LocalPosition: {x: 76.2, y: 0.44, z: -33.4444}
-  m_LocalScale: {x: 0.18651949, y: 0.7096308, z: 1}
+  m_LocalScale: {x: 0.1865195, y: 0.7096308, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,6 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c11b155070f047488f46bbdc213d82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 5748261146034919498, guid: 944c8954c68055e499649ddf8cff7f83, type: 3}
-  objetivo: {fileID: 3071924902652959904}
-  flechaPrefab: {fileID: 3071924902652959904}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  offset: {x: 0, y: 0.05, z: 0}
